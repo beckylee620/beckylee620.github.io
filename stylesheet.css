@@ -1,7 +1,51 @@
 * {
-    background-color:#99BBDD;
+    background-color:#99CCBB;
 }
 
 body {
     font-family:sans-serif;
+    color:#004444;
+}
+
+div {
+	border-radius: 5px;
+	border: 2px solid #CCCCCC;
+	background-color: #BBBBBB;
+	height: 30px;
+	text-align: center;
+	font-family: sans-serif;
+    color:#660077;
+    font-size:30px;
+}
+
+a {
+    text-decoration:none;
+}
+
+#l1 {
+    display: inline;
+	position: relative;
+	margin-left: 10px;
+    font-size:20px;
+}
+
+#l2 {
+    display: inline;
+	position: relative;
+	margin-left: 10px;
+    font-size:20px;
+}
+
+#l3 {
+    display: inline;
+	position: relative;
+	margin-left: 10px;
+    font-size:20px;
+}
+
+#l4 {
+    display: inline;
+	position: relative;
+	margin-left: 10px;
+    font-size:20px;
 }
