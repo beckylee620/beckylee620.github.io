@@ -1,28 +1,19 @@
+/* COLOR SCHEME: TETRAD, PRIMARY = 3B707F */
+
+
 * {
-    font-family:Arial Black, sans-serif;
+    font-family:impact, sans-serif;
 }
 
 body {
-    background-color:#DADAFF;
-}
-
-h1 {
-    color:#BF6392;
-    text-align:center;
-    font-size:3em;
-    text-shadow:#7D2C55 3px 3px;
-}
-
-p {
-    color:#2A0116;
-    font-size:1.5em;
-    font-family:arial;
+    background-color:#093440;
 }
 
 div {
     position:relative;
     float:none;
     left:26%;
+    top:100px;
     text-align:center;
     font-size:2em;
     border-radius:5px;
@@ -30,37 +21,70 @@ div {
     width:48%;
 }
 
+#header {
+    background-color:#BDDAE2;
+    color:#673B0D;
+    position:fixed;
+    float:left;
+    left:0;
+    top:0;
+    text-align:left;
+    font-size:4em;
+    border-radius:0;
+    margin:0;
+    width:100%;
+    height:15%;
+}
+
 .c1 {
-    background-color:#CC7A69;
-    box-shadow:#340A01 5px 5px;
-    color:#340A01;
+    background-color:#97D1E2;
+    box-shadow:#364C52 5px 5px;
+    color:#364C52;
 }
 
 .c2 {
-    background-color:#CCA069;
-    box-shadow:#341D01 5px 5px;
-    color:#341D01;
+    background-color:#A1A8E5;
+    box-shadow:#3F425B 5px 5px;
+    color:#3F425B;
 }
 
 .c3 {
-    background-color:#BF6291;
-    box-shadow:#2A0116 5px 5px;
-    color:#2A0116;
+    background-color:#F3DDA0;
+    box-shadow:#847755 5px 5px;
+    color:#847755;
 }
 
 .c4 {
-    background-color:#5EB880;
-    box-shadow:#01250E 5px 5px;
-    color:#01250E;
+    background-color:#F3CAA0;
+    box-shadow:#846D55 5px 5px;
+    color:#846D55;
 }
 
 .c5 {
-    background-color:#888888;
-    box-shadow:#222222 5px 5px;
-    color:#222222;
+    background-color:#364C52;
+    box-shadow:#BDDAE2 5px 5px;
+    color:#BDDAE2;
 }
+
+.c6 {
+    background-color:#3F425B;
+    box-shadow:#C3C7E5 5px 5px;
+    color:#C3C7E5;
+}
+
+.c7 {
+    background-color:#847755;
+    box-shadow:#F3E8CA 5px 5px;
+    color:#F3E8CA;
+}
+
+.c8 {
+    background-color:#846D55;
+    box-shadow:#F3DFCA 5px 5px;
+    color:#F3DFCA;
+}
+
 
 a {
     text-decoration:none;
-    width:48%;
 }
