@@ -12,10 +12,23 @@ body {
     height:25%;
     margin-top:-5px;
     position:fixed;
+    display:block;
     font-size:3em;
     color:#FFFFFF;
 }
 
+}
+
+.menubutton {
+    background-color:#AA3939;
+    box-shadow:#550000 5px 5px;
+    color:#550000;
+    text-align:center;
+    font-size:2em;
+    border-radius:5px;
+    display:block;
+    margin: 10px auto 0px auto;
+    width:50%;
 }
 
 .linkbutton {
@@ -30,18 +43,6 @@ body {
     clear:right;
     margin:5px;
     width:30%;
-}
-
-.menubutton {
-    background-color:#AA3939;
-    box-shadow:#550000 5px 5px;
-    color:#550000;
-    text-align:center;
-    font-size:2em;
-    border-radius:5px;
-    display:block;
-    margin: 10px auto 0px auto;
-    width:50%;
 }
 
 .buttonlink {
