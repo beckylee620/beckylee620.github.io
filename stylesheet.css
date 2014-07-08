@@ -12,6 +12,7 @@ body {
     height:20%;
     margin-top:-1px;
     text-align:left;
+    vertical-align:bottom;
     position:fixed;
     font-size:3em;
     color:#FFFFFF;
