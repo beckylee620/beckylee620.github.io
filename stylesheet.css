@@ -6,7 +6,7 @@ body {
     background-color:#F0E4EE;
 }
 
-.link {
+.linkbutton {
     background-color:#AA3939;
     box-shadow:#550000 5px 5px;
     color:#550000;
@@ -20,7 +20,7 @@ body {
     width:30%;
 }
 
-div a {
+.buttonlink {
     color:#550000;
     text-decoration:none;
     display:block;
