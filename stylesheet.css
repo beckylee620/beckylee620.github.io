@@ -10,7 +10,7 @@ body {
     background-color:#22EEEE;
     width:100%;
     height:30%;
-    margin-top:0px;
+    margin-top:-1px;
     text-align:left;
     position:fixed;
     font-size:3em;
@@ -20,6 +20,7 @@ body {
 #headercushion {
     width:100%;
     height:30%;
+    margin-top:-1px;
     background-color:#F0E4EE;
 }
 
