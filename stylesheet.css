@@ -27,7 +27,7 @@ body {
     float:right;
     clear:right;
     margin:5px;
-    width:50%;
+    width:30%;
 }
 
 .menubutton {
@@ -39,7 +39,7 @@ body {
     border-radius:5px;
     display:block;
     margin: 10px auto 0px auto;
-    width:30%;
+    width:50%;
 }
 
 .buttonlink {
