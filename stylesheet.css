@@ -6,14 +6,10 @@ body {
     background-color:#F0E4EE;
 }
 
-#menu {
-    background-color:#BE8DB6;
-    width:35%;
-    height:5%;
-    border-radius:5px;
-    display:inline-block;
-    position:fixed;
-    float:right;
+#header {
+    font-size:3em;
+}
+
 }
 
 .linkbutton {
