@@ -3,11 +3,11 @@
 }
 
 body {
-    background-color:#F0E4EE;
+    background-color:#FAFBFC;
 }
 
 #header {
-    background-color:#22EEEE;
+    background-color:#1C2A3B;
     width:150%;
     height:10%;
     margin-top:-10px;
@@ -15,13 +15,13 @@ body {
     text-align:left;
     line-height:200%;
     font-size:3em;
-    color:#FFFFFF;
+    color:#FAFBFC;
 }
 
 .menubutton {
-    background-color:#AA3939;
-    box-shadow:#550000 5px 5px;
-    color:#550000;
+    background-color:#53643D;
+    box-shadow:#192A05 5px 5px;
+    color:#192A05;
     text-align:center;
     font-size:2em;
     border-radius:5px;
@@ -31,9 +31,9 @@ body {
 }
 
 .linkbutton {
-    background-color:#AA3939;
-    box-shadow:#550000 5px 5px;
-    color:#550000;
+    background-color:#53643D;
+    box-shadow:#192A05 5px 5px;
+    color:#192A05;
     text-align:center;
     font-size:2em;
     border-radius:5px;
