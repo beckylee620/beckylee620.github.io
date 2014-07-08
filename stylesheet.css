@@ -52,3 +52,8 @@ body {
     width:100%;
 }
 
+.menubutton:hover {
+    background-color:#E75300;
+    box-shadow:#03031B;
+    color:#03031B;
+}
