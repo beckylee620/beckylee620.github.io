@@ -6,6 +6,16 @@ body {
     background-color:#F0E4EE;
 }
 
+#menu {
+    background-color:#BE8DB6;
+    margin:5px;
+    width:35%;
+    height:5%;
+    border-radius:5px;
+    position:fixed;
+    clear:right;
+}
+
 .linkbutton {
     background-color:#AA3939;
     box-shadow:#550000 5px 5px;
