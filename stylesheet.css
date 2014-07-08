@@ -18,10 +18,11 @@ body {
 }
 
 #headercushion {
+    background-color:#22EEEE;
     width:100%;
     height:30%;
     margin-top:-1px;
-    background-color:#22EEEE;
+    display:block;
 }
 
 .menubutton {
