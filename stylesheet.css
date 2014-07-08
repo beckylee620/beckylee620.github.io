@@ -10,13 +10,12 @@ body {
     background-color:#AA3939;
     box-shadow:#550000 5px 5px;
     color:#550000;
-    display:block;
-    position:fixed;
-    float:right;
-    top:20%;
     text-align:center;
     font-size:2em;
     border-radius:5px;
+    display:block;
+    clear:left;
+    top:20%;
     margin:15px;
     width:30%;
 }
