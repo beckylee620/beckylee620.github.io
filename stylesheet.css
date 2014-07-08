@@ -15,6 +15,7 @@ body {
     border-radius:5px;
     display:block;
     float:right;
+    clear:left;
     margin:5px;
     width:30%;
 }
