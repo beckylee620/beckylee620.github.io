@@ -16,11 +16,12 @@ body {
     display:block;
     clear:right;
     float:right;
+    position:fixed;
     margin:5px;
     width:30%;
 }
 
-a {
+div a {
     color:#550000;
     text-decoration:none;
     display:block;
