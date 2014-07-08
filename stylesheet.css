@@ -58,6 +58,12 @@ body {
     color:#3B3B43;
 }
 
+.linkbutton:hover {
+    background-color:#E75300;
+    box-shadow:#3B3B43 5px 5px;
+    color:#3B3B43;
+}
+
 .buttonlink:hover {
     color:#3B3B43;
 }
