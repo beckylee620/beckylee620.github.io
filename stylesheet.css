@@ -11,6 +11,7 @@ body {
     width:35%;
     height:5%;
     border-radius:5px;
+    display:block;
     position:fixed;
     float:right;
 }
