@@ -9,11 +9,10 @@ body {
 #header {
     background-color:#22EEEE;
     width:150%;
-    height:20%;
     margin-top:-10px;
     margin-left:-10px;
     text-align:left;
-    line-height:100%;
+    line-height:20%;
     position:fixed;
     font-size:3em;
     color:#FFFFFF;
