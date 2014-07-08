@@ -11,6 +11,7 @@ body {
     box-shadow:#550000 5px 5px;
     color:#550000;
     display:block;
+    position:static;
     float:right;
     top:20%;
     text-align:center;
