@@ -54,10 +54,10 @@ body {
 
 .menubutton:hover {
     background-color:#E75300;
-    box-shadow:#0A0A32 5px 5px;
-    color:#0A0A32;
+    box-shadow:#3B3B43 5px 5px;
+    color:#3B3B43;
 }
 
 .buttonlink:hover {
-    color:#0A0A32;
+    color:#3B3B43;
 }
