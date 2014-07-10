@@ -32,10 +32,8 @@ body {
 
 .dropmenu {
     background-color:#FAFBFC;
-    margin-right:-500px;
+    margin-right:-100px;
     width:50%;
-    float:right;
-    clear:right;
 }
 
 /* .linkbutton {
