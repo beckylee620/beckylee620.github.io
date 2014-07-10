@@ -26,8 +26,8 @@ body {
     font-size:2em;
     border-radius:5px;
     display:block;
-    margin: 10px auto 0px auto;
-    width:80%;
+    margin: auto auto auto auto;
+    width:70%;
 }
 
 .dropmenu {
