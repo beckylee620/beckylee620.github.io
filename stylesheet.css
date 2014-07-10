@@ -38,20 +38,6 @@ body {
     clear:right;
 }
 
-/* .linkbutton {
-    background-color:#53643D;
-    box-shadow:#192A05 5px 5px;
-    color:#192A05;
-    text-align:center;
-    font-size:2em;
-    border-radius:5px;
-    display:block;
-    float:right;
-    clear:right;
-    margin:5px;
-    width:30%;
-} */
-
 .buttonlink {
     color:#192A05;
     text-decoration:none;
@@ -60,13 +46,11 @@ body {
     width:100%;
 }
 
-.menubutton:hover {
-    background-color:#E75300;
-    box-shadow:#3B3B43 5px 5px;
-    color:#3B3B43;
+a {
+    color:#E75300;
 }
 
-.linkbutton:hover {
+.menubutton:hover {
     background-color:#E75300;
     box-shadow:#3B3B43 5px 5px;
     color:#3B3B43;
