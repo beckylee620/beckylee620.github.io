@@ -31,11 +31,14 @@ body {
 }
 
 .dropmenu {
-    background-color:#53643D;
+    background-color:#FFFFFF;
     margin-right:-50px;
+    width:60%;
+    float:right;
+    clear:right;
 }
 
-.linkbutton {
+/* .linkbutton {
     background-color:#53643D;
     box-shadow:#192A05 5px 5px;
     color:#192A05;
@@ -47,7 +50,7 @@ body {
     clear:right;
     margin:5px;
     width:30%;
-}
+} */
 
 .buttonlink {
     color:#192A05;
