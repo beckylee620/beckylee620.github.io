@@ -18,6 +18,13 @@ body {
     color:#FAFBFC;
 }
 
+.dropmenu {
+    background-color:#FAFBFC;
+    width:40%;
+    float:right;
+    clear:right;
+}
+
 .menubutton {
     background-color:#53643D;
     box-shadow:#192A05 5px 5px;
@@ -28,14 +35,6 @@ body {
     display:block;
     margin: 10px auto 0px auto;
     width:80%;
-}
-
-.dropmenu {
-    background-color:#000000;
-    /* margin-right:-10%; */
-    width:40%;
-    float:right;
-    clear:right;
 }
 
 .buttonlink {
