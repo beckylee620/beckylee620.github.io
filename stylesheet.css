@@ -27,13 +27,13 @@ body {
     border-radius:5px;
     display:block;
     margin: 10px auto 0px auto;
-    width:55%;
+    width:60%;
 }
 
 .dropmenu {
     background-color:#FAFBFC;
     /* margin-right:-10%; */
-    width:50%;
+    width:60%;
     float:right;
     clear:right;
 }
