@@ -30,6 +30,11 @@ body {
     width:50%;
 }
 
+.dropmenu {
+    background-color:#53643D;
+    margin-right:-50px;
+}
+
 .linkbutton {
     background-color:#53643D;
     box-shadow:#192A05 5px 5px;
