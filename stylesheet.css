@@ -31,9 +31,9 @@ body {
 }
 
 .dropmenu {
-    background-color:#FFFFFF;
-    margin-right:-50px;
-    width:60%;
+    background-color:#FAFBFC;
+    margin-right:-500px;
+    width:50%;
     float:right;
     clear:right;
 }
