@@ -23,7 +23,7 @@ body {
     width:40%;
     float:right;
     clear:right;
-    margin-right:-100px;
+    margin-right:-300px;
 }
 
 .menubutton {
@@ -50,8 +50,8 @@ a {
     color:#D63700;
 }
 
-.dropmenu.hover {
-    margin-right:10px;
+.dropmenu:hover {
+    margin-right:-100px;
 }
 
 .menubutton:hover {
