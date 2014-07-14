@@ -1,4 +1,12 @@
-#swipe {
+table {
+    font-size=2em;
+}
+
+#bignumber {
+    font-size=3em;
+}
+
+/*#stage {
     background-color:#FAFB00;
     width:100%;
     text-align:center;
@@ -7,8 +15,6 @@
 .number {
     width:7%;
     display:inline-block;
-    margin-top:0;
-    padding:0;
     font-size:2em;
     text-align:center;
     background-color:#FAFBFC;
@@ -20,7 +26,7 @@
     font-size:4em;
     font-weight:bold;
     color:#D63700;
-}
+}*/
 
 * {
     font-family:Inconsolata, sans-serif;
