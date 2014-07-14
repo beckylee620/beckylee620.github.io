@@ -11,6 +11,10 @@
     display:inline-block;
 }
 
+#biggest {
+    width:20%;
+}
+
 * {
     font-family:Inconsolata, sans-serif;
 }
