@@ -1,13 +1,11 @@
 #swipe {
     background-color:#FAFB00;
     width:100%;
-    position:absolute;
 }
 
 .number {
     width:7%;
     display:inline-block;
-    position:relative;
     float:center;
     margin:0;
     padding:0;
