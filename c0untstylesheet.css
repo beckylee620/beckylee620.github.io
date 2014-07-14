@@ -7,7 +7,7 @@
     width:7%;
     display:inline-block;
     margin:auto auto auto auto;
-    padding:0;
+    float:center;
     font-size:2em;
     text-align:center;
     background-color:#FAFBFC;
