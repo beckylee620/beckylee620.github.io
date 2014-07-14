@@ -1,9 +1,9 @@
-table tr td {
-    font-size=2em;
+table {
+    font-size:2em;
 }
 
 #bignumber {
-    font-size=3em;
+    font-size:3em;
 }
 
 /*#stage {
