@@ -3,6 +3,13 @@
     width:100%;
 }
 
+.number {
+    width:8%;
+    background-color:#FAFBFC;
+    font-size:2em;
+    color:#3B3B43;
+}
+
 * {
     font-family:Inconsolata, sans-serif;
 }
