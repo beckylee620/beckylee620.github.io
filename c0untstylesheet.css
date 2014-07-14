@@ -5,14 +5,16 @@
 
 .number {
     width:8%;
-    background-color:#FAFBFC;
-    font-size:2em;
-    color:#3B3B43;
     display:inline-block;
+    font-size:2em;
+    text-align:center;
+    background-color:#FAFBFC;
+    color:#3B3B43;
 }
 
 #biggest {
-    width:20%;
+    width:16%;
+    font-size:3em;
 }
 
 * {
