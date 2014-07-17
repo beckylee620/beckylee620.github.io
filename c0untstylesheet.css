@@ -10,6 +10,11 @@ table {
     font-size:2.5em;
 }
 
+.bubble {
+    background-color:#D63700;
+    border-radius:12px;
+}
+
 * {
     font-family:Inconsolata, sans-serif;
 }
