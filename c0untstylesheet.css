@@ -7,30 +7,8 @@ table {
 }
 
 #bignumber {
-    font-size:4em;
+    font-size:3.5em;
 }
-
-/*#stage {
-    background-color:#FAFB00;
-    width:100%;
-    text-align:center;
-}
-
-.number {
-    width:7%;
-    display:inline-block;
-    font-size:2em;
-    text-align:center;
-    background-color:#FAFBFC;
-    color:#3B3B43;
-}
-
-#biggest {
-    width:16%;
-    font-size:4em;
-    font-weight:bold;
-    color:#D63700;
-}*/
 
 * {
     font-family:Inconsolata, sans-serif;
