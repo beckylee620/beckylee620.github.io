@@ -13,8 +13,6 @@ table {
 .bubble {
     background-color:#FB5820;
     border-radius:50%;
-    width:75%;
-    float:center;
 }
 
 * {
