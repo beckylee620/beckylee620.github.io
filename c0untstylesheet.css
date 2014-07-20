@@ -6,10 +6,6 @@ table {
     vertical-align:middle;
 }
 
-#bignumber {
-    font-size:2.5em;
-}
-
 .container {
     position:relative;
     width:80%;
@@ -32,6 +28,14 @@ table {
 /*    width:80%;
     padding-top:5%;
     padding-bottom:5%; */
+}
+
+#bignumber {
+    font-size:2.5em;
+}
+
+#bigbubble {
+    width:130%;
 }
 
 * {
