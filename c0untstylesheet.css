@@ -10,6 +10,17 @@ table {
     font-size:2.5em;
 }
 
+.container {
+    position:relative;
+    width:80%;
+}
+
+.container:before {
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+
 .bubble {
     background-color:#FF7422;
     border-radius:50%;
