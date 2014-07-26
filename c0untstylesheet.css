@@ -1,3 +1,9 @@
+.frame {
+    margin:auto;
+    text-align:center;
+    vertical-align:middle;
+}
+
 #stage {
     margin:auto;
     font-size:3em;
