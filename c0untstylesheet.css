@@ -1,19 +1,20 @@
 #abacus {
-    color:#FF4C00;
     width:45%;
 }
 
 #ones {
+    background-color:#FF4C00;
     width:8%;
     padding:1%;
 }
 
 #tens {
+    background-color:#FF4C00;
     width:100%;
 }
 
 #hundreds {
-    
+    background-color:#FF4C00;
 }
 
 #stage {
