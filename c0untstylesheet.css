@@ -10,14 +10,27 @@
     height:10px;
 }
 
-.heightOuter {
+.heightOuterTens {
     background-color:#000000;
     display:inline-block;
     position:relative;
     width:8%;
 }
 
-.heightOuter:before {
+.heightOuterTens:before {
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+
+.heightOuterOnes {
+    background-color:#000000;
+    display:inline-block;
+    position:relative;
+    width:100%;
+}
+
+.heightOuterOnes:before {
     content:"";
     display:block;
     padding-top:100%;
