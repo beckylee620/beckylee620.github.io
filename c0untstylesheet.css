@@ -8,10 +8,9 @@
     padding:1%;
 }
 
-#tens {
+.tens {
     background-color:#FF4C00;
-    width:100%;
-    padding:0%;
+    colspan:10;
 }
 
 #hundreds {
