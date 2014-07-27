@@ -22,7 +22,7 @@
 }
 
 .heightOuterOnes {
-    background-color:#FAFBFC;
+    background-color:#000000;
     display:inline-block;
     position:relative;
     width:100%;
@@ -49,7 +49,7 @@
 }
 
 .invisible {
-    background-color:#000000;
+    background-color:#FAFBFC;
 }
 
 .visible {
