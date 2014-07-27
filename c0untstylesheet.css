@@ -20,7 +20,7 @@
 .heightOuter:before {
     content:"";
 /*    display:block;*/
-    margin-top:100%;
+    padding-top:100%;
 }
 
 .heightInner {
