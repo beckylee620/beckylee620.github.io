@@ -68,6 +68,10 @@
     width:36%;
 }
 
+.tensBlock {
+    width:3.2;
+}
+
 #stage {
     margin:auto auto 1% auto;
     font-size:3em;
