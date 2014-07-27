@@ -3,7 +3,7 @@
     position:relative;
     width:45%;
     float:left;
-    margin:auto auto auto 2%;
+    margin:1%;
 }
 
 .hundredsContainer:before {
@@ -26,7 +26,7 @@
     position:relative;
     width:4.5%;
     float:right;
-    margin:auto 2% auto auto;
+    margin:1%;
 }
 
 .onesContainer:before {
