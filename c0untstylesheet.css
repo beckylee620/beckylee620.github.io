@@ -44,6 +44,20 @@
     left:0;
 }
 
+.tensContainer {
+    display:inline-block;
+    position:relative;
+    width:4.5%;
+    float:right;
+    margin:.5%;
+}
+
+.tensContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
 .tens {
     background-color:#FF4C00;
     position:absolute;
