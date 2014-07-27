@@ -18,6 +18,7 @@
 }
 
 .heightOuter:before {
+    background-color:#FAFBFC;
     content:"";
     display:block;
     margin-top:100%;
