@@ -11,7 +11,7 @@
 }
 
 .heightOuter {
-    background-color:#FAFBFC;
+    background-color:#FF4C00;
     display:inline-block;
     position:relative;
     width:8%;
@@ -24,7 +24,7 @@
 }
 
 .heightInner {
-    background-color:#FAFBFC;
+    background-color:#FF4C00;
     position:absolute;
     top: 0;
     bottom: 0;
