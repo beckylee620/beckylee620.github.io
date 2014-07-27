@@ -19,7 +19,7 @@
 
 .heightOuter:before {
     content:"";
-/*    display:block;*/
+    display:block;
     padding-top:100%;
 }
 
