@@ -8,7 +8,6 @@
     width:8%;
     padding:1%;
     height:10px;
-    float:right;
 }
 
 .heightOuter {
@@ -16,12 +15,11 @@
     display:inline-block;
     position:relative;
     width:8%;
-    float:left;
 }
 
 .heightOuter:before {
     content:"";
-    display:block;
+/*    display:block;*/
     margin-top:100%;
 }
 
@@ -38,7 +36,6 @@
     background-color:#FF4C00;
     height:10px;
     padding:1%;
-    float:right;
 }
 
 #hundreds {
