@@ -1,5 +1,19 @@
-.hundredsContainer {
+.firstHundredsContainer {
     display:inline-block;
+    position:relative;
+    width:40%;
+    float:left;
+    margin:1%;
+}
+
+.firstHundredsContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
+.hundredsContainer {
+    display:block;
     position:relative;
     width:40%;
     float:left;
