@@ -2,7 +2,7 @@
     display:inline-block;
     position:relative;
     width:40%;
-    clear:right;
+    float:left;
     margin:1%;
 }
 
