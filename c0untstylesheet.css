@@ -80,6 +80,7 @@
     position:relative;
     width:100%;
     background-color:#FF4C00;
+    border-bottom-style: 1% solid #FF4C00;
 }
 
 .tensContainer:before {
