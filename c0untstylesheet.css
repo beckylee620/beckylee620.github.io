@@ -24,7 +24,7 @@
 .onesContainer {
     display:inline-block;
     position:relative;
-    width:4.5%;
+    width:4%;
     float:right;
     margin:.1%;
 }
@@ -44,26 +44,9 @@
     left:0;
 }
 
-.tensContainer {
-    display:inline-block;
-    position:relative;
-    width:4.5%;
-    margin:0%;
-}
-
-.tensContainer:before {
-    content:"";
-    display:block;
-    margin-top:100%;
-}
-
 .tens {
     background-color:#FF4C00;
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
+    width:4%;
 }
 
 #stage {
