@@ -11,8 +11,9 @@
 
 .tens {
     background-color:#FF4C00;
-    width:100%;
+    width:45%;
     height:10px;
+    padding:1%;
 }
 
 #hundreds {
