@@ -23,6 +23,8 @@
 
 #allOnes {
     width:4%;
+    float:right;
+    background-color:#FAFBFC;
 }
 
 .onesContainer {
