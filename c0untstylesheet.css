@@ -59,17 +59,27 @@
     left:0;
 }
 
+.aTen {
+    width:3.2%;
+    float:right;
+    background-color:#FAFBFC;
+    margin-right:5%;
+}
+
 .tens {
     background-color:#FF4C00;
-    width:11.11%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
 
 .tensContainer {
-    width:32%;
-}
-
-.tensBlock {
-    width:11.11%;
+    display:inline-block;
+    position:relative;
+    width:100%;
+    background-color:#FAFBFC;
 }
 
 #stage {
