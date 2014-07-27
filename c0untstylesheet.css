@@ -62,7 +62,7 @@
 .aTen {
     width:3.2%;
     float:left;
-    margin-left:40%;
+    margin-left:1%;
     background-color:#FF4C00;
 }
 
@@ -80,7 +80,6 @@
     position:relative;
     width:100%;
     background-color:#FF4C00;
-    border-bottom-style: 1% solid #FF4C00;
 }
 
 .tensContainer:before {
