@@ -64,7 +64,6 @@
     float:left;
     margin-left:40%;
     background-color:#FF4C00;
-    margin-right:5%;
 }
 
 .tens {
@@ -81,6 +80,12 @@
     position:relative;
     width:100%;
     background-color:#FF4C00;
+}
+
+.tensContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
 }
 
 #stage {
