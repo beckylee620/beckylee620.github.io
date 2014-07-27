@@ -23,7 +23,7 @@
 }
 
 .heightOuterOnes {
-    background-color:#FF4C00;
+    background-color:#000000;
     display:inline-block;
     position:relative;
     width:100%;
@@ -36,7 +36,7 @@
 }
 
 .heightInner {
-    background-color:#FF4C00;
+    background-color:#000000;
     position:absolute;
     top: 0;
     bottom: 0;
