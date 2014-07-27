@@ -46,7 +46,11 @@
 
 .tens {
     background-color:#FF4C00;
-    width:4%;
+    width:11.11%;
+}
+
+.tensContainer {
+    width:36%;
 }
 
 #stage {
