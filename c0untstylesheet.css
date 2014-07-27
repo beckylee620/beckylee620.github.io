@@ -1,9 +1,17 @@
+
+#allHundreds {
+    width:40%;
+    float:left;
+    background-color:#FAFBFC;
+    margin-left:2%;
+}
+
 .hundredsContainer {
     display:inline-block;
     position:relative;
-    width:40%;
-    float:left;
-    margin:1%;
+    width:100%;
+    padding:1%;
+    background-color:#FAFBFC;
 }
 
 .hundredsContainer:before {
@@ -32,7 +40,6 @@
     display:inline-block;
     position:relative;
     width:100%;
-    float:right;
     padding:1%;
     background-color:#FAFBFC;
 }
