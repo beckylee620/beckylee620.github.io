@@ -5,15 +5,15 @@
 
 #ones {
     background-color:#FF4C00;
-    width:11.11%;
+    width:10%;
     height:10px;
 }
 
 .heightOuterTens {
-    background-color:#000000;
+    background-color:#FF4C00;
     display:inline-block;
     position:relative;
-    width:11.11%;
+    width:10%;
 }
 
 .heightOuterTens:before {
@@ -23,7 +23,7 @@
 }
 
 .heightOuterOnes {
-    background-color:#000000;
+    background-color:#FF4C00;
     display:inline-block;
     position:relative;
     width:100%;
@@ -36,7 +36,7 @@
 }
 
 .heightInner {
-    background-color:#000000;
+    background-color:#FF4C00;
     position:absolute;
     top: 0;
     bottom: 0;
