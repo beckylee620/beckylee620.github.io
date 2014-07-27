@@ -1,60 +1,56 @@
-#abacus {
+.hundredsContainer {
+    display:inline-block;
+    position:relative;
     width:45%;
-    float:right;
-    margin: auto 2% auto auto;
+    float:left;
+    margin:auto auto auto 2%;
 }
 
-.heightOuterTens {
+.hundredsContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
+.hundreds {
     background-color:#FF4C00;
-    display:inline-block;
-    position:relative;
-    width:10%;
-}
-
-.heightOuterTens:before {
-    content:"";
-    display:block;
-    padding-top:100%;
-}
-
-.heightOuterOnes {
-    background-color:#FAFBFC;
-    display:inline-block;
-    position:relative;
-    width:100%;
-}
-
-.heightOuterOnes:before {
-    content:"";
-    display:block;
-    padding-top:100%;
-}
-
-.heightInner {
     position:absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+.onesContainer {
+    display:inline-block;
+    position:relative;
+    width:4.5%;
+    float:right;
+    margin:auto 2% auto auto;
+}
+
+.onesContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
+.ones {
+    background-color:#FF4C00;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
 
 .tens {
     background-color:#FF4C00;
-}
-
-.invisible {
-    background-color:#FAFBFC;
-}
-
-.visible {
-    background-color:#FF4C00;
-}
-
-#hundreds {
-    background-color:#FF4C00;
-    float:left;
-    margin: auto auto auto 2%;
-    width:45%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
 }
 
 #stage {
@@ -118,6 +114,70 @@ a {
 .buttonlink:hover {
     color:#3B3B43;
 }
+
+/*
+ABACUS BUILT WITH TABLE
+
+#abacus {
+    width:45%;
+    float:right;
+    margin: auto 2% auto auto;
+}
+
+.heightOuterTens {
+    background-color:#FF4C00;
+    display:inline-block;
+    position:relative;
+    width:10%;
+}
+
+.heightOuterTens:before {
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+
+.heightOuterOnes {
+    background-color:#FAFBFC;
+    display:inline-block;
+    position:relative;
+    width:100%;
+}
+
+.heightOuterOnes:before {
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+
+.heightInner {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.tens {
+    background-color:#FF4C00;
+}
+
+.invisible {
+    background-color:#FAFBFC;
+}
+
+.visible {
+    background-color:#FF4C00;
+}
+
+#hundreds {
+    background-color:#FF4C00;
+    float:left;
+    margin: auto auto auto 2%;
+    width:45%;
+}*/
+
+
 
 
 /*
