@@ -1,3 +1,21 @@
+#abacus {
+    color:#FF4C00;
+    width:45%;
+}
+
+#ones {
+    width:8%;
+    padding:1%;
+}
+
+#tens {
+    width:100%;
+}
+
+#hundreds {
+    
+}
+
 #stage {
     margin:auto;
     font-size:3em;
@@ -5,35 +23,6 @@
     text-align:center;
     vertical-align:middle;
 }
-
-/*
-CIRCLES AROUND NUMBERS: http://www.mademyday.de/css-height-equals-width-with-pure-css.html
-
-.container {
-    position:relative;
-    width:80%;
-}
-
-.container:before {
-    content:"";
-    display:block;
-    padding-top:100%;
-}
-
-.bubble {
-    position:absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color:#FF7422;
-    border-radius:50%;
-    line-height:100%;
-    text-align:center;
-    vertical-align:middle;
-}
-
-*/
 
 #bignumber {
     font-size:2em;
@@ -88,3 +77,36 @@ a {
 .buttonlink:hover {
     color:#3B3B43;
 }
+
+
+/*
+CIRCLES AROUND NUMBERS: http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+HTML AROUND EACH NUMBER: <td><div class="container"><div class="bubble">13</div></div></td>
+
+
+.container {
+    position:relative;
+    width:80%;
+}
+
+.container:before {
+    content:"";
+    display:block;
+    padding-top:100%;
+}
+
+.bubble {
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color:#FF7422;
+    border-radius:50%;
+    line-height:100%;
+    text-align:center;
+    vertical-align:middle;
+}
+
+*/
+
