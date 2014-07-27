@@ -1,6 +1,6 @@
 
 #allHundreds {
-    width:40%;
+    width:35%;
     float:left;
     background-color:#FAFBFC;
     margin-left:2%;
@@ -9,8 +9,8 @@
 .hundredsContainer {
     display:inline-block;
     position:relative;
-    width:95%;
-    padding:1%;
+    width:100%;
+    padding:0 0 1% 0;
     background-color:#FAFBFC;
 }
 
@@ -40,7 +40,7 @@
     display:inline-block;
     position:relative;
     width:100%;
-    padding:1%;
+    padding:0 0 1% 0;
     background-color:#FAFBFC;
 }
 
