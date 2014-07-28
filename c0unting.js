@@ -1,6 +1,6 @@
 $(document).ready(function() {
-   $('div').click(function() {
+   $('div').mouseenter(function() {
        $(this).css({
-           'color:#FAFBFC'
+           'background-color':'#FAFBFC'
        });
    });
