@@ -1,6 +1,7 @@
 $(document).ready(function() {
-   $('#allHundreds').mouseenter(function() {
+   $('#allHundreds').click(function() {
        $(this).css({
-           'background-color':'#FAFBFC'
+           'width':'10%'
        });
    });
+}
