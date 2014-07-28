@@ -1,6 +1,7 @@
 $(document).ready(function() {
    $('div').click(function() {
-       $(this).css({
-           'background-color':'#FAFBFC'
+      $(this).fadeOut('slow')
+/*       $(this).css({
+           'background-color':'#FAFBFC'*/
        });
    });
