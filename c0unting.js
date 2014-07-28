@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   $('#allHundreds').click(function() {
+   $('div').click(function() {
        $(this).css({
            'width':'10%'
        });
