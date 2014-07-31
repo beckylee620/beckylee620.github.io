@@ -1,4 +1,4 @@
-confirm('Please click "OK" if this this is working.');
+confirm('Please click "OK" if this is working.');
 
 //$(document).ready(function() {
 //$('div').mouseenter(function() {
