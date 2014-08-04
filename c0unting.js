@@ -1,17 +1,28 @@
-var negFive = -8;
+var negFive = -5;
+var negFour = -4;
+var negThree = -3;
+var negTwo = -2;
+var negOne = -1;
+var zero = 0;
+var posOne = 1;
+var posTwo = 2;
+var posThree = 3;
+var posFour = 4;
+var posFive = 5;
+
 
 
 document.getElementById("negFive").textContent=negFive.toString();
-document.getElementById("negFour").textContent="-5";
-document.getElementById("negThree").textContent="-5";
-document.getElementById("negTwo").textContent="-5";
-document.getElementById("negOne").textContent="-5";
-document.getElementById("zero").textContent="-5";
-document.getElementById("posOne").textContent="-5";
-document.getElementById("posTwo").textContent="-5";
-document.getElementById("posThree").textContent="-5";
-document.getElementById("posFour").textContent="-5";
-document.getElementById("posFive").textContent="-5";
+document.getElementById("negFour").textContent=negFive.toString();
+document.getElementById("negThree").textContent=negFive.toString();
+document.getElementById("negTwo").textContent=negFive.toString();
+document.getElementById("negOne").textContent=negFive.toString();
+document.getElementById("zero").textContent=zero.toString();
+document.getElementById("posOne").textContent=posOne.toString();
+document.getElementById("posTwo").textContent=posTwo.toString();
+document.getElementById("posThree").textContent=posThree.toString();
+document.getElementById("posFour").textContent=posFour.toString();
+document.getElementById("posFive").textContent=posFive.toString();
 
 
 
