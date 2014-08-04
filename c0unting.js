@@ -1,3 +1,5 @@
+//populate the table with the current numbers
+
 var negFive = -5;
 var negFour = -4;
 var negThree = -3;
@@ -9,8 +11,6 @@ var posTwo = 2;
 var posThree = 3;
 var posFour = 4;
 var posFive = 5;
-
-
 
 document.getElementById("negFive").textContent=negFive.toString();
 document.getElementById("negFour").textContent=negFour.toString();
@@ -30,14 +30,48 @@ document.getElementById("posFive").textContent=posFive.toString();
 //    numbers.push(num);
 //  }
 
-//populate the table with the current numbers
 
 
 
 $(document).ready(function() {
 
-  
-  
+  $(document).keydown(function(e) {
+     switch(e.which) {
+         case 37: // left
+         negFive -= 1;
+         negFour -= 1;
+         negThree -= 1;
+         negTwo -= 1;
+         negOne -= 1;
+         zero -= 1;
+         posOne -= 1;
+         posTwo -= 1;
+         posThree -= 1;
+         posFour -= 1;
+         posFive -= 1;
+         break;
+
+         case 39: // right
+         negFive += 1;
+         negFour += 1;
+         negThree += 1;
+         negTwo += 1;
+         negOne += 1;
+         zero += 1;
+         posOne += 1;
+         posTwo += 1;
+         posThree += 1;
+         posFour += 1;
+         posFive += 1;
+         break;
+
+      }
+     e.preventDefault(); // prevent the default action (scroll / move caret)
+  });
+
+
+
+
 //  $("div").click(function() {
 //   $(this).css("background-color", "#FAFBFC");
 //  });
