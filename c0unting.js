@@ -7,7 +7,7 @@ var numbers = _.range(-999, 999);
 //populate the table with the current numbers
 var middle = numbers[999];
   
-document.getElementById("zero").textContent = middle.toString();
+document.getElementById("zero").textContent = numbers[999].toString();
 
 
 
