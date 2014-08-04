@@ -13,10 +13,10 @@ var posFive = 5;
 
 
 document.getElementById("negFive").textContent=negFive.toString();
-document.getElementById("negFour").textContent=negFive.toString();
-document.getElementById("negThree").textContent=negFive.toString();
-document.getElementById("negTwo").textContent=negFive.toString();
-document.getElementById("negOne").textContent=negFive.toString();
+document.getElementById("negFour").textContent=negFour.toString();
+document.getElementById("negThree").textContent=negThree.toString();
+document.getElementById("negTwo").textContent=negTwo.toString();
+document.getElementById("negOne").textContent=negOne.toString();
 document.getElementById("zero").textContent=zero.toString();
 document.getElementById("posOne").textContent=posOne.toString();
 document.getElementById("posTwo").textContent=posTwo.toString();
