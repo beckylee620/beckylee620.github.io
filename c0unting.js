@@ -1,3 +1,7 @@
+document.getElementById("negFive").textContent="-5"
+
+
+
 //create list of all numbers used for this exercise
 var numbers = _.range(-999, 999);
 //  for(var num = -999; num < 1000; num++) {
