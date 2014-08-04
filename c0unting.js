@@ -9,7 +9,7 @@ $(document).ready(function() {
 //populate the table with the current numbers
   var middle = numbers[999];
   
-  document.getElementById("zero").textContent = middle;
+  getElementById("zero").textContent = middle;
   
   
 //  $("div").click(function() {
