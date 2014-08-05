@@ -1,4 +1,10 @@
-//populate the table with the current numbers
+//populate the table with the starting numbers
+
+
+
+//change the numbers with arrows/swipe
+
+$(document).ready(function() {
 
 var negFive = -5;
 var negFour = -4;
@@ -25,9 +31,7 @@ document.getElementById("posFour").textContent=posFour.toString();
 document.getElementById("posFive").textContent=posFive.toString();
 
 
-//change the numbers with arrows/swipe
 
-$(document).ready(function() {
 
   $(document).keydown(function(e) {
     switch(e.which) {
@@ -95,7 +99,7 @@ $(document).ready(function() {
     $("stage").on("swipeleft", swipeleftHandler);
  
     // Callback function references the event target and changes all the numbers
-    function swipeleftHandler( event ){
+    function swipeleftHandler(event){
       negFive -= 1;
       negFour -= 1;
       negThree -= 1;
