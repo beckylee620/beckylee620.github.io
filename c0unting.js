@@ -1,11 +1,5 @@
 //populate the table with the starting numbers
 
-
-
-//change the numbers with arrows/swipe
-
-$(document).ready(function() {
-
 var negFive = -5;
 var negFour = -4;
 var negThree = -3;
@@ -30,8 +24,9 @@ document.getElementById("posThree").textContent=posThree.toString();
 document.getElementById("posFour").textContent=posFour.toString();
 document.getElementById("posFive").textContent=posFive.toString();
 
+//change the numbers with arrows/swipe
 
-
+$(document).ready(function() {
 
   $(document).keydown(function(e) {
     switch(e.which) {
@@ -127,6 +122,8 @@ document.getElementById("posFive").textContent=posFive.toString();
       break;
 
     }
+    
+  });
 
 
 
