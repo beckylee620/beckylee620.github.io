@@ -32,7 +32,7 @@ $(document).ready(function() {
     switch(e.which) {
         case 37: // left
         
-        ("stage").animate({marginRight:"+=10%"}, "fast");
+        $("stage").animate({borderRightWidth:"+=10%"}, "fast");
         
         negFive -= 1;
         negFour -= 1;
@@ -90,6 +90,10 @@ $(document).ready(function() {
       }
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
+
+
+
+
 
 
 
