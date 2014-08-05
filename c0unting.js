@@ -89,43 +89,6 @@ $(document).ready(function() {
   });
 
 
-  $(function(){
-    // Bind the swipeleftHandler callback function to the swipe event on "stage"
-    $("stage").on("swipeleft", swipeleftHandler);
- 
-    // Callback function references the event target and changes all the numbers
-    function swipeleftHandler(event){
-      negFive -= 1;
-      negFour -= 1;
-      negThree -= 1;
-      negTwo -= 1;
-      negOne -= 1;
-      zero -= 1;
-      posOne -= 1;
-      posTwo -= 1;
-      posThree -= 1;
-      posFour -= 1;
-      posFive -= 1;
-       
-      document.getElementById("negFive").textContent=negFive.toString();
-      document.getElementById("negFour").textContent=negFour.toString();
-      document.getElementById("negThree").textContent=negThree.toString();
-      document.getElementById("negTwo").textContent=negTwo.toString();
-      document.getElementById("negOne").textContent=negOne.toString();
-      document.getElementById("zero").textContent=zero.toString();
-      document.getElementById("posOne").textContent=posOne.toString();
-      document.getElementById("posTwo").textContent=posTwo.toString();
-      document.getElementById("posThree").textContent=posThree.toString();
-      document.getElementById("posFour").textContent=posFour.toString();
-      document.getElementById("posFive").textContent=posFive.toString();
-        
-      break;
-
-    }
-    
-  });
-
-
 
 //  $("div").click(function() {
 //   $(this).css("background-color", "#FAFBFC");
