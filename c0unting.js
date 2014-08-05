@@ -94,7 +94,7 @@ $(document).ready(function() {
     $("stage").on("swipeleft", swipeleftHandler);
  
     // Callback function references the event target and changes all the numbers
-    function swipeleftHandler(){
+    function swipeleftHandler(event){
       negFive -= 1;
       negFour -= 1;
       negThree -= 1;
