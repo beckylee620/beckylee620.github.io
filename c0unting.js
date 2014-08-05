@@ -31,6 +31,9 @@ $(document).ready(function() {
   $(document).keydown(function(e) {
     switch(e.which) {
         case 37: // left
+        
+        $("stage").animate({marginRight:"+=15%"}, "fast");
+        
         negFive -= 1;
         negFour -= 1;
         negThree -= 1;
