@@ -32,7 +32,7 @@ $(document).ready(function() {
     switch(e.which) {
         case 39: // right
         
-        $("tr").animate({paddingLeft:"+=10%"}, "fast");
+        $("td").animate({paddingLeft:"+=10%"}, "fast");
         
         negFive += 1;
         negFour += 1;
@@ -57,13 +57,15 @@ $(document).ready(function() {
         document.getElementById("posThree").textContent=posThree.toString();
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
+        
+        $("td").css("padding-left", "0");
 
         break;
 
         
         case 37: // left
         
-        $("tr").animate({paddingRight:"+=10%"}, "fast");
+        $("td").animate({paddingRight:"+=10%"}, "fast");
         
         negFive -= 1;
         negFour -= 1;
@@ -88,6 +90,8 @@ $(document).ready(function() {
         document.getElementById("posThree").textContent=posThree.toString();
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
+        
+        $("td").css("padding-right", "0");
         
         break;
       }
