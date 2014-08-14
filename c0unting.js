@@ -61,6 +61,9 @@ $(document).ready(function() {
         break;
 
         case 39: // right
+        
+        $("td").animate({paddingRight:"+=10%"}, "fast");
+        
         negFive += 1;
         negFour += 1;
         negThree += 1;
