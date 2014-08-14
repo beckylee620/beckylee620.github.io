@@ -102,6 +102,7 @@
 td {
     padding-left:0;
     padding-right:0;
+    position:fixed;
 }
 
 #bignumber {
