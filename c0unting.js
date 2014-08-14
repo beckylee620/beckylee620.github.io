@@ -32,7 +32,7 @@ $(document).ready(function() {
     switch(e.which) {
         case 39: // right
         
-        $("td").animate({marginRight:"+=10%"}, "fast");
+        $("td").animate({backgroundPositionX:"+=10%"}, "fast");
         
         negFive += 1;
         negFour += 1;
@@ -63,7 +63,7 @@ $(document).ready(function() {
         
         case 37: // left
         
-        $("td").animate({marginLeft:"+=10%"}, "fast");
+        $("td").animate({backgroundPositionX:"+=10%"}, "fast");
         
         negFive -= 1;
         negFour -= 1;
