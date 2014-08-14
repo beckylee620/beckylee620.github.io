@@ -32,7 +32,7 @@ $(document).ready(function() {
     switch(e.which) {
         case 37: // left
         
-        $("stage").animate({borderRightWidth:"+=10%"}, "fast");
+        $("stage").animate({backgroundPositionX:"+=10%"}, "fast");
         
         negFive -= 1;
         negFour -= 1;
