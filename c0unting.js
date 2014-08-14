@@ -35,6 +35,9 @@ $(document).ready(function() {
         
         $("td").animate({paddingLeft:"+=10%"}, 100);
         
+        $("td").css("padding-right", "0");
+        $("td").css("padding-left", "0");
+        
         negFive -= 1;
         negFour -= 1;
         negThree -= 1;
@@ -59,15 +62,15 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
-        $("td").css("padding-right", "0");
-        $("td").css("padding-left", "0");
-        
         break;
         
-                case 39: // right
+        case 39: // right
         
         $("td").animate({paddingRight:"+=10%"}, 100);
         
+        $("td").css("padding-left", "0");
+        $("td").css("padding-right", "0");
+
         negFive += 1;
         negFour += 1;
         negThree += 1;
@@ -92,9 +95,6 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
-        $("td").css("padding-left", "0");
-        $("td").css("padding-right", "0");
-
         break;
 
 
