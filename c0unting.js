@@ -60,7 +60,9 @@ $(document).ready(function() {
         document.getElementById("posFive").textContent=posFive.toString();
         
 //        $("td").css("padding-right", "-=100%");
-        $("td").css("padding-left", "0");
+//        $("td").css("padding-left", "0");
+        
+        $("td").animate({paddingLeft:"-=100%"}, 0)
         
         break;
         
