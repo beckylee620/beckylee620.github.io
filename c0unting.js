@@ -35,8 +35,8 @@ $(document).ready(function() {
         
         $("td").animate({paddingLeft:"+=10%"}, 100);
         
-        $("td").css("padding-right", "0");
-        $("td").css("padding-left", "0");
+//        $("td").css("padding-right", "-=100%");
+        $("td").css("padding-left", "-=100%");
         
         negFive -= 1;
         negFour -= 1;
