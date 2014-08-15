@@ -35,9 +35,6 @@ $(document).ready(function() {
         
         $("td").animate({paddingLeft:"+=10%"}, 100);
         
-//        $("td").css("padding-right", "-=100%");
-        $("td").css("padding-left", "-=100%");
-        
         negFive -= 1;
         negFour -= 1;
         negThree -= 1;
@@ -61,6 +58,9 @@ $(document).ready(function() {
         document.getElementById("posThree").textContent=posThree.toString();
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
+        
+//        $("td").css("padding-right", "-=100%");
+        $("td").css("padding-left", "-=100%");
         
         break;
         
