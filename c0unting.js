@@ -66,7 +66,7 @@ $(document).ready(function() {
         
         case 39: // right
         
-        $("td").animate({paddingRight:"+=10%"}, 100);
+        $("td").animate({paddingLeft:"-=10%"}, 100);
         
         $("td").css("padding-left", "0");
         $("td").css("padding-right", "0");
