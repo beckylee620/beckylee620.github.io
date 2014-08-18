@@ -99,12 +99,14 @@ $(document).ready(function() {
 
 
       }
+      
+      $("td").css("padding-left", "0");
+      $("td").css("padding-right", "0");
+
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
         
-  $("td").css("padding-left", "0");
-  $("td").css("padding-right", "0");
 
 
 
