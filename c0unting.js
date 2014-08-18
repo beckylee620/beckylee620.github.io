@@ -59,8 +59,8 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
-        $("td").css("padding-right", "0");
-        $("td").css("padding-left", "0");
+//        $("td").css("padding-right", "0");
+//        $("td").css("padding-left", "0");
         
         break;
         
@@ -92,8 +92,8 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
-        $("td").css("padding-left", "0");
-        $("td").css("padding-right", "0");
+//        $("td").css("padding-left", "0");
+//        $("td").css("padding-right", "0");
         
         break;
 
@@ -102,6 +102,9 @@ $(document).ready(function() {
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
+        
+        $("td").css("padding-left", "0");
+        $("td").css("padding-right", "0");
 
 
 
