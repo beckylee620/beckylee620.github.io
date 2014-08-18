@@ -103,8 +103,8 @@ $(document).ready(function() {
   });
 
         
-        $("td").css("padding-left", "0");
-        $("td").css("padding-right", "0");
+  $("td").css("padding-left", "0");
+  $("td").css("padding-right", "0");
 
 
 
