@@ -66,8 +66,7 @@ $(document).ready(function() {
         
         case 39: // right
         
-        $("td").animate({paddingLeft:"-=10%"}, 100);
-        $("td").animate({paddingRight:"+=10"}, 100);
+        $("td").animate({paddingRight:"+=10%"}, 100);
         
         negFive += 1;
         negFour += 1;
