@@ -1,6 +1,6 @@
 //populate the table with the starting numbers
 
-var offColor = "#C2FCFC"
+var offColor = "#F9F9F9"
 var onColor = "8F0051"
 
 var negFive = -5;
