@@ -33,6 +33,8 @@ $(document).ready(function() {
         
         case 37: // left
         
+        $("stage").css("float","left");
+        
         $("td").animate({paddingLeft:"+=10%"}, 100);
         
         negFive -= 1;
@@ -65,6 +67,8 @@ $(document).ready(function() {
         break;
         
         case 39: // right
+        
+        $("stage").css("float","right");
         
         $("td").animate({paddingRight:"+=10%"}, 100);
         
@@ -100,9 +104,6 @@ $(document).ready(function() {
 
 
       }
-      
-      $("td").css("padding-left", "0");
-      $("td").css("padding-right", "0");
 
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
