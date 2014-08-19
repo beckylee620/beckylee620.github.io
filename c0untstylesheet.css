@@ -2,7 +2,7 @@
 #allHundreds {
     width:33.5%;
     float:left;
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
     margin-left:12%;
     margin-right:4.5%;
 }
@@ -12,7 +12,7 @@
     position:relative;
     width:100%;
     padding:0 0 1% 0;
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
 }
 
 .hundredsContainer:before {
@@ -33,7 +33,7 @@
 #allOnes {
     width:3.2%;
     float:right;
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
     margin-right:12%;
     margin-left:3%;
 }
@@ -43,7 +43,7 @@
     position:relative;
     width:100%;
     padding:0 0 1% 0;
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
 }
 
 .onesContainer:before {
@@ -53,7 +53,7 @@
 }
 
 .ones {
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
     position:absolute;
     top:0;
     right:0;
@@ -62,14 +62,14 @@
 }
 
 #tenOne {
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
 }
 
 .aTen {
     width:3.17%;
     float:left;
     margin-right:0.2%;
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
 }
 
 .tens {
@@ -99,7 +99,6 @@
     text-align:center;
     vertical-align:middle;
     table-layout:fixed;
-    background-color:#C2FCFC;
 }
 
 td {
@@ -121,7 +120,7 @@ body {
 }
 
 .dropmenu {
-    background-color:#C2FCFC;
+    background-color:#F9F9F9;
     width:60%;
     float:right;
     clear:right;
