@@ -59,6 +59,12 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
+        
+        if (zero % 10 < 0) {
+          $("oneOne").css("background-color", "#FF4C00");
+        }
+
+        
 //        $("td").css("padding-right", "0");
 //        $("td").css("padding-left", "0");
         
@@ -93,6 +99,10 @@ $(document).ready(function() {
         document.getElementById("posFive").textContent=posFive.toString();
         
         
+        if (zero % 10 < 0) {
+          $("oneOne").css("background-color", "#FF4C00");
+        }
+        
 //        $("td").css("padding-left", "0");
 //        $("td").css("padding-right", "0");
         
@@ -105,9 +115,6 @@ $(document).ready(function() {
   });
 
         
-if (zero % 10 < 0) {
-  $("oneOne").css("background-color", "#FF4C00");
-}
 
 
 
