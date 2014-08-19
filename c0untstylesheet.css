@@ -2,7 +2,7 @@
 #allHundreds {
     width:33.5%;
     float:left;
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
     margin-left:12%;
     margin-right:4.5%;
 }
@@ -12,7 +12,7 @@
     position:relative;
     width:100%;
     padding:0 0 1% 0;
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
 }
 
 .hundredsContainer:before {
@@ -22,7 +22,7 @@
 }
 
 .hundreds {
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
     position:absolute;
     top:0;
     right:0;
@@ -33,7 +33,7 @@
 #allOnes {
     width:3.2%;
     float:right;
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
     margin-right:12%;
     margin-left:3%;
 }
@@ -43,7 +43,7 @@
     position:relative;
     width:100%;
     padding:0 0 1% 0;
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
 }
 
 .onesContainer:before {
@@ -53,7 +53,7 @@
 }
 
 .ones {
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
     position:absolute;
     top:0;
     right:0;
@@ -62,18 +62,17 @@
 }
 
 #tenOne {
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
 }
 
 .aTen {
     width:3.17%;
     float:left;
     margin-right:0.2%;
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
 }
 
 .tens {
-/*    background-color:#FF4C00;*/
     position:absolute;
     top:0;
     right:0;
@@ -85,7 +84,6 @@
     display:inline-block;
     position:relative;
     width:100%;
-/*    background-color:#FF4C00;*/
 }
 
 .tensContainer:before {
@@ -118,11 +116,11 @@ td {
 }
 
 body {
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
 }
 
 .dropmenu {
-    background-color:#FAFBFC;
+    background-color:#C2FCFC;
     width:60%;
     float:right;
     clear:right;
@@ -162,37 +160,4 @@ a {
     color:#3B3B43;
 }
 
-
-
-
-/*
-CIRCLES AROUND NUMBERS: http://www.mademyday.de/css-height-equals-width-with-pure-css.html
-HTML AROUND EACH NUMBER: <td><div class="container"><div class="bubble">13</div></div></td>
-
-
-.container {
-    position:relative;
-    width:80%;
-}
-
-.container:before {
-    content:"";
-    display:block;
-    padding-top:100%;
-}
-
-.bubble {
-    position:absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color:#FF7422;
-    border-radius:50%;
-    line-height:100%;
-    text-align:center;
-    vertical-align:middle;
-}
-
-*/
 
