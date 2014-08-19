@@ -59,8 +59,6 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
-        $("td").animate({paddingLeft:"-=100%"}, 100);
-        
 //        $("td").css("padding-right", "0");
 //        $("td").css("padding-left", "0");
         
