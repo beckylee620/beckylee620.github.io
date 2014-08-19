@@ -127,9 +127,9 @@ body {
 }
 
 .menubutton {
-    background-color:#53643D;
-    box-shadow:#192A05 5px 5px;
-    color:#192A05;
+    background-color:#8F0051;
+/*    box-shadow:#F9F9F9 5px 5px;*/
+    color:#F9F9F9;
     text-align:center;
     font-size:2em;
     border-radius:5px;
@@ -139,7 +139,7 @@ body {
 }
 
 .buttonlink {
-    color:#192A05;
+    color:#F9F9F9;
     text-decoration:none;
     display:block;
     height:100%;
@@ -147,13 +147,13 @@ body {
 }
 
 a {
-    color:#D63700;
+    color:#F9F9F9;
 }
 
 .menubutton:hover {
-    background-color:#D63700;
-    box-shadow:#3B3B43 5px 5px;
-    color:#3B3B43;
+    background-color:#FF3900;
+/*    box-shadow:#F9F9F9 5px 5px;*/
+    color:#F9F9F9;
 }
 
 .buttonlink:hover {
