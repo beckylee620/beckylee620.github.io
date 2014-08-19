@@ -65,7 +65,7 @@ $(document).ready(function() {
         if (zero < 0) {
           var onColor = "#8F0051";
         } else {
-          var onColor = "#FF6422";
+          var onColor = "#FF3900";
         }
         
         
@@ -245,7 +245,7 @@ $(document).ready(function() {
         if (zero < 0) {
           var onColor = "#8F0051";
         } else {
-          var onColor = "#FF6422";
+          var onColor = "#FF3900";
         }
         
         
