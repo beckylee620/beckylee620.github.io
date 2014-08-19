@@ -60,7 +60,7 @@ $(document).ready(function() {
         document.getElementById("posFive").textContent=posFive.toString();
         
         
-        if (abs(zero) % 10 > 0) {
+        if (Math.abs(zero) % 10 > 0) {
           $("#oneOne").css("background-color", "#FF4C00");
         } else {
           $("#oneOne").css("background-color", "#FAFBFC");
@@ -97,7 +97,7 @@ $(document).ready(function() {
         document.getElementById("posFive").textContent=posFive.toString();
         
         
-        if (abs(zero) % 10 > 0) {
+        if (Math.abs(zero) % 10 > 0) {
           $("#oneOne").css("background-color", "#FF4C00");
         } else {
           $("#oneOne").css("background-color", "#FAFBFC");
