@@ -113,11 +113,11 @@ td {
 
 * {
     font-family:Inconsolata, sans-serif;
-    background-color:#C2FCFC;
 }
 
 body {
     background-color:#C2FCFC;
+    color:#C2FCFC;
 }
 
 .dropmenu {
