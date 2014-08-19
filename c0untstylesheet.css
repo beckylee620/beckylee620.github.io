@@ -128,7 +128,7 @@ body {
 
 .menubutton {
     background-color:#8F0051;
-/*    box-shadow:#F9F9F9 5px 5px;*/
+    box-shadow:#AAAAAA 5px 5px;
     color:#F9F9F9;
     text-align:center;
     font-size:2em;
@@ -152,12 +152,11 @@ a {
 
 .menubutton:hover {
     background-color:#FF3900;
-/*    box-shadow:#F9F9F9 5px 5px;*/
     color:#F9F9F9;
 }
 
 .buttonlink:hover {
-    color:#3B3B43;
+    color:#F9F9F9;
 }
 
 
