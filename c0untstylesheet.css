@@ -69,7 +69,7 @@
 }
 
 .tens {
-    background-color:#FF4C00;
+/*    background-color:#FF4C00;*/
     position:absolute;
     top:0;
     right:0;
@@ -81,7 +81,7 @@
     display:inline-block;
     position:relative;
     width:100%;
-    background-color:#FF4C00;
+/*    background-color:#FF4C00;*/
 }
 
 .tensContainer:before {
