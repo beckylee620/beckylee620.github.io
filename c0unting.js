@@ -1,7 +1,5 @@
 //populate the table with the starting numbers
 
-var posColor = "#FF6422"
-var negColor = "#8F0051"
 var offColor = "#C2FCFC"
 var onColor = "8F0051"
 
@@ -72,7 +70,7 @@ $(document).ready(function() {
         
         
         if (Math.abs(zero) % 10 > 0) {
-          $("#oneOne").css("background-color", onColor);
+          $("#oneOne").css("background-color", "onColor");
         } else {
           $("#oneOne").css("background-color", offColor);
         }
