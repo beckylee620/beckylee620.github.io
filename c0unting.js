@@ -65,6 +65,46 @@ $(document).ready(function() {
         } else {
           $("#oneOne").css("background-color", "#FAFBFC");
         }
+        if (Math.abs(zero) % 10 > 1) {
+          $("#twoOne").css("background-color", "#FF4C00");
+        } else {
+          $("#twoOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 2) {
+          $("#threeOne").css("background-color", "#FF4C00");
+        } else {
+          $("#threeOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 3) {
+          $("#fourOne").css("background-color", "#FF4C00");
+        } else {
+          $("#fourOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 4) {
+          $("#fiveOne").css("background-color", "#FF4C00");
+        } else {
+          $("#fiveOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 5) {
+          $("#sixOne").css("background-color", "#FF4C00");
+        } else {
+          $("#sixOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 6) {
+          $("#sevenOne").css("background-color", "#FF4C00");
+        } else {
+          $("#sevenOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 7) {
+          $("#eightOne").css("background-color", "#FF4C00");
+        } else {
+          $("#eightOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 8) {
+          $("#nineOne").css("background-color", "#FF4C00");
+        } else {
+          $("#nineOne").css("background-color", "#FAFBFC");
+        }
 
         break;
         
@@ -102,7 +142,46 @@ $(document).ready(function() {
         } else {
           $("#oneOne").css("background-color", "#FAFBFC");
         }
-        
+        if (Math.abs(zero) % 10 > 1) {
+          $("#twoOne").css("background-color", "#FF4C00");
+        } else {
+          $("#twoOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 2) {
+          $("#threeOne").css("background-color", "#FF4C00");
+        } else {
+          $("#threeOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 3) {
+          $("#fourOne").css("background-color", "#FF4C00");
+        } else {
+          $("#fourOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 4) {
+          $("#fiveOne").css("background-color", "#FF4C00");
+        } else {
+          $("#fiveOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 5) {
+          $("#sixOne").css("background-color", "#FF4C00");
+        } else {
+          $("#sixOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 6) {
+          $("#sevenOne").css("background-color", "#FF4C00");
+        } else {
+          $("#sevenOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 7) {
+          $("#eightOne").css("background-color", "#FF4C00");
+        } else {
+          $("#eightOne").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 10 > 8) {
+          $("#nineOne").css("background-color", "#FF4C00");
+        } else {
+          $("#nineOne").css("background-color", "#FAFBFC");
+        }
 
         break;
 
