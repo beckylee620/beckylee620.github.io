@@ -62,12 +62,10 @@ $(document).ready(function() {
         
         if (zero % 10 > 0) {
           $("#oneOne").css("background-color", "#FF4C00");
+        } else {
+          $("#oneOne").css("background-color", "#FAFBFC");
         }
 
-        
-//        $("td").css("padding-right", "0");
-//        $("td").css("padding-left", "0");
-        
         break;
         
         case 39: // right
@@ -98,13 +96,14 @@ $(document).ready(function() {
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
         
+        
         if (zero % 10 > 0) {
           $("#oneOne").css("background-color", "#FF4C00");
+        } else {
+          $("#oneOne").css("background-color", "#FAFBFC");
         }
         
-//        $("td").css("padding-left", "0");
-//        $("td").css("padding-right", "0");
-        
+
         break;
 
 
@@ -114,15 +113,6 @@ $(document).ready(function() {
   });
 
         
-
-
-
-
-
-//  $("div").click(function() {
-//   $(this).css("background-color", "#FAFBFC");
-//  });
-
 
 
 
