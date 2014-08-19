@@ -33,9 +33,9 @@ $(document).ready(function() {
         
         case 37: // left
         
-        $("td").css("float","right");
+        $("stage").css("float","right");
         
-        $("td").animate({paddingLeft:"+=10%"}, 100);
+        $("stage").animate({paddingLeft:"+=10%"}, 100);
         
         negFive -= 1;
         negFour -= 1;
@@ -68,9 +68,9 @@ $(document).ready(function() {
         
         case 39: // right
         
-        $("td").css("float","left");
+        $("stage").css("float","left");
         
-        $("td").animate({paddingRight:"+=10%"}, 100);
+        $("stage").animate({paddingRight:"+=10%"}, 100);
         
         negFive += 1;
         negFour += 1;
