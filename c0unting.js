@@ -154,6 +154,54 @@ $(document).ready(function() {
         }
 
 
+        if (Math.abs(zero) % 1000 > 99) {
+          $("#oneHun").css("background-color", "#FF4C00");
+        } else {
+          $("#oneHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 199) {
+          $("#twoHun").css("background-color", "#FF4C00");
+        } else {
+          $("#twoHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 299) {
+          $("#threeHun").css("background-color", "#FF4C00");
+        } else {
+          $("#threeHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 399) {
+          $("#fourHun").css("background-color", "#FF4C00");
+        } else {
+          $("#fourHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 499) {
+          $("#fiveHun").css("background-color", "#FF4C00");
+        } else {
+          $("#fiveHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 599) {
+          $("#sixHun").css("background-color", "#FF4C00");
+        } else {
+          $("#sixHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 699) {
+          $("#sevenHun").css("background-color", "#FF4C00");
+        } else {
+          $("#sevenHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 799) {
+          $("#eightHun").css("background-color", "#FF4C00");
+        } else {
+          $("#eightHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 899) {
+          $("#nineHun").css("background-color", "#FF4C00");
+        } else {
+          $("#nineHun").css("background-color", "#FAFBFC");
+        }
+
+
+
         break;
         
         case 39: // right
@@ -278,6 +326,52 @@ $(document).ready(function() {
           $("#nineTen").css("background-color", "#FAFBFC");
         }
 
+
+        if (Math.abs(zero) % 1000 > 99) {
+          $("#oneHun").css("background-color", "#FF4C00");
+        } else {
+          $("#oneHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 199) {
+          $("#twoHun").css("background-color", "#FF4C00");
+        } else {
+          $("#twoHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 299) {
+          $("#threeHun").css("background-color", "#FF4C00");
+        } else {
+          $("#threeHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 399) {
+          $("#fourHun").css("background-color", "#FF4C00");
+        } else {
+          $("#fourHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 499) {
+          $("#fiveHun").css("background-color", "#FF4C00");
+        } else {
+          $("#fiveHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 599) {
+          $("#sixHun").css("background-color", "#FF4C00");
+        } else {
+          $("#sixHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 699) {
+          $("#sevenHun").css("background-color", "#FF4C00");
+        } else {
+          $("#sevenHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 799) {
+          $("#eightHun").css("background-color", "#FF4C00");
+        } else {
+          $("#eightHun").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 1000 > 899) {
+          $("#nineHun").css("background-color", "#FF4C00");
+        } else {
+          $("#nineHun").css("background-color", "#FAFBFC");
+        }
 
 
 
