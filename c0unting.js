@@ -33,7 +33,7 @@ $(document).ready(function() {
         
         case 37: // left
         
-        $("stage").css("float","right");
+        $("td").css("float","right");
         
         $("td").animate({paddingLeft:"+=10%"}, 100);
         
@@ -68,7 +68,7 @@ $(document).ready(function() {
         
         case 39: // right
         
-        $("stage").css("float","left");
+        $("td").css("float","left");
         
         $("td").animate({paddingRight:"+=10%"}, 100);
         
