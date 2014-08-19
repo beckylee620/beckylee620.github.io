@@ -250,7 +250,7 @@ $(document).ready(function() {
         
         
         if (Math.abs(zero) % 10 > 0) {
-          $("#oneOne").css("background-color", onColor);
+          $("#oneOne").css("background-color", "onColor");
         } else {
           $("#oneOne").css("background-color", offColor);
         }
