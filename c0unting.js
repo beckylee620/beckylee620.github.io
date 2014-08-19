@@ -33,9 +33,7 @@ $(document).ready(function() {
         
         case 37: // left
         
-        $("stage").css("float","left");
-        
-        $("stage").animate({paddingLeft:"+=10%"}, 100);
+//        $("td").animate({paddingLeft:"+=10%"}, 100);
         
         negFive -= 1;
         negFour -= 1;
@@ -68,9 +66,7 @@ $(document).ready(function() {
         
         case 39: // right
         
-        $("stage").css("float","right");
-        
-        $("stage").animate({paddingRight:"+=10%"}, 100);
+//        $("td").animate({paddingRight:"+=10%"}, 100);
         
         negFive += 1;
         negFour += 1;
@@ -109,7 +105,9 @@ $(document).ready(function() {
   });
 
         
-
+if (zero % 10 < 0) {
+  $("oneOne").css("background-color", "#FF4C00");
+}
 
 
 
