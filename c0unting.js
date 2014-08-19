@@ -106,6 +106,54 @@ $(document).ready(function() {
           $("#nineOne").css("background-color", "#FAFBFC");
         }
 
+
+        if (Math.abs(zero) % 100 > 9) {
+          $("#oneTen").css("background-color", "#FF4C00");
+        } else {
+          $("#oneTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 19) {
+          $("#twoTen").css("background-color", "#FF4C00");
+        } else {
+          $("#twoTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 29) {
+          $("#threeTen").css("background-color", "#FF4C00");
+        } else {
+          $("#threeTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 39) {
+          $("#fourTen").css("background-color", "#FF4C00");
+        } else {
+          $("#fourTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 49) {
+          $("#fiveTen").css("background-color", "#FF4C00");
+        } else {
+          $("#fiveTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 59) {
+          $("#sixTen").css("background-color", "#FF4C00");
+        } else {
+          $("#sixTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 69) {
+          $("#sevenTen").css("background-color", "#FF4C00");
+        } else {
+          $("#sevenTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 79) {
+          $("#eightTen").css("background-color", "#FF4C00");
+        } else {
+          $("#eightTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 89) {
+          $("#nineTen").css("background-color", "#FF4C00");
+        } else {
+          $("#nineTen").css("background-color", "#FAFBFC");
+        }
+
+
         break;
         
         case 39: // right
@@ -182,6 +230,56 @@ $(document).ready(function() {
         } else {
           $("#nineOne").css("background-color", "#FAFBFC");
         }
+
+
+        if (Math.abs(zero) % 100 > 9) {
+          $("#oneTen").css("background-color", "#FF4C00");
+        } else {
+          $("#oneTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 19) {
+          $("#twoTen").css("background-color", "#FF4C00");
+        } else {
+          $("#twoTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 29) {
+          $("#threeTen").css("background-color", "#FF4C00");
+        } else {
+          $("#threeTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 39) {
+          $("#fourTen").css("background-color", "#FF4C00");
+        } else {
+          $("#fourTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 49) {
+          $("#fiveTen").css("background-color", "#FF4C00");
+        } else {
+          $("#fiveTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 59) {
+          $("#sixTen").css("background-color", "#FF4C00");
+        } else {
+          $("#sixTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 69) {
+          $("#sevenTen").css("background-color", "#FF4C00");
+        } else {
+          $("#sevenTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 79) {
+          $("#eightTen").css("background-color", "#FF4C00");
+        } else {
+          $("#eightTen").css("background-color", "#FAFBFC");
+        }
+        if (Math.abs(zero) % 100 > 89) {
+          $("#nineTen").css("background-color", "#FF4C00");
+        } else {
+          $("#nineTen").css("background-color", "#FAFBFC");
+        }
+
+
+
 
         break;
 
