@@ -116,7 +116,7 @@ td {
     font-family:Inconsolata, sans-serif;
 }
 
-body {
+html, body {
     background-color:#C2FCFC;
     color:#C2FCFC;
 }
