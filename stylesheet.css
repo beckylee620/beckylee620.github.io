@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color:#FAFBFC;
+    background-color:#F9F9F9;
 }
 
 #header {
@@ -15,11 +15,11 @@ body {
     text-align:left;
     line-height:200%;
     font-size:3em;
-    color:#FAFBFC;
+    color:#F9F9F9;
 }
 
 .dropmenu {
-    background-color:#FAFBFC;
+    background-color:#F9F9F9;
     width:60%;
     float:right;
     clear:right;
