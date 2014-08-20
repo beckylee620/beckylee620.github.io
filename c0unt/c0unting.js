@@ -15,6 +15,8 @@ var posThree = 3;
 var posFour = 4;
 var posFive = 5;
 
+while (Math.abs(zero) < 1000) {
+
 document.getElementById("negFive").textContent=negFive.toString();
 document.getElementById("negFour").textContent=negFour.toString();
 document.getElementById("negThree").textContent=negThree.toString();
@@ -405,3 +407,5 @@ $(document).ready(function() {
 
 
 });
+
+}
