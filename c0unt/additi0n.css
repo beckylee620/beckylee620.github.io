@@ -1,0 +1,172 @@
+#allHundreds {
+    width:33.5%;
+    float:left;
+    background-color:#F9F9F9;
+    margin-left:12%;
+    margin-right:4.5%;
+}
+
+.hundredsContainer {
+    display:inline-block;
+    position:relative;
+    width:100%;
+    padding:0 0 1% 0;
+    background-color:#F9F9F9;
+}
+
+.hundredsContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
+.hundreds {
+    background-color:#F9F9F9;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+#allOnes {
+    width:3.2%;
+    float:right;
+    background-color:#F9F9F9;
+    margin-right:12%;
+    margin-left:3%;
+}
+
+.onesContainer {
+    display:inline-block;
+    position:relative;
+    width:100%;
+    padding:0 0 1% 0;
+    background-color:#F9F9F9;
+}
+
+.onesContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
+.ones {
+    background-color:#F9F9F9;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+#tenOne {
+    background-color:#F9F9F9;
+}
+
+.aTen {
+    width:3.17%;
+    float:left;
+    margin-right:0.2%;
+    background-color:#F9F9F9;
+}
+
+.tens {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+.tensContainer {
+    display:inline-block;
+    position:relative;
+    width:100%;
+}
+
+.tensContainer:before {
+    content:"";
+    display:block;
+    margin-top:100%;
+}
+
+#stage {
+    margin:auto auto 1% auto;
+    font-size:2.5em;
+    width:95%;
+    text-align:center;
+    vertical-align:middle;
+    table-layout:fixed;
+}
+
+td {
+    margin:auto;
+    padding:0;
+}
+
+#bignumber {
+    font-size:2em;
+    width:15%;
+}
+
+* {
+    font-family:Inconsolata, sans-serif;
+}
+
+body {
+    background-color: #F9F9F9;
+}
+
+.dropmenu {
+    background-color:#F9F9F9;
+    width:60%;
+    float:right;
+    clear:right;
+}
+
+.menubutton {
+    background-color:#8F0051;
+    box-shadow:#000000 5px 5px;
+    color:#F9F9F9;
+    text-align:center;
+    font-size:2em;
+    border-radius:5px;
+    display:block;
+    margin: 10px auto 0px auto;
+    width:80%;
+}
+
+.buttonlink {
+    color:#F9F9F9;
+    text-decoration:none;
+    display:block;
+    height:100%;
+    width:100%;
+}
+
+a {
+    color:#F9F9F9;
+}
+
+.menubutton:hover {
+    background-color:#FF3900;
+    color:#F9F9F9;
+}
+
+.buttonlink:hover {
+    color:#F9F9F9;
+}
+
+
+#header {
+    background-color:#1C2A3B;
+    width:150%;
+    height:10%;
+    margin-top:-10px;
+    margin-left:-8px;
+    text-align:left;
+    line-height:200%;
+    font-size:3em;
+    color:#FAFBFC;
+}
