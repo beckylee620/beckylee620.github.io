@@ -7,7 +7,7 @@ body {
 }
 
 #header {
-    background-color:#1C2A3B;
+    background-color:#1A5A63;
     width:150%;
     height:10%;
     margin-top:-10px;
@@ -26,9 +26,9 @@ body {
 }
 
 .menubutton {
-    background-color:#53643D;
-    box-shadow:#192A05 5px 5px;
-    color:#192A05;
+    background-color:#CEE08C;
+    box-shadow:#464646 5px 5px;
+    color:#464646;
     text-align:center;
     font-size:2em;
     border-radius:5px;
@@ -38,7 +38,7 @@ body {
 }
 
 .buttonlink {
-    color:#192A05;
+    color:#464646;
     text-decoration:none;
     display:block;
     height:100%;
@@ -46,15 +46,15 @@ body {
 }
 
 a {
-    color:#D63700;
+    color:#AAB857;
 }
 
 .menubutton:hover {
-    background-color:#D63700;
-    box-shadow:#3B3B43 5px 5px;
-    color:#3B3B43;
+    background-color:#AAB857;
+    box-shadow:#464646 5px 5px;
+    color:#464646;
 }
 
 .buttonlink:hover {
-    color:#3B3B43;
+    color:#464646;
 }
