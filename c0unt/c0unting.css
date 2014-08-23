@@ -94,7 +94,7 @@
 
 #stage {
     margin:auto auto 1% auto;
-    font-size:1.5em;
+    font-size:1em;
     width:95%;
     text-align:center;
     vertical-align:middle;
@@ -108,7 +108,7 @@ td {
 }
 
 #bignumber {
-    font-size:3em;
+    font-size:4em;
     width:20%;
 }
 
