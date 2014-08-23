@@ -1,7 +1,7 @@
 //populate the table with the starting numbers
 
 var offColor = "#F9F9F9"
-var onColor = "8F0051"
+var onColor = ""
 
 var negFive = -5;
 var negFour = -4;
@@ -64,9 +64,9 @@ $(document).ready(function() {
         document.getElementById("posFive").textContent=posFive.toString();
         
         if (zero < 0) {
-          var onColor = "#8F0051";
+          var onColor = "#CEE08C";
         } else {
-          var onColor = "#FF3900";
+          var onColor = "#1A5A63";
         }
         
         
@@ -244,9 +244,9 @@ $(document).ready(function() {
         
         
         if (zero < 0) {
-          var onColor = "#8F0051";
+          var onColor = "#CEE08C";
         } else {
-          var onColor = "#FF3900";
+          var onColor = "#1A5A63";
         }
         
         
