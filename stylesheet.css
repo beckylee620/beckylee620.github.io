@@ -4,6 +4,7 @@
 
 body {
     background-color:#F9F9F9;
+    color:#464646;
 }
 
 #header {
@@ -26,7 +27,7 @@ body {
 }
 
 .menubutton {
-    background-color:#CEE08C;
+    background-color:#AAB857;
     box-shadow:#464646 5px 5px;
     color:#464646;
     text-align:center;
@@ -50,7 +51,7 @@ a {
 }
 
 .menubutton:hover {
-    background-color:#AAB857;
+    background-color:#CEE08C;
     box-shadow:#464646 5px 5px;
     color:#464646;
 }
