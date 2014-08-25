@@ -412,8 +412,6 @@ $(function(){
     var stage = document.getElementById("stage");
     
     Hammer(stage).on("swipeleft", function() {
-      
-      ev.gesture.preventDefault();
 
       negFive += 1;
       negFour += 1;
@@ -588,13 +586,12 @@ $(function(){
       }
       
 
+      ev.gesture.preventDefault();
 
     });
     
     Hammer(stage).on("swiperight", function() {
       
-      ev.gesture.preventDefault();
-
       negFive -= 1;
       negFour -= 1;
       negThree -= 1;
@@ -765,6 +762,8 @@ $(function(){
       } else {
         $("#nineHun").css("background-color", offColor);
       }
+
+      ev.gesture.preventDefault();
 
 
 
