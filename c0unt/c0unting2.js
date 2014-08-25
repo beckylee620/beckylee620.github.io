@@ -1,5 +1,3 @@
-//populate the table with the starting numbers
-
 var offColor = "#F9F9F9"
 var onColor = ""
 
@@ -263,3 +261,11 @@ $(function(){
 })
 
 });
+
+$( ".draggable" ).draggable({ axis: "x" });
+$( ".droppable" ).droppable({
+  drop: function() {
+    alert( "dropped" );
+  }
+});
+
