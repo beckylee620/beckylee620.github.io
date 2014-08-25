@@ -407,6 +407,9 @@ $(document).ready(function() {
         
 
 
+ev.gesture.preventDefault();
+
+
 $(function(){
     
     var stage = document.getElementById("stage");
@@ -586,8 +589,6 @@ $(function(){
       }
       
 
-      ev.gesture.preventDefault();
-
     });
     
     Hammer(stage).on("swiperight", function() {
@@ -762,9 +763,6 @@ $(function(){
       } else {
         $("#nineHun").css("background-color", offColor);
       }
-
-      ev.gesture.preventDefault();
-
 
 
     });
