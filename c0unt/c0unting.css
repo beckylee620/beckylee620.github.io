@@ -104,7 +104,7 @@
 
 .draggable {
     background-color:#AABB33;
-    draggable=true;
+/*    draggable="true";*/
 }
 
 td {
