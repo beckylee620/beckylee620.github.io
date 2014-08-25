@@ -263,8 +263,8 @@ $(function(){
 });
 
 $( ".draggable" ).draggable({
-  axis:"x";
-  snap:"true";
+  axis:"x",
+  snap:"true",
 });
 $( ".droppable" ).droppable({
   drop: function() {
