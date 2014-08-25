@@ -408,6 +408,9 @@ $(document).ready(function() {
 
 
 $(function(){
+    
+    ev.gesture.preventDefault();
+    
     var stage = document.getElementById("stage");
     
     Hammer(stage).on("swipeleft", function() {
@@ -768,8 +771,6 @@ $(function(){
     
 })
 
-
-  ev.gesture.preventDefault();
 
 
 });
