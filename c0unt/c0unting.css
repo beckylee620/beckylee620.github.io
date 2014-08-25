@@ -102,6 +102,10 @@
     color:#464646;
 }
 
+.draggable {
+    color:#99BB55;
+}
+
 td {
     margin:auto;
     padding:0;
