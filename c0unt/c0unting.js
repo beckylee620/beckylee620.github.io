@@ -28,6 +28,10 @@ document.getElementById("posThree").textContent=posThree.toString();
 document.getElementById("posFour").textContent=posFour.toString();
 document.getElementById("posFive").textContent=posFive.toString();
 
+
+
+
+
 //change the numbers with arrows/swipe
 
 $(document).ready(function() {
@@ -581,10 +585,6 @@ $(function(){
       }
       
 
-      ev.gesture.preventDefault();
-
-
-
 
     });
     
@@ -762,7 +762,6 @@ $(function(){
       }
 
 
-      ev.gesture.preventDefault();
 
     });
     
@@ -770,6 +769,7 @@ $(function(){
 })
 
 
+  ev.gesture.preventDefault();
 
 
 });
