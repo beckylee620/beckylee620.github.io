@@ -15,7 +15,6 @@ var posThree = 3;
 var posFour = 4;
 var posFive = 5;
 
-
 document.getElementById("negFive").textContent=negFive.toString();
 document.getElementById("negFour").textContent=negFour.toString();
 document.getElementById("negThree").textContent=negThree.toString();
@@ -27,7 +26,6 @@ document.getElementById("posTwo").textContent=posTwo.toString();
 document.getElementById("posThree").textContent=posThree.toString();
 document.getElementById("posFour").textContent=posFour.toString();
 document.getElementById("posFive").textContent=posFive.toString();
-
 
 function buildBlocks(zer0) {
   if (zer0 < 0) {
@@ -177,7 +175,57 @@ function buildBlocks(zer0) {
   }
 }
 
+function countUp() {
+  negFive += 1;
+  negFour += 1;
+  negThree += 1;
+  negTwo += 1;
+  negOne += 1;
+  zero += 1;
+  posOne += 1;
+  posTwo += 1;
+  posThree += 1;
+  posFour += 1;
+  posFive += 1;
+        
+  document.getElementById("negFive").textContent=negFive.toString();
+  document.getElementById("negFour").textContent=negFour.toString();
+  document.getElementById("negThree").textContent=negThree.toString();
+  document.getElementById("negTwo").textContent=negTwo.toString();
+  document.getElementById("negOne").textContent=negOne.toString();
+  document.getElementById("zero").textContent=zero.toString();
+  document.getElementById("posOne").textContent=posOne.toString();
+  document.getElementById("posTwo").textContent=posTwo.toString();
+  document.getElementById("posThree").textContent=posThree.toString();
+  document.getElementById("posFour").textContent=posFour.toString();
+  document.getElementById("posFive").textContent=posFive.toString();
+}
 
+function countDown() {
+  negFive -= 1;
+  negFour -= 1;
+  negThree -= 1;
+  negTwo -= 1;
+  negOne -= 1;
+  zero -= 1;
+  posOne -= 1;
+  posTwo -= 1;
+  posThree -= 1;
+  posFour -= 1;
+  posFive -= 1;
+  
+  document.getElementById("negFive").textContent=negFive.toString();
+  document.getElementById("negFour").textContent=negFour.toString();
+  document.getElementById("negThree").textContent=negThree.toString();
+  document.getElementById("negTwo").textContent=negTwo.toString();
+  document.getElementById("negOne").textContent=negOne.toString();
+  document.getElementById("zero").textContent=zero.toString();
+  document.getElementById("posOne").textContent=posOne.toString();
+  document.getElementById("posTwo").textContent=posTwo.toString();
+  document.getElementById("posThree").textContent=posThree.toString();
+  document.getElementById("posFour").textContent=posFour.toString();
+  document.getElementById("posFive").textContent=posFive.toString();
+}
 
 
 
@@ -189,10 +237,8 @@ $(document).ready(function() {
     switch(e.which) {
         
         case 37: // left
-        
-//        $("td").animate({paddingLeft:"+=10%"}, 100);
-        
-        negFive -= 1;
+        countDown();
+/*        negFive -= 1;
         negFour -= 1;
         negThree -= 1;
         negTwo -= 1;
@@ -215,16 +261,15 @@ $(document).ready(function() {
         document.getElementById("posThree").textContent=posThree.toString();
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
-        
+*/        
         buildBlocks(zero);
 
         break;
         
         case 39: // right
         
-//        $("td").animate({paddingRight:"+=10%"}, 100);
-        
-        negFive += 1;
+        countUp();
+/*        negFive += 1;
         negFour += 1;
         negThree += 1;
         negTwo += 1;
@@ -247,7 +292,7 @@ $(document).ready(function() {
         document.getElementById("posThree").textContent=posThree.toString();
         document.getElementById("posFour").textContent=posFour.toString();
         document.getElementById("posFive").textContent=posFive.toString();
-        
+        */
         buildBlocks(zero);
         
         break;
@@ -262,7 +307,8 @@ $(function(){
     
     Hammer(stage).on("swipeleft", function() {
 
-      negFive += 1;
+      countUp();
+/*      negFive += 1;
       negFour += 1;
       negThree += 1;
       negTwo += 1;
@@ -285,13 +331,13 @@ $(function(){
       document.getElementById("posThree").textContent=posThree.toString();
       document.getElementById("posFour").textContent=posFour.toString();
       document.getElementById("posFive").textContent=posFive.toString();
-        
+        */
         buildBlocks(zero);
     });
     
     Hammer(stage).on("swiperight", function() {
-      
-      negFive -= 1;
+      countDown();
+/*      negFive -= 1;
       negFour -= 1;
       negThree -= 1;
       negTwo -= 1;
@@ -314,7 +360,7 @@ $(function(){
       document.getElementById("posThree").textContent=posThree.toString();
       document.getElementById("posFour").textContent=posFour.toString();
       document.getElementById("posFive").textContent=posFive.toString();
-      
+      */
       buildBlocks(zero);
     });
     
