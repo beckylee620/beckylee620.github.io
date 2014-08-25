@@ -409,11 +409,11 @@ $(document).ready(function() {
 
 $(function(){
     
-    ev.gesture.preventDefault();
-    
     var stage = document.getElementById("stage");
     
     Hammer(stage).on("swipeleft", function() {
+      
+      ev.gesture.preventDefault();
 
       negFive += 1;
       negFour += 1;
@@ -592,6 +592,8 @@ $(function(){
     });
     
     Hammer(stage).on("swiperight", function() {
+      
+      ev.gesture.preventDefault();
 
       negFive -= 1;
       negFour -= 1;
