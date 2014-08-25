@@ -581,6 +581,7 @@ $(function(){
       }
       
 
+      ev.gesture.preventDefault();
 
 
 
@@ -761,10 +762,10 @@ $(function(){
       }
 
 
+      ev.gesture.preventDefault();
 
     });
     
-    ev.gesture.preventDefault();
     
 })
 
