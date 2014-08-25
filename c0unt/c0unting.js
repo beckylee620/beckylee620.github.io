@@ -404,11 +404,6 @@ $(document).ready(function() {
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
-        
-
-
-ev.gesture.preventDefault();
-
 
 $(function(){
     
