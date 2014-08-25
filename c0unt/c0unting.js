@@ -582,7 +582,6 @@ $(function(){
       
 
 
-/*      break;*/
 
 
 
@@ -763,11 +762,10 @@ $(function(){
 
 
 
-/*        break;*/
-
-
-
     });
+    
+    ev.gesture.preventDefault();
+    
 })
 
 
