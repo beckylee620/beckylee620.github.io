@@ -245,7 +245,9 @@ $(document).ready(function() {
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
-$(function(){
+$(function(ev){
+    
+    ev.preventDefault();
     
     var stage = document.getElementById("stage");
     
