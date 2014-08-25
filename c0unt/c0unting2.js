@@ -265,7 +265,12 @@ $(function(){
 $( ".draggable" ).draggable({
   axis:"x",
   snap:"true",
+  drag:function() {
+    countUp();
+    buildBlocks(zero);
+  }
 });
+
 $( ".droppable" ).droppable({
   drop: function() {
     alert( "dropped" );
