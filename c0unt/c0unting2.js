@@ -262,7 +262,7 @@ $(function(){
 
 });
 
-$( ".draggable" ).draggable({axis:"x"; snap:"true"});
+$( ".draggable" ).draggable({axis:"x", snap:"true"});
 $( ".droppable" ).droppable({
   drop: function() {
     alert( "dropped" );
