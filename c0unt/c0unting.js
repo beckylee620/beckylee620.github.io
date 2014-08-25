@@ -245,18 +245,18 @@ $(document).ready(function() {
      e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
-$(function(ev){
-    
-    ev.preventDefault();
+$(function(){
     
     var stage = document.getElementById("stage");
     
-    Hammer(stage).on("swipeleft", function() {
+    Hammer(stage).on("swipeleft", function(ev) {
+      ev.preventDefault();
       countUp();
       buildBlocks(zero);
     });
     
-    Hammer(stage).on("swiperight", function() {
+    Hammer(stage).on("swiperight", function(ev) {
+      ev.preventDefault();
       countDown();
       buildBlocks(zero);
     });
