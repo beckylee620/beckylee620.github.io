@@ -264,12 +264,12 @@ $(function(){
 
 $( ".draggable" ).draggable({
   axis:"x",
-  var emptyRight = 0
-  var emptyLeft = 0
   drag:function() {
     var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
     var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
+    var emptyRight = 0;
+    var emptyLeft = 0;
     if(movedLeft > criticalDistanceRight && emptyRight == 0) {
       countUp();
       buildBlocks(zero);
