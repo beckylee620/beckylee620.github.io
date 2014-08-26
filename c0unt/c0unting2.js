@@ -265,10 +265,10 @@ $(function(){
 $( ".draggable" ).draggable({
   axis:"x",
   drag:function() {
-    if(parseInt($(this).css('left')) > 10%) {
+    if(parseInt($(this).css('left')) > (parseInt($(this).css('width')) / 10)) {
       countUp();
       buildBlocks(zero);  
-    } else if(parseInt($(this).css('left')) < -10%) {
+    } else if(parseInt($(this).css('left')) < (parseInt($(this).css('width')) / -10)) {
       countDown();
       buildBlocks(zero);
     }
