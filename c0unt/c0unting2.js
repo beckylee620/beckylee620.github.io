@@ -267,9 +267,10 @@ $( ".draggable" ).draggable({
   drag:function() {
     var moveLeft = parseInt($(this).css('left'))
     if(moveLeft > (parseInt($(this).css('width')) / 10)) {
-      zero += 1;
+      countUp();
       moveLeft = 0;
       buildBlocks(zero);
+      break;
     } else if(moveLeft < (parseInt($(this).css('width')) / -10)) {
       countDown();
       buildBlocks(zero);
