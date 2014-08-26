@@ -270,11 +270,11 @@ $( ".draggable" ).draggable({
     var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
     var emptyRight = 0
     var emptyLeft = 0
-    if(movedLeft == criticalDistanceRight && emptyRight == 0) {
+    if(movedLeft > criticalDistanceRight && emptyRight == 0) {
       countUp();
       buildBlocks(zero);
       emptyRight = 1;
-    } else if(movedLeft == criticalDistanceLeft && emptyLeft == 0) {
+    } else if(movedLeft < criticalDistanceLeft && emptyLeft == 0) {
       countDown();
       buildBlocks(zero);
       emptyLeft = 1;
