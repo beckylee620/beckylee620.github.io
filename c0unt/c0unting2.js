@@ -262,10 +262,11 @@ $(function(){
 
 });
 
+var emptyRight = 0;
+var emptyLeft = 0;
+  
 $( ".draggable" ).draggable({
   axis:"x",
-  var emptyRight = 0;
-  var emptyLeft = 0;
   drag:function() {
     var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
