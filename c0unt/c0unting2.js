@@ -266,12 +266,12 @@ $( ".draggable" ).draggable({
   axis:"x",
   drag:function() {
     var movedLeft = parseInt($(this).css('left'));
-    var criticalDistanceRight = (parseInt($(this).css('width')) / 11);
-    var criticalDistanceLeft = (parseInt($(this).css('width')) / -11);
-    if(movedLeft == Math.round(criticalDistanceRight)) {
+    var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
+    var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
+    if(movedLeft == criticalDistanceRight) {
       countUp();
       buildBlocks(zero);
-    } else if(movedLeft == Math.round(criticalDistanceLeft)) {
+    } else if(movedLeft == criticalDistanceLeft) {
       countDown();
       buildBlocks(zero);
     }
