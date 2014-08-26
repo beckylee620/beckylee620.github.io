@@ -186,8 +186,8 @@ function countUp() {
   posFour += 1;
   posFive += 1;
   
-  $("#stage").css("left", "0");
-        
+  
+  
   document.getElementById("negFive").textContent=negFive.toString();
   document.getElementById("negFour").textContent=negFour.toString();
   document.getElementById("negThree").textContent=negThree.toString();
@@ -267,7 +267,7 @@ $(function(){
 var stopperRight = 0;
 var stopperLeft = 0;
   
-$( ".draggable" ).draggable({
+$( "#stage" ).draggable({
   axis:"x",
   drag:function() {
     var movedLeft = parseInt($(this).css('left'));
