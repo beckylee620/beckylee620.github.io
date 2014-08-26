@@ -186,7 +186,7 @@ function countUp() {
   posFour += 1;
   posFive += 1;
   
-  
+  $("#stageholder").html("<table class='draggable' id='stage'><tr><td><div id='negFive'></div></td><td><div id='negFour'></div></td><td><div id='negThree'></div></td><td><div id='negTwo'></div></td><td><div id='negOne'></div></td><td id='bignumber'><div id='zero'></div></td><td><div id='posOne'></div></td><td><div id='posTwo'></div></td><td><div id='posThree'></div></td><td><div id='posFour'></div></td><td><div id='posFive'></div></td></tr></table>");
   
   document.getElementById("negFive").textContent=negFive.toString();
   document.getElementById("negFour").textContent=negFour.toString();
