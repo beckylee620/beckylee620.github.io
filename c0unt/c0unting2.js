@@ -268,11 +268,10 @@ $( ".draggable" ).draggable({
     var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = (parseInt($(this).css('width')) / 11);
     var criticalDistanceLeft = (parseInt($(this).css('width')) / -11);
-    if(movedLeft > criticalDistanceRight) {
+    if(movedLeft == criticalDistanceRight) {
       countUp();
-      movedLeft = 0;
       buildBlocks(zero);
-    } else if(movedLeft < criticalDistanceLeft) {
+    } else if(movedLeft == criticalDistanceLeft) {
       countDown();
       buildBlocks(zero);
     }
