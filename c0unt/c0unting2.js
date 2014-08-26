@@ -265,7 +265,7 @@ $(function(){
 $( ".draggable" ).draggable({
   axis:"x",
   drag:function() {
-    if($(this).css('left') > 100) {
+    if(parseInt($(this).css('left')) > 100) {
       countDown();
       buildBlocks(zero);  
     }
