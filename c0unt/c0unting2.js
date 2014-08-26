@@ -264,8 +264,6 @@ $(function(){
 
 });
 
-var stopperRight = 0;
-var stopperLeft = 0;
   
 $( "#stage" ).draggable({
   axis:"x",
@@ -273,14 +271,12 @@ $( "#stage" ).draggable({
     var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
     var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
-    if(movedLeft>criticalDistanceRight && stopperRight == 0) {
+    if(movedLeft>criticalDistanceRight) {
       countUp();
       buildBlocks(zero);
-      stopperRight=1;
-    } else if(movedLeft < criticalDistanceLeft && stopperLeft == 0) {
+    } else if(movedLeft < criticalDistanceLeft) {
       countDown();
       buildBlocks(zero);
-      stopperLeft = 1;
     }
   }
 });
