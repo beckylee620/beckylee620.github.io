@@ -268,7 +268,7 @@ $( ".draggable" ).draggable({
     if(parseInt($(this).css('left')) > 100) {
       countUp();
       buildBlocks(zero);  
-    } else if(parseInt($(this).css('right')) > 100) {
+    } else if(parseInt($(this).css('left')) < -100) {
       countDown();
       buildBlocks(zero);
     }
