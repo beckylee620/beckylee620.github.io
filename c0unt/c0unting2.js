@@ -185,6 +185,8 @@ function countUp() {
   posThree += 1;
   posFour += 1;
   posFive += 1;
+  
+  $(#stage).css("left", "0");
         
   document.getElementById("negFive").textContent=negFive.toString();
   document.getElementById("negFour").textContent=negFour.toString();
