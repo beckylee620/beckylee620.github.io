@@ -264,10 +264,11 @@ $(function(){
 
 $( ".draggable" ).draggable({
   axis:"x",
-  snap:"true",
   drag:function() {
-    countUp();
-    buildBlocks(zero);
+    if($(this).css('left') > 100) {
+      countDown();
+      buildBlocks(zero);  
+    }
   }
 });
 
