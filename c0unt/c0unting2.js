@@ -1,6 +1,26 @@
 var offColor = "#F9F9F9"
 var onColor = ""
 
+var integerStart = -1004;
+var stageSetting  = "<tr>";
+var stageLeft = "<td><div>'";
+var stageRight = "'</div></td>";
+
+
+while (integerStart < 1005) {
+  var intermediate = (stageLeft.concat(integerStart.toString())).concat(stageRight);
+  stageSetting = stageSetting.concat(intermediate);
+  integerStart+=1;
+}
+
+stageSetting = stageSetting.concat("</tr>");
+
+$(".stage").html(stageSetting);
+
+
+
+
+/*
 var negFive = -5;
 var negFour = -4;
 var negThree = -3;
@@ -24,6 +44,8 @@ document.getElementById("posTwo").textContent=posTwo.toString();
 document.getElementById("posThree").textContent=posThree.toString();
 document.getElementById("posFour").textContent=posFour.toString();
 document.getElementById("posFive").textContent=posFive.toString();
+*/
+
 
 function buildBlocks(zer0) {
   if (zer0 < 0) {
