@@ -20,7 +20,7 @@ $("#stage").html(stageSetting);
 
 
 
-/*
+
 var negFive = -5;
 var negFour = -4;
 var negThree = -3;
@@ -44,7 +44,7 @@ document.getElementById("posTwo").textContent=posTwo.toString();
 document.getElementById("posThree").textContent=posThree.toString();
 document.getElementById("posFour").textContent=posFour.toString();
 document.getElementById("posFive").textContent=posFive.toString();
-*/
+
 
 
 function buildBlocks(zer0) {
@@ -290,7 +290,7 @@ $(function(){
 $( "#stage" ).draggable({
   axis:"x",
   drag:function() {
-/*    var movedLeft = parseInt($(this).css('left'));
+    var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
     var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
     if(movedLeft>criticalDistanceRight) {
@@ -298,7 +298,7 @@ $( "#stage" ).draggable({
       buildBlocks(zero);
     } else if(movedLeft < criticalDistanceLeft) {
       countDown();
-      buildBlocks(zero);*/
+      buildBlocks(zero);
     }
   }
 });
