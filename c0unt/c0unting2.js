@@ -3,8 +3,8 @@ var onColor = ""
 
 var integerStart = -1004;
 var stageSetting  = "<tr>";
-var stageLeft = "<td><div>'";
-var stageRight = "'</div></td>";
+var stageLeft = "<td><div>";
+var stageRight = "</div></td>";
 
 
 while (integerStart < 1005) {
