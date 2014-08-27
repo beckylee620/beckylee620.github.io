@@ -15,7 +15,7 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
-$(".stage").html(stageSetting);
+$("#stage").html(stageSetting);
 
 
 
