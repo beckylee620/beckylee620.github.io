@@ -290,7 +290,7 @@ $(function(){
 $( "#stage" ).draggable({
   axis:"x",
   drag:function() {
-    var movedLeft = parseInt($(this).css('left'));
+/*    var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
     var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
     if(movedLeft>criticalDistanceRight) {
@@ -298,7 +298,7 @@ $( "#stage" ).draggable({
       buildBlocks(zero);
     } else if(movedLeft < criticalDistanceLeft) {
       countDown();
-      buildBlocks(zero);
+      buildBlocks(zero);*/
     }
   }
 });
