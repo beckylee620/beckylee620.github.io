@@ -108,8 +108,10 @@
 
 td {
     margin:auto;
-    padding:0;
+    padding:50%;
+    
 }
+
 
 #bignumber {
     font-size:4em;
