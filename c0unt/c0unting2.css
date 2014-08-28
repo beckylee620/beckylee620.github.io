@@ -92,7 +92,7 @@
 }
 
 #stage {
-    margin-left:auto;
+    margin-left:-5000%;
     margin-right:auto;
     margin-bottom: 1%;
     font-size:1.25em;
@@ -100,7 +100,6 @@
     vertical-align:middle;
     table-layout:fixed;
     color:#464646;
-    width:10000%;
 }
 
 .draggable {
