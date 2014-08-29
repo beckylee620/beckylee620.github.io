@@ -1,3 +1,6 @@
+var pageWidth = $("body").css("width");
+
+
 var offColor = "#F9F9F9"
 var onColor = ""
 
@@ -15,10 +18,9 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
+$("td div").css("width", Math.round(pageWidth/11).toString());
+
 $("#stage").html(stageSetting);
-
-
-
 
 
 var negFive = -5;
