@@ -18,7 +18,9 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
-$(".stageNumbers").css("width", (Math.round(hundredsWidth/3.7)).toString());
+/*(Math.round(hundredsWidth/3.7)).toString()*/
+
+$(".stageNumbers").css("width", "20px");
 
 $("#stage").html(stageSetting);
 
