@@ -1,6 +1,3 @@
-var hundredsWidth = $("#allHundreds").css("width");
-
-
 var offColor = "#F9F9F9";
 var onColor = "";
 
