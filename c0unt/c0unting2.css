@@ -108,7 +108,9 @@
 
 td {
     margin:auto;
-    padding:.02% .055% .02% .055%;
+}
+
+td div {
     
 }
 
