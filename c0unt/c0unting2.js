@@ -6,7 +6,7 @@ var onColor = "";
 
 var integerStart = -1004;
 var stageSetting  = "<tr>";
-var stageLeft = "<td><div>";
+var stageLeft = "<td><div class='stageNumbers'>";
 var stageRight = "</div></td>";
 
 
@@ -18,7 +18,7 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
-$("td div").css("width", (Math.round(hundredsWidth/3.7)).toString());
+$(".stageNumbers").css("width", (Math.round(hundredsWidth/3.7)).toString());
 
 $("#stage").html(stageSetting);
 
