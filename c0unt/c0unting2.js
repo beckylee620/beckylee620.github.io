@@ -1,8 +1,8 @@
 var hundredsWidth = $("#allHundreds").css("width");
 
 
-var offColor = "#F9F9F9"
-var onColor = ""
+var offColor = "#F9F9F9";
+var onColor = "";
 
 var integerStart = -1004;
 var stageSetting  = "<tr>";
