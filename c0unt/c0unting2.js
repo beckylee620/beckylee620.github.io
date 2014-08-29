@@ -1,4 +1,4 @@
-var pageWidth = $("body").css("width");
+var hundredsWidth = $("#allHundreds").css("width");
 
 
 var offColor = "#F9F9F9"
@@ -18,7 +18,7 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
-$("td div").css("width", (Math.round(pageWidth/11)).toString());
+$("td div").css("width", (Math.round(hundredsWidth/3.7)).toString());
 
 $("#stage").html(stageSetting);
 
