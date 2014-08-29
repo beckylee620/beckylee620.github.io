@@ -1,3 +1,6 @@
+var hunWidth = $("#allHundreds").css("width");
+
+
 var offColor = "#F9F9F9";
 var onColor = "";
 
@@ -15,9 +18,7 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
-/*(Math.round(hundredsWidth/3.7)).toString()
-
-$(".stageNumbers").css("width", "20px");*/
+$(".stageNumbers").css("width", (Math.round(hundredsWidth/3.7)).toString());
 
 $("#stage").html(stageSetting);
 
