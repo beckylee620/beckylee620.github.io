@@ -18,7 +18,7 @@ while (integerStart < 1005) {
 
 stageSetting = stageSetting.concat("</tr>");
 
-$("td div").css("width", Math.round(pageWidth/11).toString());
+$("td div").css("width", (Math.round(pageWidth/11)).toString());
 
 $("#stage").html(stageSetting);
 
