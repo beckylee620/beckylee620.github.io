@@ -95,7 +95,7 @@
     margin-left:auto;
     margin-right:auto;
     margin-bottom: 1%;
-    font-size:3em;
+    font-size:2em;
     text-align:center;
     vertical-align:middle;
     table-layout:fixed;
@@ -116,7 +116,7 @@ td {
 
 
 #bignumber {
-    font-size:4em;
+    font-size:2em;
     width:20%;
 }
 
