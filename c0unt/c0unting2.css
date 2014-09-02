@@ -92,15 +92,13 @@
 }
 
 #stage {
-    margin-left:-9082%;
-    margin-right:9082%;
+    margin: 0 auto;
     margin-bottom: 1%;
     font-size:2em;
     text-align:center;
     vertical-align:middle;
     table-layout:fixed;
     color:#464646;
-    width:18,264%;
 }
 
 .draggable {
@@ -112,7 +110,7 @@ td {
 }
 
 .stageNumbers {
-    width:.05%;
+    padding:20px;
 }
 
 
