@@ -94,6 +94,7 @@
 #stage {
     margin: 0 auto;
     margin-bottom: 1%;
+    overflow:auto;
     font-size:2em;
     text-align:center;
     vertical-align:middle;
