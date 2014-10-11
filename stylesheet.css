@@ -3,11 +3,15 @@
 }
 
 #measurementInput {
+    display:inline-block;
     width:50%;
+    word-wrap:break-word;
 }
 
 #measurementOutput {
+    display:inline-block;
     width:50%;
+    word-wrap:break-word;
 }
 
 body {
