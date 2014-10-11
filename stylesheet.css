@@ -2,6 +2,10 @@
     font-family:Inconsolata, sans-serif;
 }
 
+td {
+    width:49%;
+}
+
 #measurementInput {
     display:inline-block;
     width:45%;
