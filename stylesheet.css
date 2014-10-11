@@ -2,6 +2,14 @@
     font-family:Inconsolata, sans-serif;
 }
 
+#measurementInput {
+    width:50%;
+}
+
+#measurementOutput {
+    width:50%;
+}
+
 body {
     background-color:#F9F9F9;
     color:#464646;
