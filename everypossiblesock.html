@@ -7,7 +7,9 @@
     <body>
         <div id="header"><p>  every possible* sock</p><p style="font-size:0.4em;line-height:15%">  *toe-up, magic loop, two-at-a-time, stockinette, short-row-and-gusset-heel, rib-cuff</p></div>
         
-        <p>Instructions
+        
+        <div style="width:50%;display:inline-block;float:left">
+        <p><b>instructions</b>
             <ol>
                 <li>knit yourself a 20-stitch x 20-row swatch</li>
                 <li>measure a 10-stitch stretch and enter its width into the appropriate box</li>
@@ -20,8 +22,10 @@
         </p>
         <p>note: it does not matter whether you use inches, centimeters, kilometers or miles for your measurements - as long as you always use the same measurement, and are precise!</p>
         <table id="measurementInput">
-        
+        </div>
 
+
+        <div style="width:50%;display:inline-block;float:right">
         <form id="frm1" action="form_action.asp">
             First name: <input type="text" name="fname"><br>
             Last name: <input type="text" name="lname"><br><br>
@@ -43,10 +47,10 @@
             document.getElementById("demo").innerHTML = text;
         }
         </script>
+        </div>
 
 
-
-
+<!--
             <tr>
                 <td>name of measure</td>
                 <td>box for measure</td>
@@ -106,6 +110,7 @@
                 <td>number</td>
             </tr>
         </table>
+-->
         
 
     <link rel="stylesheet" type="text/css" href="epsstylesheet.css" />
