@@ -6,20 +6,6 @@ td {
     width:49%;
 }
 
-#measurementInput {
-    display:inline-block;
-    width:45%;
-    word-wrap:break-word;
-    float:left;
-}
-
-#measurementOutput {
-    display:inline-block;
-    width:45%;
-    word-wrap:break-word;
-    float:right;
-}
-
 body {
     background-color:#F9F9F9;
     color:#464646;
