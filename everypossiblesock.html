@@ -50,12 +50,14 @@
             var outputA = Math.round(outputB / 4);
             outputA += ((outputB - outputA) % 4);
             var outputD = (outputB / 2) + outputA;
+            var outputE = (outputA / 2) + 1;
+            
             
             outputs[outputs.length] = [outputA];
             outputs[outputs.length] = [outputB];
 //            outputs[outputs.length] = [outputC];
             outputs[outputs.length] = [outputD];
-//            outputs[outputs.length] = [outputE];
+            outputs[outputs.length] = [outputE];
 //            outputs[outputs.length] = [outputF];
 //            outputs[outputs.length] = [outputG];
 //            outputs[outputs.length] = [outputH];
