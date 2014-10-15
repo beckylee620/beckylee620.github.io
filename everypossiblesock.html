@@ -45,11 +45,24 @@
             var footW = x.elements[2].value;
             var footL = x.elements[3].value;
             var outputs = [];
-            var outputB = footW / gaugeW * 10
+            var outputB = Math.round(footW / gaugeW * 10);
+            if (outputB % 2 != 0) {
+                outputB += 1;
+            }
+//            var outputA = 
             
             
-//            outputs[outputs.length] = ["A", outputA];
+//            outputs[outputs.length] = [outputA];
             outputs[outputs.length] = [outputB];
+//            outputs[outputs.length] = [outputC];
+//            outputs[outputs.length] = [outputD];
+//            outputs[outputs.length] = [outputE];
+//            outputs[outputs.length] = [outputF];
+//            outputs[outputs.length] = [outputG];
+//            outputs[outputs.length] = [outputH];
+
+            
+
             
             
             var text = "";
