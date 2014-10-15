@@ -41,7 +41,7 @@
         function myFunction() {
             var x = document.getElementById("frm1");
             var outputs = [];
-            var outputB = x[0]; // x.elements[footW] / x.elements[gaugeW] * 10;
+            var outputB = x.elements[0]; // x.elements[footW] / x.elements[gaugeW] * 10;
             
 //            outputs[outputs.length] = ["A", outputA];
             outputs[outputs.length] = [outputB];
@@ -50,7 +50,7 @@
             var text = "";
             var i;
             for (i = 0; i < outputs.length; i++) {
-                text += outputs.elements[i].toString() + "<br>";
+                text += outputs[i].toString() + "<br>";
             }
             document.getElementById("demo").innerHTML = text;
         }
