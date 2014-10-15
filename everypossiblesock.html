@@ -44,13 +44,13 @@
             var outputB = x.elements[footW] // / x.elements[gaugeW] * 10;
             
 //            outputs[outputs.length] = ["A", outputA];
-            outputs[outputs.length] = ["B", outputB];
+            outputs[outputs.length] = [outputB];
             
             
             var text = "";
             var i;
             for (i = 0; i < outputs.length; i++) {
-                text += outputs.elements[i].value + "<br>";
+                text += outputs.elements[i].toString() + "<br>";
             }
             document.getElementById("demo").innerHTML = text;
         }
