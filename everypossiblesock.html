@@ -15,7 +15,7 @@
                 <li>using whatever needles and yarn you want to use for your socks, knit yourself a 20-stitch x 20-row swatch</li>
                 <li>measure a 10-stitch stretch and enter its width into the appropriate box</li>
                 <li>measure a 10-row stretch and enter its length into the appropriate box</li>
-                <li>measure (comfortably and snugly, but NOT tightly) the width of the middle of the foot you're making a sock for and enter it into the appropriate box</li>
+                <li>measure (comfortably and snugly, but NOT tightly) the circumference of the middle of the foot you're making a sock for and enter it into the appropriate box</li>
                 <li>measure the length of the foot you're making a sock for, standing flat, from end of big toe to end of heel, and enter it into the appropriate box</li>
                 <li>hit "go"</li>
                 <li>mark down the output on your copy of the <a href="http://www.ravelry.com/designers/becky-lee">every possible* sock pattern</a> and get knitting!</li>
@@ -29,7 +29,7 @@
         <form id="frm1" action="form_action.asp">
             width of ten stitches: <input type="number" name="gaugeW"><br>
             length of ten rows: <input type="number" name="gaugeL"><br>
-            width of foot: <input type="number" name="footW"><br>
+            circumference of foot: <input type="number" name="footW"><br>
             length of foot: <input type="number" name="footL"><br><br>
         </form>
         
@@ -46,19 +46,15 @@
             var footL = x.elements[3].value;
             var outputs = [];
             var outputB = Math.round(footW / gaugeW * 10);
-            if (outputB % 2 != 0) {
-                outputB += 1;
-            }
+            var outputB += (outputB % 2);
             var outputA = Math.round(outputB / 4);
-            if (outputB - outputA % 4 != 0) {
-                outputA += ((outputB - outputA) % 4);
-            }
-            var outputC = (outputB / 2) + (outputA * 2);
+            var outputA += ((outputB - outputA) % 4)
+            var outputD = (outputB / 2) + outputA;
             
             outputs[outputs.length] = [outputA];
             outputs[outputs.length] = [outputB];
-            outputs[outputs.length] = [outputC];
-//            outputs[outputs.length] = [outputD];
+//            outputs[outputs.length] = [outputC];
+            outputs[outputs.length] = [outputD];
 //            outputs[outputs.length] = [outputE];
 //            outputs[outputs.length] = [outputF];
 //            outputs[outputs.length] = [outputG];
