@@ -53,11 +53,11 @@
             if (outputB - outputA % 4 != 0) {
                 outputA += ((outputB - outputA) % 4);
             }
-            
+            var outputC = (outputB / 2) + (outputA * 2);
             
             outputs[outputs.length] = [outputA];
             outputs[outputs.length] = [outputB];
-//            outputs[outputs.length] = [outputC];
+            outputs[outputs.length] = [outputC];
 //            outputs[outputs.length] = [outputD];
 //            outputs[outputs.length] = [outputE];
 //            outputs[outputs.length] = [outputF];
