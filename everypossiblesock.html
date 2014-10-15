@@ -40,8 +40,13 @@
         <script>
         function myFunction() {
             var x = document.getElementById("frm1");
+            var gaugeW = x.elements[0].value;
+            var gaugeL = x.elements[1].value;
+            var footW = x.elements[2].value;
+            var footL = x.elements[3].value;
             var outputs = [];
-            var outputB = x.elements[0].value; // x.elements[footW] / x.elements[gaugeW] * 10;
+            var outputB = footW / gaugeW * 10
+            
             
 //            outputs[outputs.length] = ["A", outputA];
             outputs[outputs.length] = [outputB];
