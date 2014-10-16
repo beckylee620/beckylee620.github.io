@@ -48,11 +48,12 @@
             outputB += (outputB % 2);
             var outputA = Math.round(outputB / 4);
             outputA += ((outputB - outputA) % 4);
-            var outputD = (outputB / 2) + outputA;
-            var outputE = (outputA / 2) + 1;
-            var outputF = (outputD - (1.5 * outputA)) / 2;
-            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) + 2 - (outputD - (outputB / 2)) - (outputF * 2));
+            var outputD = (outputB / 2) + outputA + 2; //added two
+            var DPrime = (outputA / 2) + 1; // each side!!
+            var outputE = DPrime + 1;
             var outputG = outputA / 2;
+            var outputF = (outputD - outputG - (DPrime * 2)) / 2; //(outputD - (1.5 * outputA)) / 2
+            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2)); //didn't subtract length from cast-on + first knitting row - leaving those in to account for three-dimensionality of toe!
             var outputH = outputB / 2 + 1;
             
             
