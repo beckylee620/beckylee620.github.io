@@ -11,6 +11,11 @@ body {
     color:#464646;
 }
 
+#output {
+    font-weight:bold;
+    border: 1px solid #1A5A63;
+}
+
 #header {
     background-color:#1A5A63;
     width:102%;
