@@ -2,23 +2,22 @@
     font-family:Inconsolata, sans-serif;
 }
 
+tr {
+    width:100%;
+}
+
 td {
-    width:49%;
+    border: 1px solid #1A5A63;
+    width: 45%;
+}
+
+#output {
+    border: 1px solid #1A5A63;
 }
 
 body {
     background-color:#F9F9F9;
     color:#464646;
-}
-
-#output {
-    font-weight:bold;
-    border: 1px solid #1A5A63;
-}
-
-.outputcell {
-    border: 1px solid #1A5A63;
-    width: 45%;
 }
 
 #header {
