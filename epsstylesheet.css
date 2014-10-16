@@ -16,6 +16,11 @@ body {
     border: 1px solid #1A5A63;
 }
 
+.outputcell {
+    border: 1px solid #1A5A63;
+    width: 45%;
+}
+
 #header {
     background-color:#1A5A63;
     width:102%;
