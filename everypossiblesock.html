@@ -38,14 +38,8 @@
 
         <script>
         
-        $('input').on('focus', 'input[type=number]', function (e) {
-          $(this).on('mousewheel.disableScroll', function (e) {
-            e.preventDefault()
-            })
-        })
-        $('input').on('blur', 'input[type=number]', function (e) {
-          $(this).off('mousewheel.disableScroll')
-        })
+        input = document.getElementById("gaugeW")
+        input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); })
 
         function myFunction() {
             var x = document.getElementById("input");
