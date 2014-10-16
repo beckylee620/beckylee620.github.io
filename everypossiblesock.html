@@ -27,7 +27,7 @@
 
         <div style="width:15%;display:inline-block;vertical-align:text-top;padding:1.2%">
         <p>INPUT</p>
-        <form id="frm1" action="form_action.asp">
+        <form id="input" action="form_action.asp">
             <p>width of ten stitches: <input type="number" name="gaugeW"></p>
             <p>length of ten rows: <input type="number" name="gaugeL"></p>
             <p>circumference of foot: <input type="number" name="footW"></p>
@@ -38,17 +38,17 @@
 
         <script>
         
-        $('frm1').on('focus', 'input[type=number]', function (e) {
+        $('input').on('focus', 'input[type=number]', function (e) {
           $(this).on('mousewheel.disableScroll', function (e) {
             e.preventDefault()
             })
         })
-        $('frm1').on('blur', 'input[type=number]', function (e) {
+        $('input').on('blur', 'input[type=number]', function (e) {
           $(this).off('mousewheel.disableScroll')
         })
 
         function myFunction() {
-            var x = document.getElementById("frm1");
+            var x = document.getElementById("input");
             var gaugeW = x.elements[0].value;
             var gaugeL = x.elements[1].value;
             var footW = x.elements[2].value;
