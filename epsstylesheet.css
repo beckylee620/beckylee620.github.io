@@ -11,8 +11,9 @@ td {
     width: 45%;
 }
 
-#output {
+table {
     border: 1px solid #1A5A63;
+    width:100%;
 }
 
 body {
