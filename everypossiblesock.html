@@ -53,6 +53,7 @@
             var outputA = Math.round(outputB / 4);
             outputA += ((outputB - outputA) % 4);
             var outputD = (outputB / 2) + outputA + 2; //added two
+            outputD += (outputD % 2);
             var DPrime = (outputA / 2) + 1; // each side!!
             var outputE = DPrime + 1;
             var outputG = outputA / 2;
