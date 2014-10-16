@@ -27,7 +27,7 @@
 
         <div style="width:15%;display:inline-block;vertical-align:text-top;padding:1.2%">
         <p>INPUT</p>
-        <form id="input" action="form_action.asp">
+        <form id="inputForm" action="form_action.asp">
             <p>width of ten stitches: <input type="number" name="gaugeW"></p>
             <p>length of ten rows: <input type="number" name="gaugeL"></p>
             <p>circumference of foot: <input type="number" name="footW"></p>
@@ -38,11 +38,11 @@
 
         <script>
         
-        input = document.getElementById("input");
+        input = document.getElementById("inputForm");
         input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
 
         function myFunction() {
-            var x = document.getElementById("input");
+            var x = document.getElementById("inputForm");
             var gaugeW = x.elements[0].value;
             var gaugeL = x.elements[1].value;
             var footW = x.elements[2].value;
