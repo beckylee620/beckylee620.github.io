@@ -35,6 +35,8 @@
         </form>
         
         <button onclick="myFunction()">calculate</button>
+
+        <script>
         
         $('form').on('focus', 'input[type=number]', function (e) {
           $(this).on('mousewheel.disableScroll', function (e) {
@@ -45,7 +47,6 @@
           $(this).off('mousewheel.disableScroll')
         })
 
-        <script>
         function myFunction() {
             var x = document.getElementById("frm1");
             var gaugeW = x.elements[0].value;
