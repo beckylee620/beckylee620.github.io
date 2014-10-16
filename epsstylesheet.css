@@ -28,7 +28,7 @@ body {
     height:10%;
     margin-top:-50px;
     text-align:center;
-/*    line-height:100%;*/
+    vertical-align:bottom;
     font-size:3em;
     color:#F9F9F9;
 }
