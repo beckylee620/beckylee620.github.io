@@ -72,20 +72,23 @@
             var bodyStart = bodyWidth - eachIncrease;
             var marker2 = sleeveStart - 2;
             var marker4 = bodyStart - 14;
-            var bodyBottom = bodyLength - eachIncrease; //is that right???
+            var ribbingRows = Math.round(10/inputGL);
+            var bodyBottom = bodyLength - eachIncrease - (ribbingRows * 2); //is that right??? ribbing * 2 for top & bottom
+            var sleeveBottom = sleeveLength - ribbingRows;
             var topRib = "KKPP";
             var bottomRib = "KKPP";
             
             
             
             document.getElementById("outputA").innerHTML = collarCirc;
-            document.getElementById("outputB").innerHTML = topRib;
-            document.getElementById("outputC").innerHTML = marker2;
-            document.getElementById("outputD").innerHTML = marker4;
-            document.getElementById("outputE").innerHTML = raglanEnd;
-            document.getElementById("outputF").innerHTML = bodyBottom;
-            document.getElementById("outputG").innerHTML = sleeveLength;
-            document.getElementById("outputH").innerHTML = bottomRib;
+            document.getElementById("outputB").innerHTML = ribbingRows;
+            document.getElementById("outputC").innerHTML = topRib;
+            document.getElementById("outputD").innerHTML = marker2;
+            document.getElementById("outputE").innerHTML = marker4;
+            document.getElementById("outputF").innerHTML = raglanEnd;
+            document.getElementById("outputG").innerHTML = bodyBottom;
+            document.getElementById("outputH").innerHTML = sleeveBottom;
+            document.getElementById("outputI").innerHTML = bottomRib;
         }
         </script>
         </div>
@@ -124,6 +127,10 @@
             <tr>
                 <td>H</td>
                 <td id="outputH"></td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td id="outputI"></td>
             </tr>
         </table>
         </div>
