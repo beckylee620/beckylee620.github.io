@@ -64,7 +64,7 @@
             var collarCirc = Math.round((inputHead * 0.75) / inputGW * 10);
             collarCirc += (4 - (collarCirc % 4)); //this will always be divisible by 4 and...
             var raglanEnd = bodyWidth*2 + sleeveCirc*2; //this will always be even, so...
-            bodyWidth += ((raglanEnd - collarCirc) % 8)/2; //(raglanEnd - collarCirc) is too, and stitches can always be divided evenly betwen front & back of body
+            bodyWidth += ((raglanEnd - collarCirc) % 8)/2; //(raglanEnd - collarCirc) is too, and any extra stitches needed to be divisible by 8 can always be divided evenly betwen front & back of body
             raglanEnd = bodyWidth*2 + sleeveCirc*2; //recalculate after adjusting bodyWidth
             var totalIncrease = raglanEnd - collarCirc;
             var eachIncrease = totalIncrease / 4;
