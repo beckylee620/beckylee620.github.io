@@ -65,40 +65,26 @@
             var raglanEnd = bodyWidth*2 + sleeveCirc*2; //this will always be even, so...
             bodyWidth += ((raglanEnd - collarCirc) % 8)/2; //first part of this is too, and stitches can always be divided evenly betwen front & back of body
             raglanEnd = bodyWidth*2 + sleeveCirc*2; //recalculate after adjusting bodyWidth
-            var raglanIncreases = raglanEnd - collarCirc;
+            var totalIncrease = raglanEnd - collarCirc;
+            var eachIncrease = totalIncrease / 4;
+            var sleeveStart = sleeveCirc - eachIncrease;
+            var bodyStart = bodyWidth - eachIncrease;
+            var marker1 = sleeveStart/2 - 1;
+            var marker3 = bodyStart - 7;
+            var bodyBottom = bodyLength - eachIncrease; //is that right???
+            var topRib = "KKPP";
+            var bottomRib = "KKPP";
             
-            var sleeveStart = ;
-            var bodyStart = ;
-            
-            
-            
-            var ribbingStart = "KKPP";
-            
-            
-            
-            
-            
-            var outputB = Math.round(footW / gaugeW * 10);
-            outputB += (outputB % 2);
-            var outputA = Math.round(outputB / 4);
-            outputA += ((outputB - outputA) % 4);
-            var outputD = (outputB / 2) + outputA + 2; //added two. diff between D and 1/2B will always be even.
-            var DPrime = (outputA / 2) + 1; // each side!!
-            var outputE = DPrime + 1;
-            var outputG = outputA / 2;
-            var outputF = (outputD - outputG - (DPrime * 2)) / 2; //(outputD - (1.5 * outputA)) / 2
-            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2)); //didn't subtract length from cast-on + first knitting row - leaving those in to account for three-dimensionality of toe!
-            var outputH = outputB / 2 + 1;
             
             
             document.getElementById("outputA").innerHTML = collarCirc;
-            document.getElementById("outputB").innerHTML = ribbingStart;
-            document.getElementById("outputC").innerHTML = sleeveStart;
-            document.getElementById("outputD").innerHTML = bodyStart;
-            document.getElementById("outputE").innerHTML = sleeveStart;
-            document.getElementById("outputF").innerHTML = outputF;
-            document.getElementById("outputG").innerHTML = outputG;
-            document.getElementById("outputH").innerHTML = outputH;
+            document.getElementById("outputB").innerHTML = topRib;
+            document.getElementById("outputC").innerHTML = marker1;
+            document.getElementById("outputD").innerHTML = marker3;
+            document.getElementById("outputE").innerHTML = raglanEnd;
+            document.getElementById("outputF").innerHTML = bodyBottom;
+            document.getElementById("outputG").innerHTML = sleeveLength;
+            document.getElementById("outputH").innerHTML = bottomRib;
         }
         </script>
         </div>
