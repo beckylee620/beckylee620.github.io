@@ -57,7 +57,7 @@
             var inputSW = x.elements[4].value;
             var inputSL = x.elements[5].value;
             var inputHead = x.elements[6].value;
-            var bodyWidth = Math.round(inputBW / inputGW * 10);
+            var bodyWidth = Math.round((inputBW / inputGW * 10) + 6);
             var bodyLength = Math.round(inputBL / inputGL * 10);
             var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
             var sleeveLength = Math.round(inputSL / inputGL * 10);
