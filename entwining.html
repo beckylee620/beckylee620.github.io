@@ -75,8 +75,7 @@
             var ribbingRows = Math.round(10/inputGL);
             var bodyBottom = bodyLength - eachIncrease - (ribbingRows * 2); //is that right??? ribbing * 2 for top & bottom
             var sleeveBottom = sleeveLength - ribbingRows;
-            var topRib = "KKPP";
-            var bottomRib = "KKPP";
+            var restOfRow = (collarCirc / 2) - (9 + marker2 + marker4);
             
             
             
@@ -84,9 +83,10 @@
             document.getElementById("outputB").innerHTML = ribbingRows;
             document.getElementById("outputC").innerHTML = marker2;
             document.getElementById("outputD").innerHTML = marker4;
-            document.getElementById("outputE").innerHTML = raglanEnd;
-            document.getElementById("outputF").innerHTML = bodyBottom;
-            document.getElementById("outputG").innerHTML = sleeveBottom;
+            document.getElementById("outputE").innerHTML = restOfRow;
+            document.getElementById("outputF").innerHTML = raglanEnd;
+            document.getElementById("outputG").innerHTML = bodyBottom;
+            document.getElementById("outputH").innerHTML = sleeveBottom;
         }
         </script>
         </div>
@@ -121,6 +121,10 @@
             <tr>
                 <td>G</td>
                 <td id="outputG"></td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td id="outputH"></td>
             </tr>
         </table>
         </div>
