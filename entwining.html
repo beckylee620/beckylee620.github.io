@@ -70,22 +70,26 @@
             var eachIncrease = totalIncrease / 4;
             var sleeveStart = sleeveCirc - eachIncrease;
             var bodyStart = bodyWidth - eachIncrease;
-            var marker2 = sleeveStart - 2;
-            var marker4 = bodyStart - 14;
+            var ribbing1 = sleeveStart - 2;
+            var ribbing2 = bodyStart - 14;
             var ribbingRows = Math.round(10/inputGL);
             var bodyBottom = bodyLength - eachIncrease - (ribbingRows * 2); //is that right??? ribbing * 2 for top & bottom
             var sleeveBottom = sleeveLength - ribbingRows;
-            var restOfRow = (collarCirc / 2) - (9 + marker2 + marker4); //should always be 7!!! took it out.
+            var restOfRow = (collarCirc / 2) - (9 + ribbing1 + ribbing2); //should always be 7!!! took it out.
+            var marker2 = ribbing1 - 2;
+            var marker4 = ribbing2 - 2;
             
             
             
             document.getElementById("outputA").innerHTML = collarCirc;
             document.getElementById("outputB").innerHTML = ribbingRows;
-            document.getElementById("outputC").innerHTML = marker2;
-            document.getElementById("outputD").innerHTML = marker4;
-            document.getElementById("outputE").innerHTML = raglanEnd;
-            document.getElementById("outputF").innerHTML = bodyBottom;
-            document.getElementById("outputG").innerHTML = sleeveBottom;
+            document.getElementById("outputC").innerHTML = ribbing1;
+            document.getElementById("outputD").innerHTML = ribbing2;
+            document.getElementById("outputE").innerHTML = marker2;
+            document.getElementById("outputF").innerHTML = marker4;
+            document.getElementById("outputG").innerHTML = raglanEnd;
+            document.getElementById("outputH").innerHTML = bodyBottom;
+            document.getElementById("outputI").innerHTML = sleeveBottom;
         }
         </script>
         </div>
@@ -120,6 +124,14 @@
             <tr>
                 <td>G</td>
                 <td id="outputG"></td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td id="outputH"></td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td id="outputI"></td>
             </tr>
         </table>
         </div>
