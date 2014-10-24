@@ -74,7 +74,7 @@
             var ribbing2 = bodyStart - 14;
             var ribbingRows = Math.round(10/inputGL);
             var bodyBottom = bodyLength - eachIncrease - (ribbingRows * 2); //is that right??? ribbing * 2 for top & bottom
-            var sleeveBottom = sleeveLength - ribbingRows;
+            var sleeveBottom = sleeveLength - ribbingRows; //decided not to use this (just using bodyBottom instead)
             var restOfRow = (collarCirc / 2) - (9 + ribbing1 + ribbing2); //should always be 7!!! took it out.
             var marker2 = ribbing1 - 2;
             var marker4 = ribbing2 - 2;
@@ -90,7 +90,6 @@
             document.getElementById("outputF").innerHTML = marker4;
             document.getElementById("outputG").innerHTML = secondToLastIncrease;
             document.getElementById("outputH").innerHTML = bodyBottom;
-            document.getElementById("outputI").innerHTML = sleeveBottom;
         }
         </script>
         </div>
@@ -129,10 +128,6 @@
             <tr>
                 <td>H</td>
                 <td id="outputH"></td>
-            </tr>
-            <tr>
-                <td>I</td>
-                <td id="outputI"></td>
             </tr>
         </table>
         </div>
