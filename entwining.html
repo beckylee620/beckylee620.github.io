@@ -57,7 +57,7 @@
             var inputSW = x.elements[4].value;
 //            var inputSL = x.elements[5].value; //if you put this back in, change inputHead to x.elements[6]
             var inputHead = x.elements[5].value;
-            var bodyWidth = Math.round((inputBW / inputGW * 10) + 6);
+            var bodyWidth = Math.round((inputBW / inputGW * 10) + 6); // this is on top, before the cables are decreased!!
             var bodyLength = Math.round(inputBL / inputGL * 10);
             var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
 //            var sleeveLength = Math.round(inputSL / inputGL * 10);
@@ -78,8 +78,8 @@
             var restOfRow = (collarCirc / 2) - (9 + ribbing1 + ribbing2); //should always be 7!!! took it out.
             var marker2 = ribbing1 - 2;
             var marker4 = ribbing2 - 2;
-            var secondToLastIncrease = raglanEnd - 8;// ?? should outputG be this? or raglanEnd??
-            
+            var secondToLastIncrease = raglanEnd - 8; // ?? should outputG be this? or raglanEnd??
+            var bodyStitches = bodyWidth - 6; // half of the total body stitches
             
             
             document.getElementById("outputA").innerHTML = collarCirc;
@@ -89,7 +89,9 @@
             document.getElementById("outputE").innerHTML = marker2;
             document.getElementById("outputF").innerHTML = marker4;
             document.getElementById("outputG").innerHTML = secondToLastIncrease;
-            document.getElementById("outputH").innerHTML = bodyBottom;
+            document.getElementById("outputH").innerHTML = sleeveCirc;
+            document.getElementById("outputI").innerHTML = bodyStitches;
+            document.getElementById("outputJ").innerHTML = bodyBottom;
         }
         </script>
         </div>
@@ -128,6 +130,14 @@
             <tr>
                 <td>H</td>
                 <td id="outputH"></td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td id="outputI"></td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td id="outputJ"></td>
             </tr>
         </table>
         </div>
