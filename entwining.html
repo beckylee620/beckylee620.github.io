@@ -19,7 +19,7 @@
                 <li>measure the width (not circumference) of the sweater body and enter that into the appropriate box</li>
                 <li>measure the length of the sweater body from collar to waistband (inclusive) and enter that into the appropriate box</li>
                 <li>measure the width (not circumference) of one sleeve near the armpit and enter that into the appropriate box</li>
-                <li>measure the length of the sleeve from armpit to cuff (including the cuff) and enter that into the appropriate box<li>
+ <!--               <li>measure the length of the sleeve from armpit to cuff (including the cuff) and enter that into the appropriate box<li> -->
                 <li>measure the circumference of your head at the widest part and enter that into the appropriate box<li>
                 <li>hit "calculate"</li>
                 <li>mark down the output on your copy of the <a href="http://www.ravelry.com/designers/becky-lee" target="_blank">entwining pattern</a> and get knitting!</li>
@@ -37,7 +37,7 @@
             <p>width of body: <input type="number" name="inputBW"></p>
             <p>length of body: <input type="number" name="inputBL"></p>
             <p>width of sleeve: <input type="number" name="inputSW"></p>
-            <p>length of sleeve: <input type="number" name="inputSL"></p>
+<!--            <p>length of sleeve: <input type="number" name="inputSL"></p> -->
             <p>circumference of head: <input type="number" name="inputHead"></p>
         </form>
         
@@ -55,12 +55,12 @@
             var inputBW = x.elements[2].value;
             var inputBL = x.elements[3].value;
             var inputSW = x.elements[4].value;
-            var inputSL = x.elements[5].value;
-            var inputHead = x.elements[6].value;
+//            var inputSL = x.elements[5].value; //if you put this back in, change inputHead to x.elements[6]
+            var inputHead = x.elements[5].value;
             var bodyWidth = Math.round((inputBW / inputGW * 10) + 6);
             var bodyLength = Math.round(inputBL / inputGL * 10);
             var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
-            var sleeveLength = Math.round(inputSL / inputGL * 10);
+//            var sleeveLength = Math.round(inputSL / inputGL * 10);
             var collarCirc = Math.round((inputHead * 0.75) / inputGW * 10);
             collarCirc += (4 - (collarCirc % 4)); //this will always be divisible by 4 and...
             var raglanEnd = bodyWidth*2 + sleeveCirc*2; //this will always be even, so...
@@ -74,7 +74,7 @@
             var ribbing2 = bodyStart - 14;
             var ribbingRows = Math.round(10/inputGL);
             var bodyBottom = bodyLength - eachIncrease - (ribbingRows * 2); //is that right??? ribbing * 2 for top & bottom
-            var sleeveBottom = sleeveLength - ribbingRows; //decided not to use this (just using bodyBottom instead)
+//            var sleeveBottom = sleeveLength - ribbingRows; //decided not to use this (just using bodyBottom instead)
             var restOfRow = (collarCirc / 2) - (9 + ribbing1 + ribbing2); //should always be 7!!! took it out.
             var marker2 = ribbing1 - 2;
             var marker4 = ribbing2 - 2;
