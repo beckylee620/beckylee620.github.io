@@ -47,7 +47,7 @@
             var gaugeL = x.elements[1].value;
             var footW = x.elements[2].value;
             var footL = x.elements[3].value;
-            var outputB = Math.round(footW / gaugeW * 10);
+            var outputB = Math.round(footW / gaugeW * 10 * .95);
             outputB -= (outputB % 2);
             var outputA = Math.round(outputB / 4);
             outputA += ((outputB - outputA) % 4);
