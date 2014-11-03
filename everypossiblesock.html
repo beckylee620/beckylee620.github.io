@@ -48,11 +48,11 @@
             var footW = x.elements[2].value;
             var footL = x.elements[3].value;
             var outputB = Math.round(footW / gaugeW * 10); //get # of stitches for foot circumference
-            outputB -= (outputB % 2); //make foot circumference stitches divisible by 2; round down for a little negative ease
+            outputB -= (outputB % 2); //make foot circumference stitches divisible by 2; round down for a LITTLE negative ease
             var outputA = Math.round(outputB / 4); //calculate number to cast on
             outputA += ((outputB - outputA) % 4); //make diff between A & B divisible by 4
-            var outputD = (outputB / 2) + (0.8 * outputA); //make gusset increases a little smaller than toe cast-on
-            outputD -= (outputD - (outputB / 2)) % 2; //diff between D and 1/2(B) must always be even (and since B is always even, D will always be even)
+            var outputD = (outputB / 2) + (0.8 * outputA); //make gusset increases a little smaller than toe cast-on ()
+            outputD -= (outputD - (outputB / 2)) % 2; //diff between D and 1/2(B) must always be even
             var DPrime = (outputD - (outputB / 2)) / 2; //half of the gusset increases
             var outputE = DPrime + 1; //where to start wrapping
             var outputG = outputA / 2; //unwrapped stitches in the middle of heel
