@@ -47,18 +47,18 @@
             var gaugeL = x.elements[1].value;
             var footW = x.elements[2].value;
             var footL = x.elements[3].value;
-            var outputB = Math.round(footW / gaugeW * 10 * 0.95); //get # of stitches for foot circumference
-            outputB -= (outputB % 2); //make foot circumference stitches divisible by 2; round down for a LITTLE negative ease
-            var outputA = Math.round(outputB / 4); //calculate number to cast on
-            outputA += ((outputB - outputA) % 4); //make diff between A & B divisible by 4
-            var outputD = (outputB / 2) + (0.8 * outputA); //make gusset increases a little smaller than toe cast-on ()
+            var outputB = Math.round(footW / gaugeW * 10 * 0.95);
+            outputB -= (outputB % 2);
+            var outputA = Math.round(outputB / 4);
+            outputA += ((outputB - outputA) % 4);
+            var outputD = (outputB / 2) + (0.8 * outputA);
             outputD -= (outputD - (outputB / 2)) % 2; //diff between D and 1/2(B) must always be even
-            var DPrime = (outputD - (outputB / 2)) / 2; //half of the gusset increases
-            var outputE = DPrime + 1; //where to start wrapping
-            var outputG = outputA / 2; //unwrapped stitches in the middle of heel
-            var outputF = (outputD - outputG - (DPrime * 2)) / 2; //wrapped stitches on each side
-            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2)); //didn't subtract length from cast-on + first knitting row - leaving those in to account for three-dimensionality of toe!
-            var outputH = (outputB / 2) + 1; //almost done with the heel
+            var DPrime = (outputD - (outputB / 2)) / 2;
+            var outputE = DPrime + 1;
+            var outputG = outputA / 2;
+            var outputF = (outputD - outputG - (DPrime * 2)) / 2;
+            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2));
+            var outputH = (outputB / 2) + 1;
             
             
             document.getElementById("outputA").innerHTML = outputA;
@@ -114,7 +114,7 @@
         </div>
 
 
-        <p style="float:right">*toe-up, magic loop, two-at-a-time, stockinette, short-row-and-gusset-heel, rib-cuff</p>
+        <p style="float:right">*toe-up, magic loop, two-at-a-time, stockinette, short-row-turn-and-gusset-decrease-heel, rib-cuff</p>
 
 
     <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
