@@ -12,17 +12,17 @@
                 var yearsString = "";
                 var year = 1880;
                 while (year < 2014) {
-                    yearsString.concat("<option value=");
+                    yearsString.concat("<option value='");
                     yearsString.concat(year.toString());
-                    yearsString.concat(">");
+                    yearsString.concat("'>");
                     yearsString.concat(year.toString());
                     yearsString.concat("</option>");
                     year+=1;
                 }
                 document.getElementById("selectYear").innerHTML=yearsString;
             }
-            window.onload=yearsForm;
         </script>
+        window.onload=yearsForm;
     
         <div id="header">Name Generator</div>
         
@@ -37,13 +37,16 @@
         <p>your options</p>
         
             <form>
-            <select id="selectYear"></select>
+            
+            <select id="selectYear">
+            </select>
             
             <select id="selectGender">
             <option value="unisex">unisex</option>
             <option value="female">female</option>
             <option value="male">male</option>
             </select>
+            
             </form>
         
         <button onclick="generateNames()">generate names</button>
