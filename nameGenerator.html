@@ -186,23 +186,28 @@
         <script>
         
         function generateNames() {
-            var outputA='everything';
-            var outputB='is';
-            var outputC='working';
-            var outputD='properly';
-            
             var inputYear = document.getElementById("selectYear").value;
             var inputGender = document.getElementById("selectGender").value;
             
             inputYear = parseInt(inputYear);
             
-            inputYear += 1;
+            
+            var currentState="#";
+            var end="_";
+            var output="";
+            var iteration=0;
+            
+            while (currentState != end && iter < 15) {
+                
+                
+                iteration=iteration + 1;
+            }
             
             
-            document.getElementById("outputA").innerHTML = outputA;
-            document.getElementById("outputB").innerHTML = outputB;
-            document.getElementById("outputC").innerHTML = outputC;
-            document.getElementById("outputD").innerHTML = outputD;
+            
+            
+            
+            
             document.getElementById("outputE").innerHTML = inputYear;
             document.getElementById("outputF").innerHTML = inputGender;
         }
@@ -212,18 +217,6 @@
         <div style="width:30%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
         <p>you should name your baby...</p>
         <table>
-            <tr>
-                <td id="outputA"></td>
-            </tr>
-            <tr>
-                <td id="outputB"></td>
-            </tr>
-            <tr>
-                <td id="outputC"></td>
-            </tr>
-            <tr>
-                <td id="outputD"></td>
-            </tr>
             <tr>
                 <td id="outputE"></td>
             </tr>
