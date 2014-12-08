@@ -17,13 +17,25 @@
         <div style="width:30%;display:inline-block;vertical-align:text-top;padding:1.2%">
         <p>your options</p>
         
+        <script>
+            function yearsForm() {
+                var yearsString = "";
+                var year = 1880;
+                while (year < 2014) {
+                    yearsString.concat("<option value='");
+                    yearsString.concat(year.toString());
+                    yearsString.concat("'>");
+                    yearsString.concat(year.toString());
+                    yearsString.concat("</option>");
+                    year+=1;
+                }
+                document.getElementById("selectYear").innerHTML=yearsString;
+            }
+        </script>
+        
+        
             <form>
-            <select id="selectYear">
-            <option value="1880">1880</option>
-            <option value="1881">1881</option>
-            <option value="1882">1882</option>
-            <option value="1883">1883</option>
-            </select>
+            <select id="selectYear"></select>
             
             <select id="selectGender">
             <option value="unisex">unisex</option>
@@ -37,12 +49,12 @@
         <script>
         
         function generateNames() {
-            var outputA = 'everything';
-            var outputB = 'is';
-            var outputC = 'working';
-            var outputD = 'properly';
-            var outputE = document.getElementById("selectYear").value;
-            var outputF = document.getElementById("selectGender").value;
+            var outputA='everything';
+            var outputB='is';
+            var outputC='working';
+            var outputD='properly';
+            var outputE=document.getElementById("selectYear").value;
+            var outputF=document.getElementById("selectGender").value;
             
             
             
