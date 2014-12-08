@@ -33,43 +33,31 @@
             </select>
             
             <select id="selectGender">
-            <option>Unisex</option>
-            <option>Female</option>
-            <option>Male</option>
+            <option>unisex</option>
+            <option>female</option>
+            <option>male</option>
             </select>
             </form>
         
-        <form id="inputForm" action="form_action.asp">
-            <p>width of ten stitches: <input type="number" name="gaugeW"></p>
-            <p>length of ten rows: <input type="number" name="gaugeL"></p>
-            <p>circumference of foot: <input type="number" name="footW"></p>
-            <p>length of foot: <input type="number" name="footL"></p>
-        </form>
-        
-        <button onclick="myFunction()">calculate</button>
+        <button onclick="generateNames()">generate names</button>
 
         <script>
         
-        input = document.getElementById("inputForm");
-        input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
-        function myFunction() {
-            var x = document.getElementById("inputForm");
-            var gaugeW = x.elements[0].value;
-            var gaugeL = x.elements[1].value;
-            var footW = x.elements[2].value;
-            var footL = x.elements[3].value;
-            var outputB = Math.round(footW / gaugeW * 10 * 0.95);
-            outputB -= (outputB % 2);
-            var outputA = Math.round(outputB / 4);
-            outputA += ((outputB - outputA) % 4);
-            var outputD = (outputB / 2) + (0.8 * outputA);
-            outputD -= (outputD - (outputB / 2)) % 2; //diff between D and 1/2(B) must always be even
-            var DPrime = (outputD - (outputB / 2)) / 2;
-            var outputE = DPrime + 1;
-            var outputG = outputA / 2;
-            var outputF = (outputD - outputG - (DPrime * 2)) / 2;
-            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2));
-            var outputH = (outputB / 2) + 1;
+//        inputYear = document.getElementById("selectYear");
+//        inputGender = document.getElementById("selectGender");
+        
+        
+        
+//        input = document.getElementById("inputForm");
+//        input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
+        function generateNames() {
+            var outputA = 'everything';
+            var outputB = 'is';
+            var outputC = 'working';
+            var outputD = 'properly';
+            var outputE = document.getElementById("selectYear");
+            var outputF = document.getElementById("selectGender");
+            
             
             
             document.getElementById("outputA").innerHTML = outputA;
@@ -78,8 +66,6 @@
             document.getElementById("outputD").innerHTML = outputD;
             document.getElementById("outputE").innerHTML = outputE;
             document.getElementById("outputF").innerHTML = outputF;
-            document.getElementById("outputG").innerHTML = outputG;
-            document.getElementById("outputH").innerHTML = outputH;
         }
         </script>
         </div>
@@ -111,21 +97,11 @@
                 <td>F</td>
                 <td id="outputF"></td>
             </tr>
-            <tr>
-                <td>G</td>
-                <td id="outputG"></td>
-            </tr>
-            <tr>
-                <td>H</td>
-                <td id="outputH"></td>
-            </tr>
         </table>
         
             
         </div>
 
-
-        <p style="float:right">*toe-up, magic loop, two-at-a-time, short-row-turn-and-gusset-decrease-heel</p>
 
 
     <link rel="stylesheet" type="text/css" href="nameGenerator.css" />
