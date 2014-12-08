@@ -4,7 +4,7 @@
         <title>Name Generator</title>
     </head>
     
-    <body onload="yearsForm();">
+    <body>
         <div id="header">Name Generator</div>
         
         <div style="width:30%;display:inline-block;vertical-align:text-top;padding:1.2%">
@@ -31,6 +31,7 @@
                 }
                 document.getElementById("selectYear").innerHTML=yearsString;
             }
+            window.onload=yearsForm;
         </script>
         
         
