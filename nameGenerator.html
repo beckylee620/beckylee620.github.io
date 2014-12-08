@@ -9,14 +9,14 @@
         <script>
             function yearsForm() {
                 var yearsString = "";
-                var year = 1880;
-                while (year < 2014) {
+                var yearCurrent = 1880;
+                while (yearCurrent < 2014) {
                     yearsString.concat("<option value='");
-                    yearsString.concat(year.toString());
+                    yearsString.concat(yearCurrent.toString());
                     yearsString.concat("'>");
-                    yearsString.concat(year.toString());
+                    yearsString.concat(yearCurrent.toString());
                     yearsString.concat("</option>");
-                    year = year + 1;
+                    yearCurrent = yearCurrent + 1;
                 }
                 document.getElementById("selectYear").innerHTML=yearsString;
             }
