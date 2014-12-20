@@ -60,7 +60,7 @@
             var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
             var collarCirc = Math.round((inputHead * 0.75) / inputGW * 10);
             var raglanEnd = bodyWidth*2 + sleeveCirc*2; //this will always be even
-            collarCirc -= ((raglanEnd - collarCirc) % 8); //will also give collarCirc a little more negative ease
+            collarCirc += ((raglanEnd - collarCirc) % 8); //mightly slightly counteract the negative ease, but whatever
             var totalIncrease = raglanEnd - collarCirc;
             var eachIncrease = totalIncrease / 4;
             var sleeveStart = sleeveCirc - eachIncrease;
