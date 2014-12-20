@@ -66,12 +66,12 @@
             var sleeveStart = sleeveCirc - eachIncrease;
             var bodyStart = bodyWidth - eachIncrease;
             var collarRows = Math.round(15/inputGL); //makes collar roll 1.5 inches
-            collarRows += (collarRows % 2); //makes sure it's even so that
+            collarRows -= (collarRows % 2); //makes sure it's even so that
             collarRows += 1; //we can then make it odd
             var increaseSetup = (collarRows + 1);
             var increaseStart = increaseSetup + 1;
             var increaseEnd = increaseSetup + eachIncrease; //double check this; should end evenly
-            var bodyBottom = bodyLength - eachIncrease - (collarRows); //collarRows here stands in for number of ribbing rows
+            var bodyBottom = bodyLength - eachIncrease - collarRows; //collarRows here stands in for number of ribbing rows
             var bodyStitches = bodyWidth - 6; // half of the total body stitches
             var colorRows = Math.round(eachIncrease / 6);
             var grayRows = eachIncrease - (colorRows * 4);
