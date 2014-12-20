@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>entwining</title>
+        <title>Wesley Crusher Sweaters for All</title>
     </head>
     
     <body>
-        <div id="header">entwining</div>
+        <div id="header">Wesley Crusher Sweaters for All</div>
         
         <div style="width:60%;display:inline-block;vertical-align:text-top;padding:1.2%">
         <p>INSTRUCTIONS</p>
         <p>all measurements can be entered as whole numbers or as decimals (fractions will not work). do not round your measurements; be as precise as you can!</p>
-        <p>it does not matter whether you use inches or centimeters - just use the same one for all four measurements.</p>
+        <p>enter all four measurements in inches.</p>
         <p>for sweater measurements, it is recommended that you measure a sweater that fits well, rather than entering body measurements.</p>
         <p>
             <ol>
@@ -54,7 +54,7 @@
             var inputBL = x.elements[3].value;
             var inputSW = x.elements[4].value;
             var inputHead = x.elements[5].value;
-            var bodyWidth = Math.round((inputBW / inputGW * 10) + 6); // this is on top, before the cables are decreased!!
+            var bodyWidth = Math.round((inputBW / inputGW * 10));
             var bodyLength = Math.round(inputBL / inputGL * 10);
             var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
             var collarCirc = Math.round((inputHead * 0.75) / inputGW * 10);
@@ -68,17 +68,25 @@
             var bodyStart = bodyWidth - eachIncrease;
             var ribbing1 = sleeveStart - 2;
             var ribbing2 = bodyStart - 14;
-            var collarRows = Math.round(10/inputGL);
+            var collarRows = Math.round(15/inputGL); //makes collar roll 1.5 inches
             var bodyBottom = bodyLength - eachIncrease - (ribbingRows); //is that right??
             var secondToLastIncrease = raglanEnd - 8; // ?? should outputG be this? or raglanEnd??
             var bodyStitches = bodyWidth - 6; // half of the total body stitches
             
             
-            document.getElementById("outputA").innerHTML = collarCirc;
-            document.getElementById("outputD").innerHTML = collarRows;
-            document.getElementById("outputH").innerHTML = sleeveCirc;
-            document.getElementById("outputI").innerHTML = bodyStitches;
-            document.getElementById("outputJ").innerHTML = bodyBottom;
+            document.getElementById("outputA").innerHTML = collarCirc; //cast on
+            document.getElementById("outputB").innerHTML = collarRows; //collar rows - 1 (1.5")
+            document.getElementById("outputC").innerHTML = sleeveCirc; //last collar row - row that markers are placed
+            document.getElementById("outputD").innerHTML = bodyStitches; //sleeve start
+            document.getElementById("outputE").innerHTML = bodyBottom; //body start half
+            document.getElementById("outputF").innerHTML = sleeveCirc; //first increase row (odd)
+            document.getElementById("outputG").innerHTML = sleeveCirc; //last increase row (even)
+            document.getElementById("outputH").innerHTML = sleeveCirc; //number of dark gray rows in raglan section
+            document.getElementById("outputI").innerHTML = sleeveCirc; //number of each of the three colorful rows
+            document.getElementById("outputJ").innerHTML = sleeveCirc; //total after raglan increases
+            document.getElementById("outputK").innerHTML = sleeveCirc; //sleeve raglan end
+            document.getElementById("outputL").innerHTML = sleeveCirc; //body raglan end half
+            document.getElementById("outputM").innerHTML = sleeveCirc; //body length after subtracting raglan increases
         }
         </script>
         </div>
@@ -125,6 +133,18 @@
             <tr>
                 <td>J</td>
                 <td id="outputJ"></td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td id="outputK"></td>
+            </tr>
+            <tr>
+                <td>L</td>
+                <td id="outputL"></td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td id="outputM"></td>
             </tr>
         </table>
         </div>
