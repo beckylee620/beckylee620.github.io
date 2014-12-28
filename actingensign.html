@@ -70,8 +70,8 @@
             var increaseEnd = increaseSetup + eachIncrease; //double check this; should end evenly
             var bodyBottom = bodyLength - eachIncrease - collarRows; //collarRows here stands in for number of ribbing rows
             var bodyStitches = bodyWidth - 6; // half of the total body stitches
-            var colorRows = Math.round(eachIncrease / 6);
-            var grayRows = eachIncrease - (colorRows * 4);
+            var colorRows = Math.round(eachIncrease / 9);
+            var grayRows = (eachIncrease - (colorRows * 3))/2;
             
             
             document.getElementById("outputA").innerHTML = collarCirc; //cast on
