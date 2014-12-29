@@ -68,7 +68,7 @@
             var increaseSetup = (collarRows + 1);
             var increaseStart = increaseSetup + 1;
             var increaseEnd = increaseSetup + eachIncrease; //double check this; should end evenly
-            var bodyBottom = bodyLength - eachIncrease - collarRows; //collarRows here stands in for number of ribbing rows
+            var bodyBottom = bodyLength - eachIncrease - collarRows - 1; //collarRows here stands in for number of ribbing rows; collarRows are not included since they curl up and don't add length; extra 1 is raglan-dividing row
             var bodyStitches = bodyWidth - 6; // half of the total body stitches
             var colorRows = Math.round(eachIncrease / 9);
             var grayRows = (eachIncrease - (colorRows * 3))/2;
