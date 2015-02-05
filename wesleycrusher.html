@@ -74,9 +74,10 @@
             var grayRows = (eachIncrease - (colorRows * 3))/2;
             
             if (sleeveStart < 3) {
-                sleeveStart += 3 - sleeveStart;
-                collarCirc += (3 - sleeveStart)*2; // *2 because there are two sleeves
-                sleeveCirc += 3 - sleeveStart;
+                var theDifference = 3 - sleeveStart;
+                sleeveStart += theDifference;
+                collarCirc += theDifference*2; // *2 because there are two sleeves
+                sleeveCirc += theDifference;
             }
             
             document.getElementById("outputA").innerHTML = collarCirc; //cast on
