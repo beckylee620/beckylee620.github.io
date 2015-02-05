@@ -57,7 +57,7 @@
             var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
             var collarCirc = Math.round((inputHead * 0.65) / inputGW * 10);
             var raglanEnd = bodyWidth*2 + sleeveCirc*2; //this will always be even
-            collarCirc += ((raglanEnd - collarCirc) % 8); //mightly slightly counteract the negative ease, but whatever
+            collarCirc += ((raglanEnd - collarCirc) % 8);
             var totalIncrease = raglanEnd - collarCirc;
             var eachIncrease = totalIncrease / 4;
             var sleeveStart = sleeveCirc - eachIncrease;
@@ -73,6 +73,11 @@
             var colorRows = Math.round(eachIncrease / 9);
             var grayRows = (eachIncrease - (colorRows * 3))/2;
             
+            if (sleeveStart < 3) {
+                sleeveStart += 3 - sleeveStart;
+                collarCirc += (3 - sleeveStart)*2; // *2 because there are two sleeves
+                sleeveCirc += 3 - sleeveStart;
+            }
             
             document.getElementById("outputA").innerHTML = collarCirc; //cast on
             document.getElementById("outputB").innerHTML = collarRows; //collar rows (1.5" or so), must be odd
