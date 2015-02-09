@@ -61,6 +61,12 @@
             var totalIncrease = raglanEnd - collarCirc;
             var eachIncrease = totalIncrease / 4;
             var sleeveStart = sleeveCirc - eachIncrease;
+            while (sleeveStart < 3) {
+                collarCirc += 8;
+                totalIncrease -= 8;
+                eachIncrease -= 2;
+                sleeveStart += 2;
+            }
             var bodyStart = bodyWidth - eachIncrease;
             var collarRows = Math.round(30/inputGL); //makes collar roll and ribbing sections 3.0 inches
             collarRows -= (collarRows % 2); //makes sure it's even so that
@@ -80,12 +86,17 @@
             
             grayRows = grayRows / 2;
             
-            if (sleeveStart < 3) {
-                var theDifference = 3 - sleeveStart;
-                sleeveStart += theDifference;
-                collarCirc += theDifference*2; // *2 because there are two sleeves
-                sleeveCirc += theDifference;
-                raglanEnd += theDifference*2;
+//            if (sleeveStart < 3) {
+//                var theDifference = 3 - sleeveStart;
+//                if (theDifference % 2 != 0) {
+//                    theDifference += 1;
+//                }
+//                sleeveStart += theDifference;
+//                bodyStart += theDifference;
+//                collarCirc += theDifference*4; // *4 for each section
+//                
+//                sleeveCirc += theDifference;
+//                raglanEnd += theDifference*2;
             }
             
             document.getElementById("outputA").innerHTML = collarCirc; //cast on
