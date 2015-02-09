@@ -73,7 +73,7 @@
             var colorRows = Math.round(eachIncrease / 9);
             var grayRows = (eachIncrease - (colorRows * 3));
             
-            if (grayRows % 2 == 1) {
+            if (grayRows % 2 != 0) {
                 colorRows = colorRows - 1;
                 grayRows = (eachIncrease - (colorRows * 3));
             }
