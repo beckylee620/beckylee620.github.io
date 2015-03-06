@@ -23,6 +23,35 @@
                 <li>mark down the output on your copy of the <a href="http://www.ravelry.com/patterns/library/wesley-crusher-sweater-for-adults" target="_blank">Wesley Crusher Sweaters for Adults</a> pattern and get knitting!</li>
             </ol>
         </p>
+        <table>
+            <tr>
+                <td>color</td>
+                <td>approximate yardage</td>
+            </tr>
+            <tr>
+                <td>dark gray</td>
+                <td id="dgYardage"></td>
+            </tr>
+            <tr>
+                <td>brick red</td>
+                <td id="brYardage"></td>
+            </tr>
+            <tr>
+                <td>mustard yellow</td>
+                <td id="myYardage"></td>
+            </tr>
+            <tr>
+                <td>dark teal</td>
+                <td id="dtYardage"></td>
+            </tr>
+            <tr>
+                <td>light gray</td>
+                <td id="lgYardage"></td>
+            </tr>
+            
+            
+        </table>
+
 
         </div>
 
@@ -87,17 +116,60 @@
             grayRows = grayRows / 2;
             
             
-            var totalStitches = (collarCirc*2) + (collarCirc*collarRows) + (collarCirc);
+            var dgCounter = 1;
+            var dgStitches = (collarCirc*2) + (collarCirc*collarRows) + (collarCirc);
+
             var increaseStitches = collarCirc + 8;
             
-            while (increaseStitches <= raglanEnd) {
-                totalStitches += (increaseStitches*2);
+            while (dgCounter <= grayRows) {
+                dgStitches += (increaseStitches*2);
                 increaseStitches += 8;
+                dgCounter += 1;
             }
             
-            totalStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2));
+            var brCounter = 1;
+            var brStitches = 0;
             
-            var yardage = Math.round(totalStitches/38);
+            while (brCounter <= colorRows) {
+                brStitches += (increaseStitches*2);
+                increaseStitches += 8;
+                brCounter += 1;
+            }
+            
+            var myCounter = 1;
+            var myStitches = 0;
+            
+            while (myCounter <= colorRows) {
+                myStitches += (increaseStitches*2);
+                increaseStitches += 8;
+                myCounter += 1;
+            }
+            
+            var dtCounter = 1;
+            var dtStitches = 0;
+            
+            while (dtCounter <= colorRows) {
+                dtStitches += (increaseStitches*2);
+                increaseStitches += 8;
+                dtCounter += 1;
+            }
+            
+            var lgCounter = 1;
+            var lgStitches = 0;
+            
+            while (lgCounter <= grayRows) {
+                lgStitches += (increaseStitches*2);
+                increaseStitches += 8;
+                lgCounter += 1;
+            }
+            
+            lgStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2));
+            
+            var dgYardage = Math.round(dgStitches/38);
+            var brYardage = Math.round(brStitches/38);
+            var myYardage = Math.round(myStitches/38);
+            var dtYardage = Math.round(dtStitches/38);
+            var lgYardage = Math.round(lgStitches/38);
             
             
             document.getElementById("outputA").innerHTML = collarCirc; //cast on
@@ -113,15 +185,17 @@
             document.getElementById("outputK").innerHTML = sleeveCirc; //sleeve raglan end
             document.getElementById("outputL").innerHTML = bodyWidth; //body raglan end half
             document.getElementById("outputM").innerHTML = bodyBottom; //body length after subtracting raglan increases
-            document.getElementById("yardage").innerHTML = yardage; //body length after subtracting raglan increases
+            document.getElementById("dgYardage").innerHTML = dgYardage;
+            document.getElementById("brYardage").innerHTML = brYardage;
+            document.getElementById("myYardage").innerHTML = myYardage;
+            document.getElementById("dtYardage").innerHTML = dtYardage;
+            document.getElementById("lgYardage").innerHTML = lgYardage;
         }
         </script>
         </div>
         
         <div style="width:15%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
         <p>OUTPUT</p>
-        <p>approximate yardage:</p>
-        <p id="yardage"></p>
         <table>
             <tr>
                 <td>A</td>
