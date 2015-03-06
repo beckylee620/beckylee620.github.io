@@ -86,8 +86,22 @@
             
             grayRows = grayRows / 2;
             
+            
+            var totalStitches = (collarCirc*2) + (collarCirc*collarRows) + (collarCirc);
+            var increaseStitches = collarCirc + 8;
+            
+            while (increaseStitches <= increaseEnd) {
+                totalStitches += (increaseStitches*2);
+                increaseStitches += 8;
+            }
+            
+            totalStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2));
+            
+            var yardage = Math.round(totalStitches/38);
+            
+            
             document.getElementById("outputA").innerHTML = collarCirc; //cast on
-            document.getElementById("outputB").innerHTML = collarRows; //collar rows (1.5" or so), must be odd
+            document.getElementById("outputB").innerHTML = collarRows; //collar rows (3" or so), must be odd
             document.getElementById("outputC").innerHTML = increaseSetup; //increase setup, must be even
             document.getElementById("outputD").innerHTML = sleeveStart; //sleeve start
             document.getElementById("outputE").innerHTML = bodyStart; //body start (half of entire body)
@@ -99,12 +113,15 @@
             document.getElementById("outputK").innerHTML = sleeveCirc; //sleeve raglan end
             document.getElementById("outputL").innerHTML = bodyWidth; //body raglan end half
             document.getElementById("outputM").innerHTML = bodyBottom; //body length after subtracting raglan increases
+            document.getElementById("yardage").innerHTML = yardage; //body length after subtracting raglan increases
         }
         </script>
         </div>
         
         <div style="width:15%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
         <p>OUTPUT</p>
+        <p>approximate yardage:</p>
+        <p id="yardage"></p>
         <table>
             <tr>
                 <td>A</td>
