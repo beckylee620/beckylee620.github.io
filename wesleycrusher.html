@@ -122,46 +122,46 @@
 
             var increaseStitches = collarCirc + 8;
             
-            while (dgCounter <= grayRows) {
+            while (dgCounter < grayRows) {
                 dgStitches += (increaseStitches*2);
                 increaseStitches += 8;
-                dgCounter += 1;
+                dgCounter += 2;
             }
             
             var brCounter = 1;
             var brStitches = 0;
             
-            while (brCounter <= colorRows) {
+            while (brCounter < colorRows) {
                 brStitches += (increaseStitches*2);
                 increaseStitches += 8;
-                brCounter += 1;
+                brCounter += 2;
             }
             
             var myCounter = 1;
             var myStitches = 0;
             
-            while (myCounter <= colorRows) {
+            while (myCounter < colorRows) {
                 myStitches += (increaseStitches*2);
                 increaseStitches += 8;
-                myCounter += 1;
+                myCounter += 2;
             }
             
             var dtCounter = 1;
             var dtStitches = 0;
             
-            while (dtCounter <= colorRows) {
+            while (dtCounter < colorRows) {
                 dtStitches += (increaseStitches*2);
                 increaseStitches += 8;
-                dtCounter += 1;
+                dtCounter += 2;
             }
             
             var lgCounter = 1;
             var lgStitches = 0;
             
-            while (lgCounter <= grayRows) {
+            while (lgCounter < grayRows) {
                 lgStitches += (increaseStitches*2);
                 increaseStitches += 8;
-                lgCounter += 1;
+                lgCounter += 2;
             }
             
             lgStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2));
@@ -173,19 +173,19 @@
             var lgYardage = Math.round(lgStitches/38);
             
             
-            document.getElementById("outputA").innerHTML = collarCirc; //cast on
-            document.getElementById("outputB").innerHTML = collarRows; //collar rows (3" or so), must be odd
-            document.getElementById("outputC").innerHTML = increaseSetup; //increase setup, must be even
-            document.getElementById("outputD").innerHTML = sleeveStart; //sleeve start
-            document.getElementById("outputE").innerHTML = bodyStart; //body start (half of entire body)
-            document.getElementById("outputF").innerHTML = increaseStart; //first increase row (odd)
-            document.getElementById("outputG").innerHTML = increaseEnd; //last increase row (even)
-            document.getElementById("outputH").innerHTML = grayRows; //number of dark gray rows in raglan section
-            document.getElementById("outputI").innerHTML = colorRows; //number of each of the three colors and light gray
-            document.getElementById("outputJ").innerHTML = raglanEnd; //total after raglan increases
-            document.getElementById("outputK").innerHTML = sleeveCirc; //sleeve raglan end
-            document.getElementById("outputL").innerHTML = bodyWidth; //body raglan end half
-            document.getElementById("outputM").innerHTML = bodyBottom; //body length after subtracting raglan increases
+            document.getElementById("outputA").innerHTML = collarCirc;
+            document.getElementById("outputB").innerHTML = collarRows;
+            document.getElementById("outputC").innerHTML = increaseSetup;
+            document.getElementById("outputD").innerHTML = sleeveStart;
+            document.getElementById("outputE").innerHTML = bodyStart;
+            document.getElementById("outputF").innerHTML = increaseStart;
+            document.getElementById("outputG").innerHTML = increaseEnd;
+            document.getElementById("outputH").innerHTML = grayRows;
+            document.getElementById("outputI").innerHTML = colorRows;
+            document.getElementById("outputJ").innerHTML = raglanEnd;
+            document.getElementById("outputK").innerHTML = sleeveCirc;
+            document.getElementById("outputL").innerHTML = bodyWidth;
+            document.getElementById("outputM").innerHTML = bodyBottom;
             document.getElementById("dgYardage").innerHTML = dgYardage;
             document.getElementById("brYardage").innerHTML = brYardage;
             document.getElementById("myYardage").innerHTML = myYardage;
