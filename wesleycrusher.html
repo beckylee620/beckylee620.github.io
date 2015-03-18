@@ -84,9 +84,9 @@
             var inputHead = x.elements[5].value;
             var bodyWidth = Math.round((inputBW / inputGW * 10));
             var bodyLength = Math.round(inputBL / inputGL * 10);
-            var sleeveCirc = Math.round(inputSW / inputGW * 20); //times 20 to turn width into circumference
+            var sleeveCirc = Math.round(inputSW / inputGW * 20);
             var collarCirc = Math.round((inputHead * 0.6) / inputGW * 10);
-            var raglanEnd = bodyWidth*2 + sleeveCirc*2; //this will always be even
+            var raglanEnd = bodyWidth*2 + sleeveCirc*2;
             collarCirc += ((raglanEnd - collarCirc) % 8);
             var totalIncrease = raglanEnd - collarCirc;
             var eachIncrease = totalIncrease / 4;
@@ -98,14 +98,14 @@
                 sleeveStart += 2;
             }
             var bodyStart = bodyWidth - eachIncrease;
-            var collarRows = Math.round(30/inputGL); //makes collar roll and ribbing sections 3.0 inches
-            collarRows -= (collarRows % 2); //makes sure it's even so that
-            collarRows += 1; //we can then make it odd
+            var collarRows = Math.round(30/inputGL);
+            collarRows -= (collarRows % 2);
+            collarRows += 1;
             var increaseSetup = (collarRows + 1);
             var increaseStart = increaseSetup + 1;
-            var increaseEnd = increaseSetup + eachIncrease; //double check this; should end evenly
-            var bodyBottom = bodyLength - eachIncrease - collarRows - 1; //collarRows here stands in for number of ribbing rows; actual collarRows are not accounted for since they curl up and don't add length; extra 1 is raglan-dividing row
-            var bodyStitches = bodyWidth - 6; // half of the total body stitches
+            var increaseEnd = increaseSetup + eachIncrease;
+            var bodyBottom = bodyLength - eachIncrease - collarRows - 1;
+            var bodyStitches = bodyWidth - 6;
             var colorRows = Math.round(eachIncrease / 9);
             var grayRows = (eachIncrease - (colorRows * 3));
             
@@ -166,10 +166,10 @@
             
             lgStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2));
             
-            var dgYardage = Math.round(dgStitches/38);
-            var brYardage = Math.round(brStitches/38);
-            var myYardage = Math.round(myStitches/38);
-            var dtYardage = Math.round(dtStitches/38);
+            var dgYardage = Math.round(dgStitches/38 + 2);
+            var brYardage = Math.round(brStitches/38 + 2);
+            var myYardage = Math.round(myStitches/38 + 2);
+            var dtYardage = Math.round(dtStitches/38 + 2);
             var lgYardage = Math.round(lgStitches/38);
             
             
