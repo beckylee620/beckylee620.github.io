@@ -66,6 +66,7 @@
             <p>length of sweater body: <input type="number" name="inputBL"></p>
             <p>width of sweater sleeve: <input type="number" name="inputSW"></p>
             <p>circumference of head: <input type="number" name="inputHead"></p>
+            <p>stitches per yard (optional): <input type="number" name="inputYardage"></p>
         </form>
         
         <button onclick="myFunction()">calculate</button>
@@ -82,6 +83,7 @@
             var inputBL = x.elements[3].value;
             var inputSW = x.elements[4].value;
             var inputHead = x.elements[5].value;
+            var inputYardage = x.elements[6].value;
             var bodyWidth = Math.round((inputBW / inputGW * 10));
             var bodyLength = Math.round(inputBL / inputGL * 10);
             var sleeveCirc = Math.round(inputSW / inputGW * 20);
@@ -166,11 +168,11 @@
             
             lgStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(bodyWidth*4)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2)+(sleeveCirc*4));
             
-            var dgYardage = Math.round(dgStitches/38 + 2);
-            var brYardage = Math.round(brStitches/38 + 2);
-            var myYardage = Math.round(myStitches/38 + 2);
-            var dtYardage = Math.round(dtStitches/38 + 2);
-            var lgYardage = Math.round(lgStitches/38);
+            var dgYardage = Math.round(dgStitches/inputYardage + 2);
+            var brYardage = Math.round(brStitches/inputYardage + 2);
+            var myYardage = Math.round(myStitches/inputYardage + 2);
+            var dtYardage = Math.round(dtStitches/inputYardage + 2);
+            var lgYardage = Math.round(lgStitches/inputYardage);
             
             
             document.getElementById("outputA").innerHTML = collarCirc;
