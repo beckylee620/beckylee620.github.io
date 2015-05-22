@@ -7,7 +7,7 @@ td {
 }
 
 body {
-    background-color:#B2F6D9; /*F9F9F9*/
+    background-color:#FCFCFC; /*F9F9F9*/
     color:#11B971; /*464646*/
 }
 
@@ -20,7 +20,7 @@ body {
     text-align:left;
     line-height:200%;
     font-size:3em;
-    color:#B2F6D9;
+    color:#FCFCFC;
 }
 
 .dropmenu {
