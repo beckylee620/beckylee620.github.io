@@ -7,12 +7,12 @@ td {
 }
 
 body {
-    background-color:#93F6CB; /*F9F9F9*/
-    color:#00D378; /*464646*/
+    background-color:#E0FDF1; /*F9F9F9*/
+    color:#59CF9C; /*464646*/
 }
 
 #header {
-    background-color:#39E99D; /*1A5A63*/
+    background-color:#59CF9C; /*1A5A63*/
     width:150%;
     height:10%;
     margin-top:-10px;
@@ -20,7 +20,7 @@ body {
     text-align:left;
     line-height:200%;
     font-size:3em;
-    color:#93F6CB;
+    color:#E0FDF1;
 }
 
 .dropmenu {
@@ -31,9 +31,9 @@ body {
 }
 
 .menubutton {
-    background-color:#FC96B5; /*AAB857*/
-    box-shadow:#F73D75 5px 5px;
-    color:#F73D75; /*464646*/
+    background-color:#FCB4CA; /*AAB857*/
+    box-shadow:#EF6790 5px 5px;
+    color:#EF6790; /*464646*/
     text-align:center;
     font-size:2em;
     border-radius:5px;
@@ -43,7 +43,7 @@ body {
 }
 
 .buttonlink {
-    color:#F73D75;
+    color:#EF6790;
     text-decoration:none;
     display:block;
     height:100%;
@@ -51,15 +51,15 @@ body {
 }
 
 a {
-    color:#AAB857;
+    color:#FFC16E;
 }
 
 .menubutton:hover {
-    background-color:#FA6592; /*CEE08C*/
-    box-shadow:#F73D75 5px 5px; /*464646*/
-    color:#F73D75;
+    background-color:#FEE1EA; /*CEE08C*/
+    box-shadow:#EF6790 5px 5px; /*464646*/
+    color:#EF6790;
 }
 
 .buttonlink:hover {
-    color:#F73D75;
+    color:#EF6790;
 }
