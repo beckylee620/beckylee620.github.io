@@ -7,12 +7,12 @@ td {
 }
 
 body {
-    background-color:#F9F9F9;
-    color:#464646;
+    background-color:#93F6CB; /*F9F9F9*/
+    color:#00D378; /*464646*/
 }
 
 #header {
-    background-color:#1A5A63;
+    background-color:#39E99D; /*1A5A63*/
     width:150%;
     height:10%;
     margin-top:-10px;
@@ -20,20 +20,20 @@ body {
     text-align:left;
     line-height:200%;
     font-size:3em;
-    color:#F9F9F9;
+    color:#93F6CB;
 }
 
 .dropmenu {
-    background-color:#F9F9F9;
+    background-color:#93F6CB;
     width:40%;
     float:right;
     clear:right;
 }
 
 .menubutton {
-    background-color:#AAB857;
-    box-shadow:#464646 5px 5px;
-    color:#464646;
+    background-color:#FC96B5; /*AAB857*/
+    box-shadow:#F73D75 5px 5px;
+    color:#F73D75; /*464646*/
     text-align:center;
     font-size:2em;
     border-radius:5px;
@@ -43,7 +43,7 @@ body {
 }
 
 .buttonlink {
-    color:#464646;
+    color:#F73D75;
     text-decoration:none;
     display:block;
     height:100%;
@@ -55,11 +55,11 @@ a {
 }
 
 .menubutton:hover {
-    background-color:#CEE08C;
-    box-shadow:#464646 5px 5px;
-    color:#464646;
+    background-color:#FA6592; /*CEE08C*/
+    box-shadow:#F73D75 5px 5px; /*464646*/
+    color:#F73D75;
 }
 
 .buttonlink:hover {
-    color:#464646;
+    color:#F73D75;
 }
