@@ -4,23 +4,6 @@ var hunWidth = $("#allHundreds").css("width");
 var offColor = "#F9F9F9";
 var onColor = "";
 
-var integerStart = -1004;
-var stageSetting  = "<tr>";
-var stageLeft = "<td class='stageNumbers'> ";
-var stageRight = " </td>";
-
-
-while (integerStart < 1005) {
-  var intermediate = (stageLeft.concat(integerStart.toString())).concat(stageRight);
-  stageSetting = stageSetting.concat(intermediate);
-  integerStart+=1;
-}
-
-stageSetting = stageSetting.concat("</tr>");
-
-$(".stageNumbers").css("width", (Math.round(hunWidth/3.7)).toString());
-
-$("#stage").html(stageSetting);
 
 
 var negFive = -5;
@@ -294,7 +277,7 @@ $( "#stage" ).draggable({
   drag:function() {
     var movedLeft = parseInt($(this).css('left'));
     var criticalDistanceRight = Math.round(parseInt($(this).css('width')) / 11);
-    var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / -11);
+    var criticalDistanceLeft = Math.round(parseInt($(this).css('width')) / 11);
     if(movedLeft>criticalDistanceRight) {
       countUp();
       buildBlocks(zero);
