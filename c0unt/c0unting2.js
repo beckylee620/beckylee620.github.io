@@ -281,11 +281,12 @@ $( "#stage" ).draggable({
     if(movedLeft > criticalDistanceRight) {
       countUp();
       buildBlocks(zero);
+      movedLeft = 0;
     } else if(movedLeft < criticalDistanceLeft) {
       countDown();
       buildBlocks(zero);
+      movedLeft = 0;
     }
-    movedLeft = 0;
   }
 });
 
