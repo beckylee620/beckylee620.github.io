@@ -282,10 +282,12 @@ $( "#stage" ).draggable({
       countUp();
       buildBlocks(zero);
       movedLeft = 0;
+      break;
     } else if(movedLeft < criticalDistanceLeft) {
       countDown();
       buildBlocks(zero);
       movedLeft = 0;
+      break;
     }
   }
 });
