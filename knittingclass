@@ -7,6 +7,7 @@
     <body>
         <div id="header">knitting class</div>
         
+        <div>
         <p>WEEK 1</p>
         <p>you'll learn...</p>
         <p><ol>
@@ -55,7 +56,7 @@
             </ol>
         </p>
         <p>WEEK 4</p>
-        <p>you'll choose one of these topics:</p>
+        <p>as a class, you'll choose one of these topics:</p>
         <p><ol>
                 <li>intro to cabling</li>
                 <li>intro to lace</li>
@@ -63,6 +64,7 @@
                 <li>intro to socks</li>
             </ol>
         </p>
+        </div>
 
     <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -71,7 +73,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
-    <script type='text/javascript' src='everypossiblesock.js'></script>
     <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
 
         
