@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>knitting class</title>
+    </head>
+    
+    <body>
+        <div id="header">knitting class</div>
+        
+        <p>WEEK 1</p>
+        <p>you'll learn...</p>
+        <p><ol>
+                <li>casting on</li>
+                <li>knitting</li>
+                <li>purling</li>
+                <li>stocking/stockinette stitch</li>
+            </ol>
+        </p>
+        <p>you'll need...</p>
+        <p><ol>
+                <li>one ball of yarn (50 grams or more); DK, aran, worsted, or chunky weight recommended</li>
+                <li>one set of straight knitting needles; size 3.5mm - 5mm recommended (or size recommended on yarn ball band)</li>
+            </ol>
+        </p>
+        <p>WEEK 2</p>
+        <p>you'll learn...</p>
+        <p><ol>
+                <li>binding off/casting off</li>
+                <li>weaving in ends</li>
+                <li>more basic stitches - rib, garter, seed</li>
+                <li>kfb (increase stitch)</li>
+                <li>yo (increase stitch)</li>
+                <li>k2tog/p2tog (decrease stitch)</li>
+                <li>slipping knitwise & purlwise</li>
+                <li>selvedge edge</li>
+            </ol>
+        </p>
+        <p>you'll need...</p>
+        <p><ol>
+                <li>one ball of yarn (50 grams or more); DK, aran, worsted, or chunky weight recommended</li>
+                <li>one set of straight knitting needles; size 3.5mm - 5mm recommended (or size recommended on yarn ball band)</li>
+            </ol>
+        </p>
+        <p>WEEK 3</p>
+        <p>you'll learn...</p>
+        <p><ol>
+                <li>knitting in the round</li>
+                <li>magic loop</li>
+            </ol>
+        </p>
+        <p>you'll need...</p>
+        <p><ol>
+                <li>one ball of yarn (50 grams or more); DK, aran, worsted, or chunky weight recommended</li>
+                <li>one circular knitting needle; size 3.5mm - 5mm recommended (or size recommended on yarn ball band)</li>
+            </ol>
+        </p>
+        <p>WEEK 4</p>
+        <p>you'll choose one of these topics:</p>
+        <p><ol>
+                <li>intro to cabling</li>
+                <li>intro to lace</li>
+                <li>intro to colorwork</li>
+                <li>intro to socks</li>
+            </ol>
+        </p>
+
+    <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+    <script type='text/javascript' src='everypossiblesock.js'></script>
+    <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+
+        
+    </body>
+</html>
