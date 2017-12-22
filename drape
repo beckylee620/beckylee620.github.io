@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>drape</title>
+    </head>
+    
+    <body>
+        <div id="header">drape</div>
+        
+        <div style="width:60%;display:inline-block;vertical-align:text-top;padding:1.2%">
+        <p>TIPS FOR CHOOSING MATERIALS</p>
+        <p>worsted-weight yarn is recommended for this garment; use a US size 7 (4.5mm) circular needle, or a needle size that gives you a gauge that's on the tight side</p>
+        <p>this is a long and heavy garment, so you should use relatively light yarn (merino superwash is not recommended)</p>
+        <p>for the most accurate measurements, block your swatch before measuring, and gently tug it lengthwise when blocking (pulling the top and bottom of the swatch) to simulate the effect of gravity</p>
+        <p>MEASUREMENT TIPS</p>
+        <p>garment width: for a drapey fit, use bust measurement with 6-18 inches (15-46 cm) of positive ease</p>
+        <p>garment length: enter the length that you would like the garment to hang from the collar in back</p>
+        <p>sleeve width: for a good fit, use middle bicep measurement with 0-1 inches (0-2.5 cm) of positive ease</p>
+        <p>cross back: enter the length from shoulder to shoulder</p>
+        <p>INSTRUCTIONS</p>
+        <p>all measurements can be entered as whole numbers or as decimals (fractions will not work)</p>
+        <p>it does not matter whether you use inches or centimeters - just use the same one for all four measurements</p>
+        <p><ol>
+                <li>knit a flat 20-stitch by 20-row garter stitch swatch using the yarn and needles you intend to use for your sweater</li>
+                <li>measure the width of the swatch (laid flat) and enter it into the appropriate box</li>
+                <li>measure the length of the swatch (laid flat) and enter it into the appropriate box</li>
+                <li>enter garment measurements into the appropriate boxes</li>
+                <li>hit "calculate"</li>
+                <li>mark down the output on your copy of the <a href="http://www.ravelry.com/designers/becky-lee" target="_blank">drape pattern</a> and get knitting!</li>
+            </ol>
+        </p>
+
+        </div>
+
+
+        <div style="width:15%;display:inline-block;vertical-align:text-top;padding:1.2%">
+        <p>INPUT</p>
+        <form id="inputForm" action="form_action.asp">
+            <p>swatch width: <input type="number" name="gaugeW"></p>
+            <p>swatch length: <input type="number" name="gaugeL"></p>
+            <p>garment width: <input type="number" name="garmentW"></p>
+            <p>garment length: <input type="number" name="garmentL"></p>
+            <p>sleeve width: <input type="number" name="sleeveW"></p>
+            <p>cross back: <input type="number" name="topW"></p>
+        </form>
+        
+        <button onclick="calculate()">calculate</button>
+
+        <script>
+        
+        input = document.getElementById("inputForm");
+        input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
+        function calculate() {
+            var x = document.getElementById("inputForm");
+            var gaugeW = x.elements[0].value;
+            var gaugeL = x.elements[1].value;
+            var garmentW = x.elements[2].value;
+            var garmentL = x.elements[3].value;
+            var sleeveW = x.elements[4].value;
+            var topW = x.elements[5].value;
+            //pick up here
+            var outputB = Math.round(footW / gaugeW * 10 * 0.95);
+            outputB -= (outputB % 2);
+            var outputA = Math.round(outputB / 4);
+            outputA += ((outputB - outputA) % 4);
+            var outputD = (outputB / 2) + (0.8 * outputA);
+            outputD -= (outputD - (outputB / 2)) % 2; //diff between D and 1/2(B) must always be even
+            var DPrime = (outputD - (outputB / 2)) / 2;
+            var outputE = DPrime + 1;
+            var outputG = outputA / 2;
+            var outputF = (outputD - outputG - (DPrime * 2)) / 2;
+            var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2));
+            var outputH = (outputB / 2) + 1;
+            
+            
+            document.getElementById("outputA").innerHTML = outputA;
+            document.getElementById("outputB").innerHTML = outputB;
+            document.getElementById("outputC").innerHTML = outputC;
+            document.getElementById("outputD").innerHTML = outputD;
+            document.getElementById("outputE").innerHTML = outputE;
+            document.getElementById("outputF").innerHTML = outputF;
+            document.getElementById("outputG").innerHTML = outputG;
+            document.getElementById("outputH").innerHTML = outputH;
+        }
+        </script>
+        </div>
+        
+        <div style="width:15%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
+        <p>OUTPUT</p>
+        <table>
+            <tr>
+                <td>A</td>
+                <td id="outputA"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td id="outputB"></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td id="outputC"></td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td id="outputD"></td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td id="outputE"></td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td id="outputF"></td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td id="outputG"></td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td id="outputH"></td>
+            </tr>
+        </table>
+        
+            
+        </div>
+
+
+        <p style="float:right">*toe-up, magic loop, two-at-a-time, short-row-turn-and-gusset-decrease-heel</p>
+
+
+    <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+    <script type='text/javascript' src='everypossiblesock.js'></script>
+    <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+
+        
+    </body>
+</html>
