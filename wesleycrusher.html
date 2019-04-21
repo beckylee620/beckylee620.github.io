@@ -3,10 +3,10 @@
     <head>
         <title>Wesley Crusher Sweater for Adults</title>
     </head>
-    
+
     <body>
         <div id="header">Wesley Crusher Sweater for Adults</div>
-        
+
         <div style="width:60%;display:inline-block;vertical-align:text-top;padding:1.2%">
         <p>INSTRUCTIONS</p>
         <p>all measurements can be entered as whole numbers or as decimals (fractions will not work). do not round your measurements, and take all of your measurements in inches. for sweater measurements, it's best to measure a sweater that fits well, rather than entering body measurements. doing a <a href="http://ysolda.com/blog/2014/6/5/swift-swatching-in-the-round" target="_blank">swift swatch in the round</a> will give you the most accurate gauge</p>
@@ -24,7 +24,7 @@
                 <li>mark down the output on your copy of the <a href="http://www.ravelry.com/patterns/library/wesley-crusher-sweater-for-adults" target="_blank">Wesley Crusher Sweaters for Adults</a> pattern and get knitting!</li>
             </ol>
         </p>
-    
+
         </div>
 
 
@@ -39,11 +39,11 @@
             <p>circumference of head: <input type="number" name="inputHead"></p>
             <p>stitches per yard (optional): <input type="number" name="inputYardage"></p>
         </form>
-        
+
         <button onclick="myFunction()">calculate</button>
 
         <script>
-        
+
         input = document.getElementById("inputForm");
         input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
         function myFunction() {
@@ -81,71 +81,71 @@
             var bodyStitches = bodyWidth - 6;
             var colorRows = Math.round(eachIncrease / 9);
             var grayRows = (eachIncrease - (colorRows * 3));
-            
+
             if (grayRows % 2 != 0) {
                 colorRows = colorRows - 1;
                 grayRows = (eachIncrease - (colorRows * 3));
             }
-            
+
             grayRows = grayRows / 2;
-            
-            
+
+
             var dgCounter = 1;
             var dgStitches = (collarCirc*2) + (collarCirc*collarRows) + (collarCirc);
 
             var increaseStitches = collarCirc + 8;
-            
+
             while (dgCounter < grayRows) {
                 dgStitches += (increaseStitches*2);
                 increaseStitches += 8;
                 dgCounter += 2;
             }
-            
+
             var brCounter = 1;
             var brStitches = 0;
-            
+
             while (brCounter < colorRows) {
                 brStitches += (increaseStitches*2);
                 increaseStitches += 8;
                 brCounter += 2;
             }
-            
+
             var myCounter = 1;
             var myStitches = 0;
-            
+
             while (myCounter < colorRows) {
                 myStitches += (increaseStitches*2);
                 increaseStitches += 8;
                 myCounter += 2;
             }
-            
+
             var dtCounter = 1;
             var dtStitches = 0;
-            
+
             while (dtCounter < colorRows) {
                 dtStitches += (increaseStitches*2);
                 increaseStitches += 8;
                 dtCounter += 2;
             }
-            
+
             var lgCounter = 1;
             var lgStitches = 0;
-            
+
             while (lgCounter < grayRows) {
                 lgStitches += (increaseStitches*2);
                 increaseStitches += 8;
                 lgCounter += 2;
             }
-            
+
             lgStitches += ((bodyWidth*2)+(bodyWidth*2*bodyBottom)+(bodyWidth*2*collarRows)+(bodyWidth*4)+(sleeveCirc*(bodyBottom*1.1)*2)+(sleeveCirc*collarRows*2)+(sleeveCirc*4));
-            
+
             var dgYardage = Math.round(dgStitches/inputYardage + 2);
             var brYardage = Math.round(brStitches/inputYardage + 2);
             var myYardage = Math.round(myStitches/inputYardage + 2);
             var dtYardage = Math.round(dtStitches/inputYardage + 2);
             var lgYardage = Math.round(lgStitches/inputYardage);
-            
-            
+
+
             document.getElementById("outputA").innerHTML = collarCirc;
             document.getElementById("outputB").innerHTML = collarRows;
             document.getElementById("outputC").innerHTML = increaseSetup;
@@ -167,7 +167,7 @@
         }
         </script>
         </div>
-        
+
         <div style="width:15%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
         <p>OUTPUT</p>
         <table>
@@ -255,7 +255,7 @@
 
 
     <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
@@ -264,6 +264,6 @@
     <script type='text/javascript' src='everypossiblesock.js'></script>
     <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
 
-        
+
     </body>
 </html>

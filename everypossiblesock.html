@@ -3,10 +3,10 @@
     <head>
         <title>every possible* sock</title>
     </head>
-    
+
     <body>
         <div id="header">every possible* sock</div>
-        
+
         <div style="width:60%;display:inline-block;vertical-align:text-top;padding:1.2%">
         <p>INSTRUCTIONS</p>
         <p>all measurements can be entered as whole numbers or as decimals (fractions will not work). do not round your measurements; be as precise as you can!</p>
@@ -33,11 +33,11 @@
             <p>circumference of foot: <input type="number" name="footW"></p>
             <p>length of foot: <input type="number" name="footL"></p>
         </form>
-        
+
         <button onclick="myFunction()">calculate</button>
 
         <script>
-        
+
         input = document.getElementById("inputForm");
         input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
 
@@ -59,8 +59,8 @@
             var outputF = (outputD - outputG - (DPrime * 2)) / 2;
             var outputC = Math.round((footL / gaugeL * 10) - ((outputB - outputA) / 2) - (outputD - (outputB / 2)) - (outputF * 2));
             var outputH = (outputB / 2) + 1;
-            
-            
+
+
             document.getElementById("outputA").innerHTML = outputA;
             document.getElementById("outputB").innerHTML = outputB;
             document.getElementById("outputC").innerHTML = outputC;
@@ -72,7 +72,7 @@
         }
         </script>
         </div>
-        
+
         <div style="width:15%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
         <p>OUTPUT</p>
         <table>
@@ -109,8 +109,8 @@
                 <td id="outputH"></td>
             </tr>
         </table>
-        
-            
+
+
         </div>
 
 
@@ -118,7 +118,7 @@
 
 
     <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
@@ -127,6 +127,6 @@
     <script type='text/javascript' src='everypossiblesock.js'></script>
     <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
 
-        
+
     </body>
 </html>
