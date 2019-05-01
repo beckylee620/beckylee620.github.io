@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cowlculator</title>
+    </head>
+
+    <body style="text-align:center">
+        <div id="header">
+          <div id="text_cutout_background">
+            <div id="text_cutout">COWLCULATOR</div>
+          </div>
+        </div>
+
+        <div style="text-align:center">INPUT</div>
+        <div id="input">
+        <form id="input_form" action="form_action.asp">
+            <div class="input_section">width of ten stitches <input type="number" name="gauge_width"></div>
+            <div class="input_section">length of ten rows <input type="number" name="gauge_length"></div>
+            <div class="input_section">(make divisible by) <input type="number" name="divisor"></div>
+            <div class="input_section">cowl circumference <input type="number" name="cowl_circ"></div>
+            <div class="input_section">cowl length <input type="number" name="cowl_length"></div>
+            <div class="input_section">(edging length) <input type="number" name="edging_length"></div>
+            <div class="input_section">(weight of swatch) <input type="number" name="swatch_weight"></div>
+            <div class="input_section">(weight of skein) <input type="number" name="skein_weight"></div>
+            <div class="input_section">(length of skein) <input type="number" name="skein_length"></div>
+        </form>
+
+        <button style="display:inline-block;width:40%;text-align:center" onclick="cowlculate()">calculate</button>
+
+        <script>
+
+        input = document.getElementById("inputForm");
+        input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
+        function cowlculate() {
+            var x = document.getElementById("inputForm");
+            var gauge_width = x.elements[0].value;
+            var gauge_length = x.elements[1].value;
+            var divisor = x.elements[2].value;
+            var cowl_circ = x.elements[3].value;
+            var cowl_length = x.elements[4].value;
+            var edging_length = x.elements[5].value;
+            var swatch_weight = x.elements[6].value;
+            var skein_weight = x.elements[7].value;
+            var skein_length = x.elements[8].value;
+            var cast_on = Math.round((cowl_circ / gauge_width * 10));
+            var edging_rows = Math.round(edging_length / gauge_length * 10);
+            var cowl_rows = Math.round((cowl_length - (edging_length * 2)) / gauge_length * 10)
+
+            document.getElementById("outputA").innerHTML = cast_on;
+            document.getElementById("outputB").innerHTML = edging_rows;
+            document.getElementById("outputC").innerHTML = cowl_rows;
+        }
+        </script>
+        </div>
+
+        <div style="width:95%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
+        <p>OUTPUT</p>
+        <table>
+            <tr>
+                <td>A</td>
+                <td id="outputA"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td id="outputB"></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td id="outputC"></td>
+            </tr>
+        </table>
+
+        </div>
+
+
+    <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+    </body>
+</html>
