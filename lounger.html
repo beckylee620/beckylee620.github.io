@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lounger</title>
+    </head>
+
+    <body style="text-align:center">
+        <div id="header">
+          <div id="text_cutout_background">
+            <div id="text_cutout">Lounger</div>
+          </div>
+        </div>
+
+        <div style="text-align:center">GAUGE</div>
+        <div id="input">
+        <form class="input_form" id="gauge_form" action="form_action.asp">
+            <div class="input_section">width of ten stitches<input type="number" name="gauge_width"></div>
+            <div class="input_section">length of ten rows<input type="number" name="gauge_length"></div>
+        </form>
+        </div>
+
+        <div style="text-align:center">BODY MEASUREMENTS</div>
+        <div id="input">
+        <form class="input_form" id="body_form" action="form_action.asp">
+            <div class="input_section">neck circumference<input type="number" name="gauge_width"></div>
+            <div class="input_section">shoulder width<input type="number" name="gauge_length"></div>
+            <div class="input_section">bicep circumference<input type="number" name="divisor"></div>
+            <div class="input_section">wrist circumference<input type="number" name="cowl_circ"></div>
+        </form>
+        </div>
+
+        <div style="text-align:center">GARMENT MEASUREMENTS</div>
+        <div id="input">
+        <form class="input_form" id="garment_form" action="form_action.asp">
+            <div class="input_section">body circumference<input type="number" name="gauge_width"></div>
+            <div class="input_section">back length<input type="number" name="gauge_length"></div>
+            <div class="input_section">sleeve length<input type="number" name="divisor"></div>
+            <div class="input_section">collar height<input type="number" name="divisor"></div>
+        </form>
+        </div>
+
+        <div style="text-align:center">DESIGN OPTIONS</div>
+        <div id="input">
+        <form class="input_form" id="design_form" action="form_action.asp">
+            <div class="input_section">make divisible by...<input type="number" name="gauge_width"></div>
+            <div class="input_section">...plus<input type="number" name="gauge_length"></div>
+            <div class="input_section">crossover point<input type="number" name="divisor"></div>
+            <div class="input_section">collar openness<input type="number" name="divisor"></div>
+        </form>
+        </div>
+
+        <button style="display:inline-block;width:40%;text-align:center" onclick="cowlculate()">calculate</button>
+
+        <script>
+
+/* vvvv this doesn't appear to work across a group of elements (seems to have worked on a single one)
+        input = document.getElementsByClassName("input_section");
+        input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
+/* ^^^^ */
+
+        function cowlculate() {
+            var gauge_form = document.getElementById("gauge_form");
+            var body_form = document.getElementById("body_form");
+            var garment_form = document.getElementById("garment_form");
+            var design_form = document.getElementById("design_form");
+
+            var gauge_width = gauge_form.elements[0].value;
+            var gauge_length = gauge_form.elements[1].value;
+            var neck_circumference = body_form.elements[0].value;
+            var shoulder_width = body_form.elements[2].value;
+            var bicep_circumference = body_form.elements[2].value;
+            var wrist_circumference = body_form.elements[3].value;
+            var body_circumference = garment_form.elements[0].value;
+            var back_length = garment_form.elements[1].value;
+            var sleeve_length = garment_form.elements[2].value;
+            var collar_height = garment_form.elements[3].value;
+            var divisor = design_form.elements[0].value;
+            var divisor_plus = design_form.elements[1].value;
+            var crossover_point = design_form.elements[2].value;
+            var collar_openness = design_form.elements[3].value;
+
+            var body_stitches = Math.round((body_circumference / gauge_width * 10));
+            var body_rows = Math.round(back_length / gauge_length * 10);
+            var sleeve_rows = Math.round(sleeve_length / gauge_length * 10)
+
+            document.getElementById("outputA").innerHTML = body_stitches;
+            document.getElementById("outputB").innerHTML = body_rows;
+            document.getElementById("outputC").innerHTML = sleeve_rows;
+        }
+        </script>
+        </div>
+
+        <div style="width:95%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
+        <p>OUTPUT</p>
+        <table>
+            <tr>
+                <td>A</td>
+                <td id="outputA"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td id="outputB"></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td id="outputC"></td>
+            </tr>
+        </table>
+
+        </div>
+
+
+    <link rel="stylesheet" type="text/css" href="patternstylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+    </body>
+</html>

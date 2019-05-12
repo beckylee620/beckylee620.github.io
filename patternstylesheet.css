@@ -65,9 +65,10 @@ body {
   background-image: url("images/joiner.jpeg");
   background-position: center;
   border-radius: 25px;
+  padding: 2%
 }
 
-#input_form {
+.input_form {
   display: inline-block;
   text-align: center;
   width: 100%;

@@ -29,10 +29,13 @@
 
         <script>
 
-        input = document.getElementById("inputForm");
+/*
+        input = document.getElementsByClassName("input_section");
         input.addEventListener("mousewheel", function(evt){ evt.preventDefault(); });
+*/
+
         function cowlculate() {
-            var x = document.getElementById("inputForm");
+            var x = document.getElementById("input_form");
             var gauge_width = x.elements[0].value;
             var gauge_length = x.elements[1].value;
             var divisor = x.elements[2].value;
