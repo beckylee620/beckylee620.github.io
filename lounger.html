@@ -81,19 +81,35 @@
             var collar_openness = design_form.elements[3].value;
             var folded_collar = design_form.elements[4].value;
 
-            var body_circumference_total = Math.round((body_circumference / gauge_width * 10));
-            var back_panel_total = Math.round((body_circumference_total / 2));
+/* problem if shoulder_width is wider than 1/2 body_circumference? */
+
+            var body_circumference_total = Math.round(body_circumference / gauge_width * 10);
+            var back_panel_stitches = Math.round(body_circumference_total / 2);
+            var front_panel_stitches_with_shoulder = Math.round(back_panel_stitches / 2);
+            var shoulder_to_shoulder_stitches = Math.round(shoulder_width / gauge_width * 10);
+            var front_panel_stitches_inside_shoulders = Math.round(shoulder_to_shoulder_stitches / 2);
+
             var body_rows_total = Math.round(back_length / gauge_length * 10);
+            var front_panel_increase_rate = Math.round(body_rows_total / front_panel_stitches_inside_shoulders);
+            /* not sure if this adjustment vvv will definitely always work out evenly - test */
+            /* maybe i should force it to round down? Math.round rounds to the nearest integer - Math.floor / Math.ceil */
+            var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
+            var front_panel_end_stitches = Math.round(front_panel_stitches_inside_shoulders * crossover_point / 100 + front_panel_stitches_with_shoulder);
+            var front_panel_start_stitches = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
+            var cast_on = Math.round(front_panel_start_stitches * 2 + back_panel_stitches);
+
+
+            var drop_sleeve_body_rows = Math.round(bicep_circumference * 1.1 / gauge_length * 10);
+            var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows);
+
+            var drop_sleeve_pickup_stitches = Math.round(bicep_circumference * 1.1 / gauge_width * 10);
             var sleeve_rows_total = Math.round(sleeve_length / gauge_length * 10);
-            var drop_sleeve_stitches = Math.round(bicep_circumference * 1.1 / gauge_width * 10);
-            var drop_sleeve_rows = Math.round(bicep_circumference * 1.1 / gauge_length * 10);
-            var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_rows);
 
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
-            document.getElementById("outputC").innerHTML = sleeve_rows_total;
-            document.getElementById("outputD").innerHTML = drop_sleeve_stitches;
-            document.getElementById("outputE").innerHTML = back_panel_total;
+            document.getElementById("outputC").innerHTML = front_panel_increase_rate;
+            document.getElementById("outputD").innerHTML = drop_sleeve_pickup_stitches;
+            document.getElementById("outputE").innerHTML = back_panel_stitches;
             document.getElementById("outputF").innerHTML = cast_on;
             document.getElementById("outputG").innerHTML = cast_on;
             document.getElementById("outputH").innerHTML = cast_on;
