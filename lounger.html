@@ -92,13 +92,18 @@
             /* not sure if these adjustments vvv will definitely always work out evenly - test */
             var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
             var body_rows_total = Math.round(back_length / gauge_length * 10);
-            var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
+            body_rows_total += (body_rows_total % 2);
+            var front_panel_increase_rate = Math.floor(body_rows_total / front_panel_increases);
             var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
             var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
             var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
             var drop_sleeve_body_rows = Math.round(bicep_circumference * 1.1 / gauge_length * 10);
+            drop_sleeve_body_rows -= (drop_sleeve_body_rows % 2)
             var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows);
+
+            /* is this right?? */
+            var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
 
             var drop_sleeve_pickup_stitches = Math.round(bicep_circumference * 1.1 / gauge_width * 10);
             var sleeve_rows_total = Math.round(sleeve_length / gauge_length * 10);
@@ -116,9 +121,9 @@
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
             document.getElementById("outputC").innerHTML = front_panel_increase_rate;
-            document.getElementById("outputD").innerHTML = drop_sleeve_pickup_stitches;
+            document.getElementById("outputD").innerHTML = front_panel_pickup_stitches;
             document.getElementById("outputE").innerHTML = back_panel_stitches;
-            document.getElementById("outputF").innerHTML = cast_on;
+            document.getElementById("outputF").innerHTML = drop_sleeve_body_rows;
             document.getElementById("outputG").innerHTML = cast_on;
             document.getElementById("outputH").innerHTML = cast_on;
             document.getElementById("outputI").innerHTML = cast_on;
