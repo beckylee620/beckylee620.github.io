@@ -44,7 +44,6 @@
         <form class="input_form" id="design_form" action="form_action.asp">
             <div class="input_section">make divisible by...<input type="number" name="divisor"></div>
             <div class="input_section">...plus<input type="number" name="divisor_plus"></div>
-            <div class="input_section">crossover point<input type="number" name="crossover_point"></div>
             <div class="input_section">collar openness<input type="number" name="collar_openness"></div>
             <div class="input_section">folded collar<input type="number" name="folded_collar"></div>
         </form>
@@ -77,33 +76,42 @@
             var cuff_circumference = garment_form.elements[4].value;
             var divisor = design_form.elements[0].value;
             var divisor_plus = design_form.elements[1].value;
-            var crossover_point = design_form.elements[2].value;
-            var collar_openness = design_form.elements[3].value;
-            var folded_collar = design_form.elements[4].value;
+            var collar_openness = design_form.elements[2].value;
+            var folded_collar = design_form.elements[3].value;
 
 /* problem if shoulder_width is wider than 1/2 body_circumference? */
+/* fyi Math.round rounds to the nearest integer - Math.floor / Math.ceil */
 
             var body_circumference_total = Math.round(body_circumference / gauge_width * 10);
             var back_panel_stitches = Math.round(body_circumference_total / 2);
-            var front_panel_stitches_with_shoulder = Math.round(back_panel_stitches / 2);
+            var front_panel_start_stitches = Math.round(back_panel_stitches * .05);
             var shoulder_to_shoulder_stitches = Math.round(shoulder_width / gauge_width * 10);
-            var front_panel_stitches_inside_shoulders = Math.round(shoulder_to_shoulder_stitches / 2);
+            var shoulder_short_row_stitches = Math.round((back_panel_stitches - shoulder_to_shoulder_stitches) / 2);
+            var front_panel_end_stitches = Math.round(back_panel_stitches - shoulder_short_row_stitches);
 
+            /* not sure if these adjustments vvv will definitely always work out evenly - test */
+            var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
             var body_rows_total = Math.round(back_length / gauge_length * 10);
-            var front_panel_increase_rate = Math.round(body_rows_total / front_panel_stitches_inside_shoulders);
-            /* not sure if this adjustment vvv will definitely always work out evenly - test */
-            /* maybe i should force it to round down? Math.round rounds to the nearest integer - Math.floor / Math.ceil */
+            var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
             var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
-            var front_panel_end_stitches = Math.round(front_panel_stitches_inside_shoulders * crossover_point / 100 + front_panel_stitches_with_shoulder);
-            var front_panel_start_stitches = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
-            var cast_on = Math.round(front_panel_start_stitches * 2 + back_panel_stitches);
-
+            var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
+            var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
             var drop_sleeve_body_rows = Math.round(bicep_circumference * 1.1 / gauge_length * 10);
             var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows);
 
             var drop_sleeve_pickup_stitches = Math.round(bicep_circumference * 1.1 / gauge_width * 10);
             var sleeve_rows_total = Math.round(sleeve_length / gauge_length * 10);
+
+            /* old front panel calculation */
+            // var front_panel_stitches_with_shoulder = Math.round(back_panel_stitches / 2);
+            // var shoulder_to_shoulder_stitches = Math.round(shoulder_width / gauge_width * 10);
+            // var front_panel_stitches_inside_shoulders = Math.round(shoulder_to_shoulder_stitches / 2);
+            // var front_panel_increase_rate = Math.round(body_rows_total / front_panel_stitches_inside_shoulders);
+            // var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
+            // var front_panel_end_stitches = Math.round(front_panel_stitches_inside_shoulders * crossover_point / 100 + front_panel_stitches_with_shoulder);
+            // var front_panel_start_stitches = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
+            // var cast_on = Math.round(front_panel_start_stitches * 2 + back_panel_stitches);
 
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
