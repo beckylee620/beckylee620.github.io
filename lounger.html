@@ -89,6 +89,13 @@
             var shoulder_short_row_stitches = Math.round((back_panel_stitches - shoulder_to_shoulder_stitches) / 2);
             var front_panel_end_stitches = Math.round(back_panel_stitches - shoulder_short_row_stitches);
 
+            /* currently making the rise of the shoulder triangle 1/4 the length of the run */
+            var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 4 / gauge_length * 10);
+            shoulder_short_row_rows -= (shoulder_short_row_rows % 2);
+            shoulder_short_row_iterations = Math.round(shoulder_short_row_rows / 2);
+            var shoulder_short_row_decreases = Math.floor(shoulder_short_row_stitches / shoulder_short_row_iterations);
+            var shoulder_short_row_leftovers = Math.round(shoulder_short_row_stitches % shoulder_short_row_decreases);
+
             /* not sure if these adjustments vvv will definitely always work out evenly - test */
             var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
             var body_rows_total = Math.round(back_length / gauge_length * 10);
@@ -100,13 +107,15 @@
 
             var drop_sleeve_body_rows = Math.round(bicep_circumference * 1.1 / gauge_length * 10);
             drop_sleeve_body_rows -= (drop_sleeve_body_rows % 2)
-            var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows);
+            /* note: there is an extra body row after the shoulder short rows that is not accounted for here */
+            var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows - shoulder_short_row_rows);
 
             /* is this right?? */
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
 
             var drop_sleeve_pickup_stitches = Math.round(bicep_circumference * 1.1 / gauge_width * 10);
             var sleeve_rows_total = Math.round(sleeve_length / gauge_length * 10);
+
 
             /* old front panel calculation */
             // var front_panel_stitches_with_shoulder = Math.round(back_panel_stitches / 2);
@@ -124,11 +133,11 @@
             document.getElementById("outputD").innerHTML = front_panel_pickup_stitches;
             document.getElementById("outputE").innerHTML = back_panel_stitches;
             document.getElementById("outputF").innerHTML = drop_sleeve_body_rows;
-            document.getElementById("outputG").innerHTML = cast_on;
-            document.getElementById("outputH").innerHTML = cast_on;
-            document.getElementById("outputI").innerHTML = cast_on;
-            document.getElementById("outputJ").innerHTML = cast_on;
-            document.getElementById("outputK").innerHTML = cast_on;
+            document.getElementById("outputG").innerHTML = shoulder_short_row_rows;
+            document.getElementById("outputH").innerHTML = shoulder_short_row_decreases;
+            document.getElementById("outputI").innerHTML = shoulder_short_row_iterations;
+            document.getElementById("outputJ").innerHTML = shoulder_short_row_leftovers;
+            document.getElementById("outputK").innerHTML = shoulder_short_row_stitches;
             document.getElementById("outputL").innerHTML = cast_on;
             document.getElementById("outputM").innerHTML = cast_on;
             document.getElementById("outputN").innerHTML = cast_on;
