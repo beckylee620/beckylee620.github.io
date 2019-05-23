@@ -88,6 +88,8 @@
             var shoulder_to_shoulder_stitches = Math.round(shoulder_width / gauge_width * 10);
             var shoulder_short_row_stitches = Math.round((back_panel_stitches - shoulder_to_shoulder_stitches) / 2);
             var front_panel_end_stitches = Math.round(back_panel_stitches - shoulder_short_row_stitches);
+            var front_panel_overlap = (front_panel_end_stitches - shoulder_short_row_stitches);
+            var front_panel_overlap_both = (front_panel_overlap * 2)
 
             /* currently making the rise of the shoulder triangle 1/4 the length of the run */
             var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 4 / gauge_length * 10);
@@ -106,9 +108,10 @@
             var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
             var drop_sleeve_body_rows = Math.round(bicep_circumference * 1.1 / gauge_length * 10);
-            drop_sleeve_body_rows -= (drop_sleeve_body_rows % 2)
-            /* note: there is an extra body row after the shoulder short rows that is not accounted for here */
-            var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows - shoulder_short_row_rows);
+            /* note: the extra 2 rows being subtracted here are the short row stitch pickup rows at the very top */
+            drop_sleeve_body_rows -= ((drop_sleeve_body_rows % 2) - 2);
+            /* it looks crazy but those same two rows need to be subtracted again here because they are not included in drop_sleeve_body_rows !! */
+            var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows - shoulder_short_row_rows - 2);
 
             /* is this right?? */
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
@@ -138,8 +141,8 @@
             document.getElementById("outputI").innerHTML = shoulder_short_row_iterations;
             document.getElementById("outputJ").innerHTML = shoulder_short_row_leftovers;
             document.getElementById("outputK").innerHTML = shoulder_short_row_stitches;
-            document.getElementById("outputL").innerHTML = cast_on;
-            document.getElementById("outputM").innerHTML = cast_on;
+            document.getElementById("outputL").innerHTML = front_panel_overlap;
+            document.getElementById("outputM").innerHTML = front_panel_overlap_both;
             document.getElementById("outputN").innerHTML = cast_on;
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputA").innerHTML = cast_on;
@@ -213,56 +216,56 @@
                 <td id="outputM"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>N</td>
+                <td id="outputN"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>O</td>
+                <td id="outputO"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>P</td>
+                <td id="outputP"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>Q</td>
+                <td id="outputQ"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>R</td>
+                <td id="outputR"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>S</td>
+                <td id="outputS"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>T</td>
+                <td id="outputT"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>U</td>
+                <td id="outputU"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>V</td>
+                <td id="outputV"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>W</td>
+                <td id="outputW"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>X</td>
+                <td id="outputX"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>Y</td>
+                <td id="outputY"></td>
             </tr>
             <tr>
-                <td>C</td>
-                <td id="outputC"></td>
+                <td>Z</td>
+                <td id="outputZ"></td>
             </tr>
         </table>
 
