@@ -36,6 +36,7 @@
             <div class="input_section">collar height<input type="number" name="collar_height"></div>
             <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
             <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
+            <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
         </form>
         </div>
 
@@ -74,6 +75,7 @@
             var collar_height = garment_form.elements[2].value;
             var sleeve_length = garment_form.elements[3].value;
             var cuff_circumference = garment_form.elements[4].value;
+            var cuff_length = garment_form.elements[5].value;
             var divisor = design_form.elements[0].value;
             var divisor_plus = design_form.elements[1].value;
             var collar_openness = design_form.elements[2].value;
@@ -89,7 +91,15 @@
             var shoulder_short_row_stitches = Math.round((back_panel_stitches - shoulder_to_shoulder_stitches) / 2);
             var front_panel_end_stitches = Math.round(back_panel_stitches - shoulder_short_row_stitches);
             var front_panel_overlap = (front_panel_end_stitches - shoulder_short_row_stitches);
-            var front_panel_overlap_both = (front_panel_overlap * 2)
+
+            var collar_minimum_stitches = Math.round((neck_circumference / 2) / gauge_width * 10);
+            var collar_maximum_stitches = Math.round(shoulder_to_shoulder_stitches - 2); /* leave one each side */
+            var collar_wiggle_room = Math.round(collar_maximum_stitches - collar_minimum_stitches);
+            var collar_stitches = Math.round(collar_minimum_stitches + ((collar_openness / 100) * collar_wiggle_room));
+            var shoulder_seam_stitches = Math.round((shoulder_to_shoulder_stitches - collar_stitches) / 2);
+            var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
+            var collar_stitches_circumference = (collar_stitches * 2);
+            var collar_rows = (folded_collar = 0) ? Math.round(collar_height / gauge_length * 10) : Math.round((collar_height / gauge_length * 10) * 2);
 
             /* currently making the rise of the shoulder triangle 1/4 the length of the run */
             var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 4 / gauge_length * 10);
@@ -115,9 +125,17 @@
 
             /* is this right?? */
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
+            var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
-            var drop_sleeve_pickup_stitches = Math.round(bicep_circumference * 1.1 / gauge_width * 10);
-            var sleeve_rows_total = Math.round(sleeve_length / gauge_length * 10);
+            var drop_sleeve_pickup_stitches = Math.round((bicep_circumference * 1.1) / gauge_width * 10);
+            drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
+            var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
+            var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
+            var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
+            var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
+            var sleeve_rows_total = Math.round((sleeve_length - hypotenuse) / gauge_length * 10);
+            var sleeve_rows_straight = Math.round(sleeve_rows_total / 2);
+
 
 
             /* old front panel calculation */
@@ -132,7 +150,7 @@
 
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
-            document.getElementById("outputC").innerHTML = front_panel_increase_rate;
+            document.getElementById("outputC").innerHTML = rows_between_front_panel_increases;
             document.getElementById("outputD").innerHTML = front_panel_pickup_stitches;
             document.getElementById("outputE").innerHTML = back_panel_stitches;
             document.getElementById("outputF").innerHTML = drop_sleeve_body_rows;
@@ -141,15 +159,15 @@
             document.getElementById("outputI").innerHTML = shoulder_short_row_iterations;
             document.getElementById("outputJ").innerHTML = shoulder_short_row_leftovers;
             document.getElementById("outputK").innerHTML = shoulder_short_row_stitches;
-            document.getElementById("outputL").innerHTML = front_panel_overlap;
-            document.getElementById("outputM").innerHTML = front_panel_overlap_both;
-            document.getElementById("outputN").innerHTML = cast_on;
-            document.getElementById("outputA").innerHTML = cast_on;
-            document.getElementById("outputA").innerHTML = cast_on;
-            document.getElementById("outputA").innerHTML = cast_on;
-            document.getElementById("outputA").innerHTML = cast_on;
-            document.getElementById("outputA").innerHTML = cast_on;
-            document.getElementById("outputA").innerHTML = cast_on;
+            document.getElementById("outputL").innerHTML = shoulder_seam_stitches;
+            document.getElementById("outputM").innerHTML = shoulder_seam_stitches_both;
+            document.getElementById("outputN").innerHTML = collar_stitches;
+            document.getElementById("outputO").innerHTML = collar_rows;
+            document.getElementById("outputP").innerHTML = drop_sleeve_pickup_stitches_halved;
+            document.getElementById("outputQ").innerHTML = drop_sleeve_pickup_stitches;
+            document.getElementById("outputR").innerHTML = cast_on;
+            document.getElementById("outputS").innerHTML = cast_on;
+            document.getElementById("outputT").innerHTML = cast_on;
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputA").innerHTML = cast_on;
