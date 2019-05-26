@@ -89,14 +89,15 @@
             var front_panel_start_stitches = Math.round(back_panel_stitches * .05);
             var shoulder_to_shoulder_stitches = Math.round(shoulder_width / gauge_width * 10);
             var shoulder_short_row_stitches = Math.round((back_panel_stitches - shoulder_to_shoulder_stitches) / 2);
+            var shoulder_to_shoulder_stitches_adjusted = (back_panel_stitches - (shoulder_short_row_stitches * 2 ));
             var front_panel_end_stitches = Math.round(back_panel_stitches - shoulder_short_row_stitches);
 
             var collar_minimum_stitches = Math.round((neck_circumference / 2) / gauge_width * 10);
-            var collar_maximum_stitches = Math.round(shoulder_to_shoulder_stitches - 2); /* leave one each side */
+            var collar_maximum_stitches = Math.round(shoulder_to_shoulder_stitches_adjusted - 2); /* leave one each side */
             var collar_wiggle_room = Math.round(collar_maximum_stitches - collar_minimum_stitches);
             var collar_stitches = Math.round(collar_minimum_stitches + ((collar_openness / 100) * collar_wiggle_room));
-            var shoulder_seam_stitches = Math.floor((shoulder_to_shoulder_stitches - collar_stitches) / 2);
-            var collar_stitches_adjusted = (shoulder_to_shoulder_stitches - (shoulder_seam_stitches * 2));
+            var shoulder_seam_stitches = Math.floor((shoulder_to_shoulder_stitches_adjusted - collar_stitches) / 2);
+            var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
             var collar_stitches_circumference = (collar_stitches_adjusted * 2);
             var collar_rows = (folded_collar = 0) ? Math.round(collar_height / gauge_length * 10) : Math.round((collar_height / gauge_length * 10) * 2);
@@ -119,8 +120,8 @@
 
             var drop_sleeve_body_rows = Math.round((bicep_circumference * 1.1 / 2) / gauge_length * 10);
             /* note: the extra 2 rows being subtracted here are the short row stitch pickup rows at the very top */
-            drop_sleeve_body_rows -= ((drop_sleeve_body_rows % 2) - 2);
-            /* it looks crazy but those same two rows need to be subtracted again here because they are not included in drop_sleeve_body_rows !! */
+            drop_sleeve_body_rows -= ((drop_sleeve_body_rows % 2) + 2);
+            /* it looks crazy but those same two rows need to be subtracted again here because they are NOT included in drop_sleeve_body_rows !! */
             var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows - shoulder_short_row_rows - 2);
 
             /* is this right?? */
