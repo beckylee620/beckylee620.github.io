@@ -100,14 +100,21 @@
             var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
             var collar_stitches_circumference = (collar_stitches_adjusted * 2);
-            var collar_rows = (folded_collar = 0) ? Math.round(collar_height / gauge_length * 10) : Math.round((collar_height / gauge_length * 10) * 2);
+            if (folded_collar == 0) {
+              var collar_rows = Math.round(collar_height / gauge_length * 10);
+            } else {
+              var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
+            }
 
-            /* currently making the rise of the shoulder triangle 1/4 the length of the run */
-            var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 4 / gauge_length * 10);
+            /* currently making the rise of the shoulder triangle 1/2 the length of the run */
+            var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 2 / gauge_length * 10);
             shoulder_short_row_rows -= (shoulder_short_row_rows % 2);
             var shoulder_short_row_iterations = Math.round(shoulder_short_row_rows / 2);
             var shoulder_short_row_decreases = Math.floor(shoulder_short_row_stitches / shoulder_short_row_iterations);
-            var shoulder_short_row_leftovers = Math.round(shoulder_short_row_stitches % shoulder_short_row_decreases);
+            var shoulder_short_row_leftovers = (shoulder_short_row_stitches % shoulder_short_row_decreases);
+            if (shoulder_short_row_leftovers != 0) {
+              (shoulder_short_row_rows += 2);
+            }
 
             /* not sure if these adjustments vvv will definitely always work out evenly - test */
             var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
@@ -118,7 +125,7 @@
             var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
             var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
-            var drop_sleeve_body_rows = Math.round((bicep_circumference * 1.1 / 2) / gauge_length * 10);
+            var drop_sleeve_body_rows = Math.round((bicep_circumference * 1.05 / 2) / gauge_length * 10);
             /* note: the extra 2 rows being subtracted here are the short row stitch pickup rows at the very top */
             drop_sleeve_body_rows -= ((drop_sleeve_body_rows % 2) + 2);
             /* it looks crazy but those same two rows need to be subtracted again here because they are NOT included in drop_sleeve_body_rows !! */
