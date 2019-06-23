@@ -44,9 +44,6 @@
         <div id="input">
         <form class="input_form" id="design_form" action="form_action.asp">
             <div class="input_section">make divisible by...<input type="number" name="divisor"></div>
-            <div class="input_section">...plus<input type="number" name="divisor_plus"></div>
-            <div class="input_section">collar openness<input type="number" name="collar_openness"></div>
-            <div class="input_section">folded collar<input type="number" name="folded_collar"></div>
         </form>
         </div>
 
@@ -77,9 +74,6 @@
             var cuff_circumference = garment_form.elements[4].value;
             var cuff_length = garment_form.elements[5].value;
             var divisor = design_form.elements[0].value;
-            var divisor_plus = design_form.elements[1].value;
-            var collar_openness = design_form.elements[2].value;
-            var folded_collar = design_form.elements[3].value;
 
 /* problem if shoulder_width is wider than 1/2 body_circumference? */
 /* fyi Math.round rounds to the nearest integer - Math.floor / Math.ceil */
@@ -95,16 +89,12 @@
             var collar_minimum_stitches = Math.round((neck_circumference / 2) / gauge_width * 10);
             var collar_maximum_stitches = Math.round(shoulder_to_shoulder_stitches_adjusted - 2); /* leave one each side */
             var collar_wiggle_room = Math.round(collar_maximum_stitches - collar_minimum_stitches);
-            var collar_stitches = Math.round(collar_minimum_stitches + ((collar_openness / 100) * collar_wiggle_room));
+            var collar_stitches = Math.round(collar_minimum_stitches + (0.4 * collar_wiggle_room));
             var shoulder_seam_stitches = Math.floor((shoulder_to_shoulder_stitches_adjusted - collar_stitches) / 2);
             var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
             var collar_stitches_circumference = (collar_stitches_adjusted * 2);
-            if (folded_collar == 0) {
-              var collar_rows = Math.round(collar_height / gauge_length * 10);
-            } else {
-              var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
-            }
+            var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
 
             /* currently making the rise of the shoulder triangle 1/2 the length of the run */
             var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 2 / gauge_length * 10);
