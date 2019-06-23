@@ -25,6 +25,7 @@
             <div class="input_section">neck circumference<input type="number" name="neck_circumference"></div>
             <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
             <div class="input_section">bicep circumference<input type="number" name="bicep_circumference"></div>
+            <div class="input_section">wrist circumference<input type="number" name="wrist_circumference"></div>
         </form>
         </div>
 
@@ -33,9 +34,8 @@
         <form class="input_form" id="garment_form" action="form_action.asp">
             <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
             <div class="input_section">back length<input type="number" name="back_length"></div>
-            <div class="input_section">collar height<input type="number" name="collar_height"></div>
-            <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
-            <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
+            <div class="input_section">full sleeve length<input type="number" name="full_sleeve_length"></div>
+            <div class="input_section">sweater sleeve length<input type="number" name="sweater_sleeve_length"></div>
             <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
         </form>
         </div>
@@ -69,10 +69,9 @@
             var bicep_circumference = body_form.elements[2].value;
             var body_circumference = garment_form.elements[0].value;
             var back_length = garment_form.elements[1].value;
-            var collar_height = garment_form.elements[2].value;
-            var sleeve_length = garment_form.elements[3].value;
-            var cuff_circumference = garment_form.elements[4].value;
-            var cuff_length = garment_form.elements[5].value;
+            var full_sleeve_length = garment_form.elements[2].value;
+            var sweater_sleeve_length = garment_form.elements[3].value;
+            var cuff_length = garment_form.elements[4].value;
             var divisor = design_form.elements[0].value;
 
 /* problem if shoulder_width is wider than 1/2 body_circumference? */
@@ -133,7 +132,7 @@
             var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
             var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
             var cuff_rows = Math.round(cuff_length / gauge_length * 10);
-            var cuff_stitches = Math.round(cuff_circumference / gauge_width * 10);
+            var cuff_stitches = Math.round((wrist_circumference * 1.1) / gauge_width * 10);
             cuff_stitches -= (cuff_stitches % 2);
             var sleeve_rows_total = Math.round(((sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
             var sleeve_rows_straight = Math.round(sleeve_rows_total / 3);
