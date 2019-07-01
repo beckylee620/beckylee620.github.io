@@ -97,9 +97,10 @@
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
             var collar_stitches_circumference = (collar_stitches_adjusted * 2);
 /* edit the relevant input section to (unit of measurement) to be a drop-down menu at some point */
-            var collar_height = 1.5;
-            if (unit = "centimeters") {
-              collar_height = 4;
+            if (unit == "centimeters") {
+              var collar_height = 4;
+            } else if (unit == "inches") {
+              var collar_height = 1.5;
             }
             var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
 
@@ -138,15 +139,15 @@
             var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
             var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
             var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
+            /* just checking, this returns a length measurement and not a number of stitches right? */
             var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
             var cuff_rows = Math.round(cuff_length / gauge_length * 10);
             cuff_rows -= (cuff_rows % 2);
             var full_cuff_stitches = Math.round((wrist_circumference * 1.1) / gauge_width * 10);
             var full_sleeve_rows = Math.round(((full_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
-            full_sleeve_rows -= (full_sleeve_rows % 2);
             var actual_sleeve_rows = Math.round(((sweater_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
             var full_sleeve_rows_decreasing = Math.round(((full_sleeve_length / gauge_length * 10) / 2) - cuff_rows);
-            var sleeve_rows_straight = full_sleeve_rows - full_sleeve_rows_decreasing - cuff_rows;
+            var sleeve_rows_straight = (full_sleeve_rows - full_sleeve_rows_decreasing - cuff_rows);
             var full_sleeve_decreases = (drop_sleeve_pickup_stitches - full_cuff_stitches);
             var sleeve_decrease_rate = Math.round(full_sleeve_rows_decreasing / full_sleeve_decreases);
             var sleeve_decreases_adjusted = Math.round(full_sleeve_rows_decreasing / sleeve_decrease_rate);
@@ -154,13 +155,15 @@
             var full_cuff_stitches_adjusted = Math.round(drop_sleeve_pickup_stitches - sleeve_decreases_adjusted);
             full_cuff_stitches_adjusted -= (full_cuff_stitches_adjusted % 2);
             var rows_between_sleeve_decreases = (sleeve_decrease_rate - 1);
-            var actual_cuff_stitches = drop_sleeve_pickup_stitches;
-            /* only doing the stuff in the if statement if the sleeve rows before cuff amount to more than the non-decreasing section - accounting for custom decrease rate!! */
+            actual_sleeve_rows -= (actual_sleeve_rows % sleeve_decrease_rate);
+            /* only doing the stuff in the if statement if the sleeve rows before cuff amount to more than the non-decreasing section - accounting for decrease rate!! */
             if (sleeve_rows_straight < (actual_sleeve_rows - cuff_rows - rows_between_sleeve_decreases)) {
               var sleeve_rows_decreasing = Math.round(actual_sleeve_rows - sleeve_rows_straight);
-              /* sleeve_rows_decreasing should already be divisible by stuff?? */
               sleeve_rows_decreasing -= (sleeve_rows_decreasing % sleeve_decrease_rate);
-              actual_cuff_stitches = ??;
+              var actual_cuff_stitches = Math.round(actual_sleeve_rows - (sleeve_rows_decreasing / sleeve_decrease_rate));
+            } else {
+              var sleeve_rows_decreasing = 0
+              var actual_cuff_stitches = drop_sleeve_pickup_stitches;
             }
 
             document.getElementById("outputA").innerHTML = cast_on;
@@ -182,7 +185,7 @@
             document.getElementById("outputQ").innerHTML = drop_sleeve_pickup_stitches;
             document.getElementById("outputR").innerHTML = sleeve_rows_straight;
             document.getElementById("outputS").innerHTML = rows_between_sleeve_decreases;
-            document.getElementById("outputT").innerHTML = actual_cuff_stitches_adjusted;
+            document.getElementById("outputT").innerHTML = actual_cuff_stitches;
             document.getElementById("outputU").innerHTML = cuff_rows;
         }
         </script>
