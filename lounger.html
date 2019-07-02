@@ -77,6 +77,15 @@
             var cuff_length = garment_form.elements[4].value;
             var divisor = design_form.elements[0].value;
 
+            /* edit the relevant input section to (unit of measurement) to be a drop-down menu at some point */
+            if (unit == "centimeters") {
+              var collar_height = 4;
+              var arm_ease = 2.5;
+            } else if (unit == "inches") {
+              var collar_height = 1.5;
+              var arm_ease = 1;
+            }
+
 /* problem if shoulder_width is wider than 1/2 body_circumference? */
 /* fyi Math.round rounds to the nearest integer - Math.floor / Math.ceil */
 
@@ -96,12 +105,6 @@
             var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
             var collar_stitches_circumference = (collar_stitches_adjusted * 2);
-/* edit the relevant input section to (unit of measurement) to be a drop-down menu at some point */
-            if (unit == "centimeters") {
-              var collar_height = 4;
-            } else if (unit == "inches") {
-              var collar_height = 1.5;
-            }
             var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
 
             /* currently making the rise of the shoulder triangle 1/2 the length of the run */
@@ -123,7 +126,7 @@
             var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
             var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
-            var drop_sleeve_body_rows = Math.round((bicep_circumference * 1.1 / 2) / gauge_length * 10);
+            var drop_sleeve_body_rows = Math.round(((bicep_circumference + arm_ease) / 2) / gauge_length * 10);
             /* note: the extra 2 rows being subtracted here account for the short row stitch pickup rows at the very top */
             drop_sleeve_body_rows -= ((drop_sleeve_body_rows % 2) + 2);
             /* it looks crazy but those same two rows need to be subtracted again here because they are NOT included in drop_sleeve_body_rows !! */
@@ -133,8 +136,10 @@
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
             var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
-            var drop_sleeve_pickup_stitches = Math.round((bicep_circumference * 1.1) / gauge_width * 10);
-            drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % divisor);
+            var drop_sleeve_pickup_stitches = Math.round((bicep_circumference + arm_ease) / gauge_width * 10);
+            if (divisor > 0){
+              drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % divisor);
+            }
             drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
             var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
             var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
@@ -143,7 +148,7 @@
             var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
             var cuff_rows = Math.round(cuff_length / gauge_length * 10);
             cuff_rows -= (cuff_rows % 2);
-            var full_cuff_stitches = Math.round((wrist_circumference * 1.1) / gauge_width * 10);
+            var full_cuff_stitches = Math.round((wrist_circumference + arm_ease) / gauge_width * 10);
             var full_sleeve_rows = Math.round(((full_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
             var actual_sleeve_rows = Math.round(((sweater_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
             var full_sleeve_rows_decreasing = Math.round(((full_sleeve_length / gauge_length * 10) / 2) - cuff_rows);
@@ -158,9 +163,9 @@
             actual_sleeve_rows -= (actual_sleeve_rows % sleeve_decrease_rate);
             /* only doing the stuff in the if statement if the sleeve rows before cuff amount to more than the non-decreasing section - accounting for decrease rate!! */
             if (sleeve_rows_straight < (actual_sleeve_rows - cuff_rows - rows_between_sleeve_decreases)) {
-              var sleeve_rows_decreasing = Math.round(actual_sleeve_rows - sleeve_rows_straight);
+              var sleeve_rows_decreasing = Math.round(actual_sleeve_rows - cuff_rows - sleeve_rows_straight);
               sleeve_rows_decreasing -= (sleeve_rows_decreasing % sleeve_decrease_rate);
-              var actual_cuff_stitches = Math.round(actual_sleeve_rows - (sleeve_rows_decreasing / sleeve_decrease_rate));
+              var actual_cuff_stitches = Math.round(drop_sleeve_pickup_stitches - (sleeve_rows_decreasing / sleeve_decrease_rate));
             } else {
               var sleeve_rows_decreasing = 0
               var actual_cuff_stitches = drop_sleeve_pickup_stitches;
