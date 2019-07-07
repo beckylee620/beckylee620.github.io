@@ -14,8 +14,9 @@
         <div style="text-align:center">GAUGE</div>
         <div id="input">
         <form class="input_form" id="gauge_form" action="form_action.asp">
-            <div class="input_section">width of ten stitches<input type="number" name="gauge_width"></div>
-            <div class="input_section">length of ten rows<input type="number" name="gauge_length"></div>
+            <div class="input_section">stitches per length<input type="number" name="stitches_per_length"></div>
+                <div class="input_section">width of 10 stitches<input type="number" name="gauge_width"></div>
+            <div class="input_section">length of 10 rows<input type="number" name="gauge_length"></div>
         </form>
         </div>
 
@@ -24,6 +25,7 @@
         <form class="input_form" id="body_form" action="form_action.asp">
             <div class="input_section">neck circumference<input type="number" name="neck_circumference"></div>
             <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
+            <div class="input_section">bicep length<input type="number" name="bicep_length"></div>
         </form>
         </div>
 
@@ -32,21 +34,20 @@
         <form class="input_form" id="garment_form" action="form_action.asp">
             <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
             <div class="input_section">back length<input type="number" name="back_length"></div>
-            <div class="input_section">full sleeve length<input type="number" name="full_sleeve_length"></div>
-            <div class="input_section">full sleeve cuff circumference<input type="number" name="full_cuff_circumference"></div>
-            <div class="input_section">sweater sleeve length<input type="number" name="sweater_sleeve_length"></div>
-            <div class="input_section">sweater sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
+            <div class="input_section">collar height<input type="number" name="collar_height"></div>
+            <div class="input_section">sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
+            <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
+            <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
             <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
-            <div class="input_section">collar height<input type="number" name="">collar_height</div>
         </form>
         </div>
 
-        <div style="text-align:center">DESIGN OPTIONS</div>
+        <!-- <div style="text-align:center">DESIGN OPTIONS</div>
         <div id="input">
         <form class="input_form" id="design_form" action="form_action.asp">
             <div class="input_section">make divisible by...<input type="number" name="divisor"></div>
         </form>
-        </div>
+        </div> -->
 
         <button style="display:inline-block;width:40%;text-align:center" onclick="calculate()">calculate</button>
 
@@ -61,18 +62,24 @@
             var gauge_form = document.getElementById("gauge_form");
             var body_form = document.getElementById("body_form");
             var garment_form = document.getElementById("garment_form");
-            var design_form = document.getElementById("design_form");
+            // var design_form = document.getElementById("design_form");
 
-            var gauge_width = gauge_form.elements[0].value;
-            var gauge_length = gauge_form.elements[1].value;
+            var stitches_per_length = gauge_form.elements[0].value;
+            var gauge_width = gauge_form.elements[1].value;
+            var gauge_length = gauge_form.elements[2].value;
+
             var neck_circumference = body_form.elements[0].value;
             var shoulder_width = body_form.elements[1].value;
+            var bicep_length = body_form.elements[2].value;
+
             var body_circumference = garment_form.elements[0].value;
             var back_length = garment_form.elements[1].value;
-            var full_sleeve_length = garment_form.elements[2].value;
-            var sweater_sleeve_length = garment_form.elements[3].value;
-            var cuff_length = garment_form.elements[4].value;
-            var divisor = design_form.elements[0].value;
+            var collar_height = garment_form.elements[2].value;
+            var sleeve_bicep_circumference = garment_form.elements[3].value;
+            var sleeve_length = garment_form.elements[4].value;
+            var cuff_circumference = garment_form.elements[5].value;
+            var cuff_length = garment_form.elements[6].value;
+            // var divisor = design_form.elements[0].value;
 
 /* problem if shoulder_width is wider than 1/2 body_circumference? */
 /* fyi Math.round rounds to the nearest integer - Math.floor / Math.ceil */
@@ -114,58 +121,81 @@
             var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
             var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
-            var drop_sleeve_body_rows = Math.round((sleeve_bicep_circumference / 2) / gauge_length * 10);
+            var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
+            var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
+            /* just checking, this returns a length measurement and not a number of stitches right? */
+            var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
+
+/// NEW SLEEVE CALCULATIONS
+
+            var cuff_rows = Math.round(cuff_length / gauge_length * 10);
+            cuff_rows -= (cuff_rows % 2);
+            var cuff_stitches = Math.round(cuff_circumference / gauge_width * 10);
+            cuff_stitches -= (cuff_stitches % 2);
+            var sleeve_minus_cuff = Math.round(sleeve_length - cuff_length);
+            var sleeve_rows_straight = Math.round((bicep_length - hypotenuse) / gauge_length * 10);
+            if (sleeve_minus_cuff < hypotenuse) { // just pick up and do cuff (make sure everything else is zero)
+              sleeve_rows_straight = 0;
+              var drop_sleeve_pickup_circumference = cuff_circumference;
+              var drop_sleeve_pickup_stitches = cuff_stitches;
+              var rows_between_sleeve_decreases = 0;
+            } else {
+                if (sleeve_rows_straight < 0) { // just start decreasing right away
+                  sleeve_rows_straight = 0;
+                }
+              var drop_sleeve_pickup_circumference = sleeve_bicep_circumference;
+              var drop_sleeve_pickup_stitches = Math.round(drop_sleeve_pickup_circumference / gauge_width * 10);
+              drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
+              var sleeve_rows_minus_cuff = Math.round((sleeve_minus_cuff - hypotenuse) / gauge_length * 10);
+              var sleeve_rows_decreasing = Math.round(sleeve_rows_minus_cuff - sleeve_rows_straight);
+              var sleeve_decreases = (drop_sleeve_pickup_stitches - cuff_stitches);
+              var sleeve_decrease_rate = Math.round(sleeve_rows_decreasing / sleeve_decreases);
+              var sleeve_decreases_adjusted = Math.round(sleeve_rows_decreasing / sleeve_decrease_rate);
+              sleeve_decreases_adjusted -= (sleeve_decreases_adjusted % 2);
+              var cuff_stitches_adjusted = Math.round(drop_sleeve_pickup_stitches - sleeve_decreases_adjusted);
+              cuff_stitches_adjusted -= (cuff_stitches_adjusted % 2);
+              var rows_between_sleeve_decreases = (sleeve_decrease_rate - 1);
+            }
+
+            var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
+            var drop_sleeve_body_rows = Math.round((drop_sleeve_pickup_circumference / 2) / gauge_length * 10);
             /* note: the extra 2 rows being subtracted here account for the short row stitch pickup rows at the very top */
             drop_sleeve_body_rows -= ((drop_sleeve_body_rows % 2) + 2);
             /* it looks crazy but those same two rows need to be subtracted again here because they are NOT included in drop_sleeve_body_rows !! */
             var body_rows_before_sleeve = Math.round(body_rows_total - drop_sleeve_body_rows - shoulder_short_row_rows - 2);
+            var drop_sleeve_pickup_stitches = Math.round(drop_sleeve_pickup_circumference / gauge_width * 10);
+            drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
+            var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
+
 
 /* check this - does the flooring ever cause problems?? ...check same with the sleeve decrease rate */
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
             var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
-            var drop_sleeve_pickup_stitches = Math.round(sleeve_bicep_circumference / gauge_width * 10);
-            if (divisor > 0){
-              drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % divisor);
-            }
-            drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
-            var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
-            var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
-            var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
-            /* just checking, this returns a length measurement and not a number of stitches right? */
-            var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
-            var cuff_rows = Math.round(cuff_length / gauge_length * 10);
-            cuff_rows -= (cuff_rows % 2);
-            var sleeve_rows = Math.round(((sweater_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
-             /* calculate decreases -
-             get rid of the old stuff
-             add top arm body measurement: from top of shoulder to inside of elbow with arm at 90 degrees
-             if hypotenuse is bigger than top arm measurement - recalculate pickup stitches? (or calculate that after?)
-             if desired sleeve length is shorter than where hypotenuse falls? just pick up and do cuff?
-             take cuff out of all arm length measurements and just add on at end?
-             */
-            var sleeve_rows_straight = (sleeve_rows - ???? - cuff_rows);
 
-            var full_cuff_stitches = Math.round(full_cuff_circumference / gauge_width * 10);
-            var full_sleeve_rows = Math.round(((full_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
-            var full_sleeve_rows_decreasing = Math.round(((full_sleeve_length / gauge_length * 10) / 2) - cuff_rows);
-            var full_sleeve_decreases = (drop_sleeve_pickup_stitches - full_cuff_stitches);
-            var sleeve_decrease_rate = Math.round(full_sleeve_rows_decreasing / full_sleeve_decreases);
-            var sleeve_decreases_adjusted = Math.round(full_sleeve_rows_decreasing / sleeve_decrease_rate);
-            sleeve_decreases_adjusted -= (sleeve_decreases_adjusted % 2);
-            var full_cuff_stitches_adjusted = Math.round(drop_sleeve_pickup_stitches - sleeve_decreases_adjusted);
-            full_cuff_stitches_adjusted -= (full_cuff_stitches_adjusted % 2);
-            var rows_between_sleeve_decreases = (sleeve_decrease_rate - 1);
-            sleeve_rows -= (sleeve_rows % sleeve_decrease_rate);
-            /* only doing the stuff in the if statement if the sleeve rows before cuff amount to more than the non-decreasing section - accounting for decrease rate!! */
-            if (sleeve_rows_straight < (sleeve_rows - cuff_rows - rows_between_sleeve_decreases)) {
-              var sleeve_rows_decreasing = Math.round(sleeve_rows - cuff_rows - sleeve_rows_straight);
-              sleeve_rows_decreasing -= (sleeve_rows_decreasing % sleeve_decrease_rate);
-              var actual_cuff_stitches = Math.round(drop_sleeve_pickup_stitches - (sleeve_rows_decreasing / sleeve_decrease_rate));
-            } else {
-              var sleeve_rows_decreasing = 0
-              var actual_cuff_stitches = drop_sleeve_pickup_stitches;
-            }
+/////ooooolD!!!
+            // var sleeve_rows = Math.round(((sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
+            // var sleeve_rows_straight = (sleeve_rows - ???? - cuff_rows);
+            // var full_cuff_stitches = Math.round(cuff_circumference / gauge_width * 10);
+            // var full_sleeve_rows = Math.round(((full_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
+            // var full_sleeve_rows_decreasing = Math.round(((full_sleeve_length / gauge_length * 10) / 2) - cuff_rows);
+            // var full_sleeve_decreases = (drop_sleeve_pickup_stitches - full_cuff_stitches);
+            // var sleeve_decrease_rate = Math.round(full_sleeve_rows_decreasing / full_sleeve_decreases);
+            // var sleeve_decreases_adjusted = Math.round(full_sleeve_rows_decreasing / sleeve_decrease_rate);
+            // sleeve_decreases_adjusted -= (sleeve_decreases_adjusted % 2);
+            // var full_cuff_stitches_adjusted = Math.round(drop_sleeve_pickup_stitches - sleeve_decreases_adjusted);
+            // full_cuff_stitches_adjusted -= (full_cuff_stitches_adjusted % 2);
+            // var rows_between_sleeve_decreases = (sleeve_decrease_rate - 1);
+            // sleeve_rows -= (sleeve_rows % sleeve_decrease_rate);
+            // /* only doing the stuff in the if statement if the sleeve rows before cuff amount to more than the non-decreasing section - accounting for decrease rate!! */
+            // if (sleeve_rows_straight < (sleeve_rows - cuff_rows - rows_between_sleeve_decreases)) {
+            //   var sleeve_rows_decreasing = Math.round(sleeve_rows - cuff_rows - sleeve_rows_straight);
+            //   sleeve_rows_decreasing -= (sleeve_rows_decreasing % sleeve_decrease_rate);
+            //   var actual_cuff_stitches = Math.round(drop_sleeve_pickup_stitches - (sleeve_rows_decreasing / sleeve_decrease_rate));
+            // } else {
+            //   var sleeve_rows_decreasing = 0
+            //   var actual_cuff_stitches = drop_sleeve_pickup_stitches;
+            // }
 
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
@@ -184,9 +214,9 @@
             document.getElementById("outputO").innerHTML = collar_rows;
             document.getElementById("outputP").innerHTML = drop_sleeve_pickup_stitches_halved;
             document.getElementById("outputQ").innerHTML = drop_sleeve_pickup_stitches;
-            document.getElementById("outputR").innerHTML = sleeve_rows_straight;
+            document.getElementById("outputR").innerHTML = hypotenuse; // sleeve_rows_straight;
             document.getElementById("outputS").innerHTML = rows_between_sleeve_decreases;
-            document.getElementById("outputT").innerHTML = actual_cuff_stitches;
+            document.getElementById("outputT").innerHTML = cuff_stitches;
             document.getElementById("outputU").innerHTML = cuff_rows;
         }
         </script>
