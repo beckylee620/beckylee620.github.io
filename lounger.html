@@ -123,7 +123,6 @@
 
             var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
             var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
-            /* just checking, this returns a length measurement and not a number of stitches right? */
             var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
 
 /// NEW SLEEVE CALCULATIONS
@@ -167,11 +166,9 @@
             drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
             var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
 
-
 /* check this - does the flooring ever cause problems?? ...check same with the sleeve decrease rate */
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
             var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
-
 
 /////ooooolD!!!
             // var sleeve_rows = Math.round(((sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
