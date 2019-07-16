@@ -23,7 +23,6 @@
         <div style="text-align:center">BODY MEASUREMENTS</div>
         <div id="input">
         <form class="input_form" id="body_form" action="form_action.asp">
-            <div class="input_section">neck circumference<input type="number" name="neck_circumference"></div>
             <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
             <div class="input_section">bicep length<input type="number" name="bicep_length"></div>
         </form>
@@ -34,6 +33,7 @@
         <form class="input_form" id="garment_form" action="form_action.asp">
             <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
             <div class="input_section">back length<input type="number" name="back_length"></div>
+            <div class="input_section">collar width<input type="number" name="collar_width"></div>
             <div class="input_section">collar height<input type="number" name="collar_height"></div>
             <div class="input_section">sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
             <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
@@ -68,17 +68,17 @@
             var gauge_width = gauge_form.elements[1].value;
             var gauge_length = gauge_form.elements[2].value;
 
-            var neck_circumference = body_form.elements[0].value;
-            var shoulder_width = body_form.elements[1].value;
-            var bicep_length = body_form.elements[2].value;
+            var shoulder_width = body_form.elements[0].value;
+            var bicep_length = body_form.elements[1].value;
 
             var body_circumference = garment_form.elements[0].value;
             var back_length = garment_form.elements[1].value;
-            var collar_height = garment_form.elements[2].value;
-            var sleeve_bicep_circumference = garment_form.elements[3].value;
-            var sleeve_length = garment_form.elements[4].value;
-            var cuff_circumference = garment_form.elements[5].value;
-            var cuff_length = garment_form.elements[6].value;
+            var collar_width = garment_form.elements[2].value;
+            var collar_height = garment_form.elements[3].value;
+            var sleeve_bicep_circumference = garment_form.elements[4].value;
+            var sleeve_length = garment_form.elements[5].value;
+            var cuff_circumference = garment_form.elements[6].value;
+            var cuff_length = garment_form.elements[7].value;
             // var divisor = design_form.elements[0].value;
 
 /* problem if shoulder_width is wider than 1/2 body_circumference? */
@@ -86,20 +86,23 @@
 
             var body_circumference_total = Math.round(body_circumference / gauge_width * 10);
             var back_panel_stitches = Math.round(body_circumference_total / 2);
+            back_panel_stitches += (back_panel_stitches % 2);
             var front_panel_start_stitches = Math.round(back_panel_stitches * .05);
             var shoulder_to_shoulder_stitches = Math.round(shoulder_width / gauge_width * 10);
+            shoulder_to_shoulder_stitches += (shoulder_to_shoulder_stitches % 2);
             var shoulder_short_row_stitches = Math.round((back_panel_stitches - shoulder_to_shoulder_stitches) / 2);
             var shoulder_to_shoulder_stitches_adjusted = (back_panel_stitches - (shoulder_short_row_stitches * 2 ));
             var front_panel_end_stitches = Math.round(back_panel_stitches - shoulder_short_row_stitches);
 
-            var collar_minimum_stitches = Math.round((neck_circumference / 2) / gauge_width * 10);
-            var collar_maximum_stitches = Math.round(shoulder_to_shoulder_stitches_adjusted - 2); /* leave one each side */
-            var collar_wiggle_room = Math.round(collar_maximum_stitches - collar_minimum_stitches);
-            var collar_stitches = Math.round(collar_minimum_stitches + (0.4 * collar_wiggle_room));
+            // var collar_minimum_stitches = Math.round((neck_circumference / 2) / gauge_width * 10);
+            // var collar_maximum_stitches = Math.round(shoulder_to_shoulder_stitches_adjusted - 2); /* leave one each side */
+            // var collar_wiggle_room = Math.round(collar_maximum_stitches - collar_minimum_stitches);
+            // var collar_stitches = Math.round(collar_minimum_stitches + (0.4 * collar_wiggle_room));
+            var collar_stitches = Math.round(collar_width / gauge_width * 10);
+            collar_stitches -= (collar_stitches % 2);
             var shoulder_seam_stitches = Math.floor((shoulder_to_shoulder_stitches_adjusted - collar_stitches) / 2);
-            var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
+            // var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
-            var collar_stitches_circumference = (collar_stitches_adjusted * 2);
             var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
 
             /* currently making the rise of the shoulder triangle 1/2 the length of the run */
@@ -207,7 +210,7 @@
             document.getElementById("outputK").innerHTML = shoulder_short_row_stitches;
             document.getElementById("outputL").innerHTML = shoulder_seam_stitches;
             document.getElementById("outputM").innerHTML = shoulder_seam_stitches_both;
-            document.getElementById("outputN").innerHTML = collar_stitches_adjusted;
+            document.getElementById("outputN").innerHTML = collar_stitches;
             document.getElementById("outputO").innerHTML = collar_rows;
             document.getElementById("outputP").innerHTML = drop_sleeve_pickup_stitches_halved;
             document.getElementById("outputQ").innerHTML = drop_sleeve_pickup_stitches;
