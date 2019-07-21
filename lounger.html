@@ -173,29 +173,45 @@
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
             var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
-/////ooooolD!!!
-            // var sleeve_rows = Math.round(((sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
-            // var sleeve_rows_straight = (sleeve_rows - ???? - cuff_rows);
-            // var full_cuff_stitches = Math.round(cuff_circumference / gauge_width * 10);
-            // var full_sleeve_rows = Math.round(((full_sleeve_length - hypotenuse) / gauge_length * 10) - cuff_rows);
-            // var full_sleeve_rows_decreasing = Math.round(((full_sleeve_length / gauge_length * 10) / 2) - cuff_rows);
-            // var full_sleeve_decreases = (drop_sleeve_pickup_stitches - full_cuff_stitches);
-            // var sleeve_decrease_rate = Math.round(full_sleeve_rows_decreasing / full_sleeve_decreases);
-            // var sleeve_decreases_adjusted = Math.round(full_sleeve_rows_decreasing / sleeve_decrease_rate);
-            // sleeve_decreases_adjusted -= (sleeve_decreases_adjusted % 2);
-            // var full_cuff_stitches_adjusted = Math.round(drop_sleeve_pickup_stitches - sleeve_decreases_adjusted);
-            // full_cuff_stitches_adjusted -= (full_cuff_stitches_adjusted % 2);
-            // var rows_between_sleeve_decreases = (sleeve_decrease_rate - 1);
-            // sleeve_rows -= (sleeve_rows % sleeve_decrease_rate);
-            // /* only doing the stuff in the if statement if the sleeve rows before cuff amount to more than the non-decreasing section - accounting for decrease rate!! */
-            // if (sleeve_rows_straight < (sleeve_rows - cuff_rows - rows_between_sleeve_decreases)) {
-            //   var sleeve_rows_decreasing = Math.round(sleeve_rows - cuff_rows - sleeve_rows_straight);
-            //   sleeve_rows_decreasing -= (sleeve_rows_decreasing % sleeve_decrease_rate);
-            //   var actual_cuff_stitches = Math.round(drop_sleeve_pickup_stitches - (sleeve_rows_decreasing / sleeve_decrease_rate));
-            // } else {
-            //   var sleeve_rows_decreasing = 0
-            //   var actual_cuff_stitches = drop_sleeve_pickup_stitches;
-            // }
+/* calculate yarn quantity */
+            /* all body rows together */
+            var row_counter = 0;
+            var stitch_counter = (cast_on * 2);
+            var current_stitches = cast_on;
+
+            while (row_counter < body_rows_total) {
+              stitch_counter += (current_stitches * front_panel_increase_rate);
+              current_stitches += 2;
+              row_counter += front_panel_increase_rate;
+            }
+
+            /* shoulder short rows and a generous seaming quantity */
+            row_counter = 0;
+            var skipped_short_row_stitches = 0;
+            while (row_counter < (shoulder_short_row_iterations * 2)) {
+              row_counter += 2;
+              skipped_short_row_stitches += (shoulder_short_row_decreases * row_counter);
+            }
+            if (shoulder_short_row_leftovers != 0) {
+              skipped_short_row_stitches += (((shoulder_short_row_decreases * shoulder_short_row_iterations) +  shoulder_short_row_leftovers) * 2);
+            }
+
+            stitch_counter -= (skipped_short_row_stitches * 4);
+            stitch_counter += (shoulder_short_row_stitches + shoulder_seam_stitches * 4);
+
+            /* collar (accounts for grafting tail) */
+            stitch_counter += ((collar_rows + 2) * collar_stitches * 2);
+
+            /* sleeves (accounts for bind-off) */
+            stitch_counter += (drop_sleeve_pickup_stitches * (sleeve_rows_straight + 1));
+            current_stitches = (drop_sleeve_pickup_stitches - 1);
+            while (current_stitches >= cuff_stitches) {
+              stitch_counter += (sleeve_decrease_rate * current_stitches);
+              current_stitches -= 1;
+            }
+            stitch_counter += (cuff_stitches * (cuff_rows + 2));
+
+            var yarn_quantity = Math.round(stitch_counter/stitches_per_length);
 
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
@@ -218,12 +234,24 @@
             document.getElementById("outputS").innerHTML = rows_between_sleeve_decreases;
             document.getElementById("outputT").innerHTML = cuff_stitches;
             document.getElementById("outputU").innerHTML = cuff_rows;
+            document.getElementById("output_quantity").innerHTML = yarn_quantity;
         }
         </script>
         </div>
 
         <div style="width:60%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
-        <p>OUTPUT</p>
+        <p>YARN QUANTITY RECOMMENDATION</p>
+        <table>
+            <tr>
+              <td>LENGTH</td>
+              <td id="output_quantity"></td>
+            </tr>
+        </table>
+        </div>
+
+
+        <div style="width:60%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
+        <p>CALCULATIONS</p>
         <table>
             <tr>
                 <td>A</td>
