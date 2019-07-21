@@ -185,7 +185,7 @@
               row_counter += front_panel_increase_rate;
             }
 
-            /* shoulder short rows and a generous seaming quantity */
+            /* subtracting shoulder short rows; adding a generous seaming quantity */
             row_counter = 0;
             var skipped_short_row_stitches = 0;
             while (row_counter < (shoulder_short_row_iterations * 2)) {
@@ -195,23 +195,22 @@
             if (shoulder_short_row_leftovers != 0) {
               skipped_short_row_stitches += (((shoulder_short_row_decreases * shoulder_short_row_iterations) +  shoulder_short_row_leftovers) * 2);
             }
-
             stitch_counter -= (skipped_short_row_stitches * 4);
-            stitch_counter += (shoulder_short_row_stitches + shoulder_seam_stitches * 4);
+            stitch_counter += ((shoulder_short_row_stitches + shoulder_seam_stitches) * 4);
 
             /* collar (accounts for grafting tail) */
-            stitch_counter += ((collar_rows + 2) * collar_stitches * 2);
+            stitch_counter += ((collar_rows + 2) * (collar_stitches * 2));
 
-            /* sleeves (accounts for bind-off) */
-            stitch_counter += (drop_sleeve_pickup_stitches * (sleeve_rows_straight + 1));
+            /* sleeves (accounts for pick-up and bind-off) */
+            stitch_counter += ((drop_sleeve_pickup_stitches * (sleeve_rows_straight + 1)) * 2);
             current_stitches = (drop_sleeve_pickup_stitches - 1);
             while (current_stitches >= cuff_stitches) {
-              stitch_counter += (sleeve_decrease_rate * current_stitches);
+              stitch_counter += ((sleeve_decrease_rate * current_stitches) * 2);
               current_stitches -= 1;
             }
-            stitch_counter += (cuff_stitches * (cuff_rows + 2));
+            stitch_counter += ((cuff_stitches * (cuff_rows + 2)) * 2);
 
-            var yarn_quantity = Math.round(stitch_counter/stitches_per_length);
+            var yarn_quantity = Math.ceil(stitch_counter/stitches_per_length);
 
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
