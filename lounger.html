@@ -173,6 +173,8 @@
             var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
             var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
+            var body_stitches_before_sleeves = ((front_panel_pickup_stitches * 2) + back_panel_stitches);
+
 /* calculate yarn quantity */
             /* all body rows together */
             var row_counter = 0;
@@ -225,24 +227,25 @@
             document.getElementById("outputA").innerHTML = cast_on;
             document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
             document.getElementById("outputC").innerHTML = rows_between_front_panel_increases;
-            document.getElementById("outputD").innerHTML = front_panel_pickup_stitches;
-            document.getElementById("outputE").innerHTML = back_panel_stitches;
-            document.getElementById("outputF").innerHTML = drop_sleeve_body_rows;
-            document.getElementById("outputG").innerHTML = shoulder_short_row_rows;
-            document.getElementById("outputH").innerHTML = shoulder_short_row_decreases;
-            document.getElementById("outputI").innerHTML = shoulder_short_row_iterations;
-            document.getElementById("outputJ").innerHTML = shoulder_short_row_leftovers;
-            document.getElementById("outputK").innerHTML = shoulder_short_row_stitches;
-            document.getElementById("outputL").innerHTML = shoulder_seam_stitches;
-            document.getElementById("outputM").innerHTML = shoulder_seam_stitches_both;
-            document.getElementById("outputN").innerHTML = collar_stitches;
-            document.getElementById("outputO").innerHTML = collar_rows;
-            document.getElementById("outputP").innerHTML = drop_sleeve_pickup_stitches_halved;
-            document.getElementById("outputQ").innerHTML = drop_sleeve_pickup_stitches;
-            document.getElementById("outputR").innerHTML = sleeve_rows_straight;
-            document.getElementById("outputS").innerHTML = rows_between_sleeve_decreases;
-            document.getElementById("outputT").innerHTML = cuff_stitches;
-            document.getElementById("outputU").innerHTML = cuff_rows;
+            document.getElementById("outputD").innerHTML = body_stitches_before_sleeves;
+            document.getElementById("outputE").innerHTML = front_panel_pickup_stitches;
+            document.getElementById("outputF").innerHTML = back_panel_stitches;
+            document.getElementById("outputG").innerHTML = drop_sleeve_body_rows;
+            document.getElementById("outputH").innerHTML = shoulder_short_row_rows;
+            document.getElementById("outputI").innerHTML = shoulder_short_row_decreases;
+            document.getElementById("outputJ").innerHTML = shoulder_short_row_iterations;
+            document.getElementById("outputK").innerHTML = shoulder_short_row_leftovers;
+            document.getElementById("outputL").innerHTML = shoulder_short_row_stitches;
+            document.getElementById("outputM").innerHTML = shoulder_seam_stitches;
+            document.getElementById("outputN").innerHTML = shoulder_seam_stitches_both;
+            document.getElementById("outputO").innerHTML = collar_stitches;
+            document.getElementById("outputP").innerHTML = collar_rows;
+            document.getElementById("outputQ").innerHTML = drop_sleeve_pickup_stitches_halved;
+            document.getElementById("outputR").innerHTML = drop_sleeve_pickup_stitches;
+            document.getElementById("outputS").innerHTML = sleeve_rows_straight;
+            document.getElementById("outputT").innerHTML = rows_between_sleeve_decreases;
+            document.getElementById("outputU").innerHTML = cuff_stitches;
+            document.getElementById("outputV").innerHTML = cuff_rows;
             document.getElementById("output_yarn_A").innerHTML = total_yarn_quantity;
             document.getElementById("output_yarn_B").innerHTML = body_yarn_quantity;
             document.getElementById("output_yarn_C").innerHTML = collar_yarn_quantity;
@@ -360,6 +363,10 @@
             <tr>
                 <td>U</td>
                 <td id="outputU"></td>
+            </tr>
+            <tr>
+                <td>V</td>
+                <td id="outputV"></td>
             </tr>
         </table>
 
