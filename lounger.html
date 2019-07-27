@@ -106,12 +106,17 @@
             var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
 
             /* currently making the rise of the shoulder triangle 1/2 the length of the run */
-            var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches / (gauge_width * 10)) / 2 / gauge_length * 10);
+            var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches * (gauge_width / 10)) / 2 / gauge_length * 10);
             shoulder_short_row_rows -= (shoulder_short_row_rows % 2);
             var shoulder_short_row_iterations = Math.round(shoulder_short_row_rows / 2);
             var shoulder_short_row_decreases = Math.floor(shoulder_short_row_stitches / shoulder_short_row_iterations);
-            var shoulder_short_row_leftovers = (shoulder_short_row_stitches % shoulder_short_row_decreases);
-            if (shoulder_short_row_leftovers != 0) {
+            var shoulder_short_row_leftovers = (shoulder_short_row_stitches - (shoulder_short_row_iterations * shoulder_short_row_decreases));
+            if (shoulder_short_row_leftovers == shoulder_short_row_decreases) {
+              shoulder_short_row_leftovers = 0;
+              shoulder_short_row_rows += 2;
+              shoulder_short_row_iterations += 1;
+            }
+              else if (shoulder_short_row_leftovers != 0) {
               (shoulder_short_row_rows += 2);
             }
 
@@ -124,8 +129,8 @@
             var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
             var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
-            var a_to_square = Math.round(shoulder_short_row_stitches / (gauge_width * 10));
-            var b_to_square = Math.round(shoulder_short_row_rows / (gauge_length * 10));
+            var a_to_square = Math.round(shoulder_short_row_stitches * (gauge_width / 10));
+            var b_to_square = Math.round(shoulder_short_row_rows * (gauge_length / 10));
             var hypotenuse = (Math.pow((Math.pow(a_to_square, 2) + Math.pow(b_to_square, 2)), 0.5));
 
 /// NEW SLEEVE CALCULATIONS
