@@ -104,6 +104,8 @@
             // var collar_stitches_adjusted = (shoulder_to_shoulder_stitches_adjusted - (shoulder_seam_stitches * 2));
             var shoulder_seam_stitches_both = (shoulder_seam_stitches * 2);
             var collar_rows = Math.round((collar_height / gauge_length * 10) * 2);
+            // accounting for the first row, which is in a separate instruction
+            collar_rows = (collar_rows - 1);
 
             /* currently making the rise of the shoulder triangle 1/2 the length of the run */
             var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches * (gauge_width / 10)) / 2 / gauge_length * 10);
@@ -214,8 +216,8 @@
 
             var body_yarn_quantity = Math.ceil(stitch_counter/stitches_per_length);
 
-            /* collar (accounts for grafting tail) */
-            var collar_stitch_counter = ((collar_rows + 2) * (collar_stitches * 2));
+            /* collar (accounts for grafting tail and first row, which was removed) */
+            var collar_stitch_counter = ((collar_rows + 3) * (collar_stitches * 2));
 
             var collar_yarn_quantity = Math.ceil(collar_stitch_counter/stitches_per_length);
 
