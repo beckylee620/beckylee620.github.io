@@ -68,6 +68,25 @@ body {
   padding: 2%
 }
 
+/* .column {
+  float: left;
+  width: 35%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 35%;
+}
+
 .input_form {
   display: inline-block;
   text-align: center;

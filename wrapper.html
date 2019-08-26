@@ -1,185 +1,183 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Wrapper</title>
-    </head>
+<head>
+  <title>Wrapper</title>
+</head>
 
-    <body style="text-align:center">
-        <div id="header">
-          <div id="text_cutout_background">
-            <div id="text_cutout">Wrapper</div>
-          </div>
-        </div>
+<body style="text-align:center">
+  <div id="header">
+    <div id="text_cutout_background">
+      <div id="text_cutout">Wrapper</div>
+    </div>
+  </div>
 
-        <div style="text-align:center">GAUGE</div>
-        <div id="input">
+  <div class="row">
+    <div class="column">
+      <div style="text-align:center">GAUGE</div>
+      <div id="input">
         <form class="input_form" id="gauge_form" action="form_action.asp">
-            <div class="input_section">stitches per length<input type="number" name="stitches_per_length"></div>
-                <div class="input_section">width of 10 stitches<input type="number" name="gauge_width"></div>
-            <div class="input_section">length of 10 rows<input type="number" name="gauge_length"></div>
+          <div class="input_section">stitches per length<input type="number" name="stitches_per_length"></div>
+          <div class="input_section">width of 10 stitches<input type="number" name="gauge_width"></div>
+          <div class="input_section">length of 10 rows<input type="number" name="gauge_length"></div>
         </form>
-        </div>
+      </div>
 
-        <div style="text-align:center">BODY MEASUREMENTS</div>
-        <div id="input">
+      <div>BODY MEASUREMENTS</div>
+      <div id="input">
         <form class="input_form" id="body_form" action="form_action.asp">
-            <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
-            <div class="input_section">bicep length<input type="number" name="bicep_length"></div>
+          <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
+          <div class="input_section">bicep length<input type="number" name="bicep_length"></div>
         </form>
-        </div>
+      </div>
 
-        <div style="text-align:center">GARMENT MEASUREMENTS</div>
-        <div id="input">
+      <div style="text-align:center">GARMENT MEASUREMENTS</div>
+      <div id="input">
         <form class="input_form" id="garment_form" action="form_action.asp">
-            <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
-            <div class="input_section">back length<input type="number" name="back_length"></div>
-            <div class="input_section">collar width<input type="number" name="collar_width"></div>
-            <div class="input_section">collar height<input type="number" name="collar_height"></div>
-            <div class="input_section">sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
-            <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
-            <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
-            <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
+          <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
+          <div class="input_section">back length<input type="number" name="back_length"></div>
+          <div class="input_section">collar width<input type="number" name="collar_width"></div>
+          <div class="input_section">collar height<input type="number" name="collar_height"></div>
+          <div class="input_section">sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
+          <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
+          <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
+          <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
         </form>
-        </div>
+      </div>
 
-        <!-- <div style="text-align:center">DESIGN OPTIONS</div>
-        <div id="input">
-        <form class="input_form" id="design_form" action="form_action.asp">
-            <div class="input_section">make divisible by...<input type="number" name="divisor"></div>
-        </form>
-        </div> -->
+      <button style="display:inline-block;width:40%;text-align:center" onclick="calculate()">calculate</button>
 
-        <button style="display:inline-block;width:40%;text-align:center" onclick="calculate()">calculate</button>
+    </div>
 
-        </div>
-
-        <div style="width:60%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
-        <p>YARN QUANTITY RECOMMENDATION</p>
-        <table>
-            <tr>
-              <td>total yarn quantity</td>
-              <td id="output_yarn_A"></td>
-            </tr>
-            <tr>
-              <td>sweater body yarn quantity</td>
-              <td id="output_yarn_B"></td>
-            </tr>
-            <tr>
-              <td>collar yarn quantity</td>
-              <td id="output_yarn_C"></td>
-            </tr>
-            <tr>
-              <td>per-sleeve yarn quantity</td>
-              <td id="output_yarn_D"></td>
-            </tr>
-        </table>
-        </div>
+  <div class="column">
+    <div>
+      <p>YARN QUANTITY RECOMMENDATION</p>
+      <table>
+        <tr>
+          <td>total yarn quantity</td>
+          <td id="output_yarn_A"></td>
+        </tr>
+        <tr>
+          <td>sweater body yarn quantity</td>
+          <td id="output_yarn_B"></td>
+        </tr>
+        <tr>
+          <td>collar yarn quantity</td>
+          <td id="output_yarn_C"></td>
+        </tr>
+        <tr>
+          <td>per-sleeve yarn quantity</td>
+          <td id="output_yarn_D"></td>
+        </tr>
+      </table>
+    </div>
 
 
-        <div style="width:60%;display:inline-block;text-align:center;vertical-align:text-top;padding:1.2%">
-        <p>CALCULATIONS</p>
-        <table>
-            <tr>
-                <td>A</td>
-                <td id="outputA"></td>
-            </tr>
-            <tr>
-                <td>B</td>
-                <td id="outputB"></td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td id="outputC"></td>
-            </tr>
-            <tr>
-                <td>D</td>
-                <td id="outputD"></td>
-            </tr>
-            <tr>
-                <td>E</td>
-                <td id="outputE"></td>
-            </tr>
-            <tr>
-                <td>F</td>
-                <td id="outputF"></td>
-            </tr>
-            <tr>
-                <td>G</td>
-                <td id="outputG"></td>
-            </tr>
-            <tr>
-                <td>H</td>
-                <td id="outputH"></td>
-            </tr>
-            <tr>
-                <td>I</td>
-                <td id="outputI"></td>
-            </tr>
-            <tr>
-                <td>J</td>
-                <td id="outputJ"></td>
-            </tr>
-            <tr>
-                <td>K</td>
-                <td id="outputK"></td>
-            </tr>
-            <tr>
-                <td>L</td>
-                <td id="outputL"></td>
-            </tr>
-            <tr>
-                <td>M</td>
-                <td id="outputM"></td>
-            </tr>
-            <tr>
-                <td>N</td>
-                <td id="outputN"></td>
-            </tr>
-            <tr>
-                <td>O</td>
-                <td id="outputO"></td>
-            </tr>
-            <tr>
-                <td>P</td>
-                <td id="outputP"></td>
-            </tr>
-            <tr>
-                <td>Q</td>
-                <td id="outputQ"></td>
-            </tr>
-            <tr>
-                <td>R</td>
-                <td id="outputR"></td>
-            </tr>
-            <tr>
-                <td>S</td>
-                <td id="outputS"></td>
-            </tr>
-            <tr>
-                <td>T</td>
-                <td id="outputT"></td>
-            </tr>
-            <tr>
-                <td>U</td>
-                <td id="outputU"></td>
-            </tr>
-            <tr>
-                <td>V</td>
-                <td id="outputV"></td>
-            </tr>
-        </table>
+    <div>
+      <p>CALCULATIONS</p>
+      <table>
+        <tr>
+          <td>A</td>
+          <td id="outputA"></td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td id="outputB"></td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td id="outputC"></td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td id="outputD"></td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td id="outputE"></td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td id="outputF"></td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td id="outputG"></td>
+        </tr>
+        <tr>
+          <td>H</td>
+          <td id="outputH"></td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td id="outputI"></td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td id="outputJ"></td>
+        </tr>
+        <tr>
+          <td>K</td>
+          <td id="outputK"></td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td id="outputL"></td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td id="outputM"></td>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td id="outputN"></td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td id="outputO"></td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td id="outputP"></td>
+        </tr>
+        <tr>
+          <td>Q</td>
+          <td id="outputQ"></td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td id="outputR"></td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td id="outputS"></td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td id="outputT"></td>
+        </tr>
+        <tr>
+          <td>U</td>
+          <td id="outputU"></td>
+        </tr>
+        <tr>
+          <td>V</td>
+          <td id="outputV"></td>
+        </tr>
+      </table>
 
-        </div>
+    </div>
+  </div>
+</div>
 
 
-    <link rel="stylesheet" type="text/css" href="wrapperstylesheet.css" />
-    <script src="wrapper_calculator.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="wrapperstylesheet.css" />
+  <script src="wrapper_calculator.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
 
-    </body>
+</body>
 </html>
