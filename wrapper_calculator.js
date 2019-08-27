@@ -129,8 +129,8 @@ function calculate() {
     var drop_sleeve_pickup_stitches = Math.round(drop_sleeve_pickup_circumference / gauge_width * 10);
     drop_sleeve_pickup_stitches -= (drop_sleeve_pickup_stitches % 2);
     var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
-
-    var front_panel_pickup_stitches = (Math.floor(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted)
+/* this vvv needs to be math.ceil because if body_rows_before_sleeve is not evenly divisible by front_panel_increase_rate, that means you have done at least a single extra row in terms of increases, and the first row in that repeat is the increase row, so you have definitely increased at least once more. */
+    var front_panel_pickup_stitches = (Math.ceil(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
     var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
     var body_stitches_before_sleeves = ((front_panel_pickup_stitches * 2) + back_panel_stitches);
