@@ -73,9 +73,9 @@ function calculate() {
     var body_rows_total = Math.round(back_length / gauge_length * 10);
     body_rows_total += (body_rows_total % 2);
     var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
-    var front_panel_increases_adjusted = body_rows_total / front_panel_increase_rate;
-    var front_panel_start_stitches_adjusted = front_panel_end_stitches - front_panel_increases_adjusted;
-    var cast_on = back_panel_stitches + (front_panel_start_stitches_adjusted * 2);
+    var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
+    var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
+    var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
     var a_to_square = (shoulder_short_row_stitches * (gauge_width / 10));
     var b_to_square = (shoulder_short_row_rows * (gauge_length / 10));
@@ -131,7 +131,14 @@ function calculate() {
     var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
 /* this vvv needs to be math.ceil because if body_rows_before_sleeve is not evenly divisible by front_panel_increase_rate, that means you have done at least a single extra row in terms of increases, and the first row in that repeat is the increase row, so you have definitely increased at least once more. */
     var front_panel_pickup_stitches = (Math.ceil(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
+    if ((body_rows_before_sleeve % front_panel_increase_rate) == 0) {
+      var last_step_worked_section_4 = "step 4/a (increase row)"
+    } else {
+      var last_step_worked_section_4 = "step 4/b, row ".concat(body_rows_before_sleeve % front_panel_increase_rate)
+    }
     var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
+
+    var stitch_count_after_drop_sleeve_body_rows = (Math.ceil((body_rows_before_sleeve + drop_sleeve_body_rows) / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
 
     var body_stitches_before_sleeves = ((front_panel_pickup_stitches * 2) + back_panel_stitches);
 
@@ -210,4 +217,6 @@ function calculate() {
     document.getElementById("output_yarn_B").innerHTML = body_yarn_quantity;
     document.getElementById("output_yarn_C").innerHTML = collar_yarn_quantity;
     document.getElementById("output_yarn_D").innerHTML = sleeve_yarn_quantity;
+    document.getElementById("output_last_step_section_4").innerHTML = last_step_worked_section_4;
+    document.getElementById("output_stitch_count_after_G").innerHTML = stitch_count_after_drop_sleeve_body_rows;
 }
