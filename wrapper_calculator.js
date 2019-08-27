@@ -52,6 +52,7 @@ function calculate() {
     shoulder_short_row_rows -= (shoulder_short_row_rows % 2);
     var shoulder_short_row_iterations = Math.round(shoulder_short_row_rows / 2);
     var shoulder_short_row_decreases = Math.floor(shoulder_short_row_stitches / shoulder_short_row_iterations);
+    var shoulder_short_row_instruction = shoulder_short_row_decreases - 1
     var shoulder_short_row_leftovers = (shoulder_short_row_stitches - (shoulder_short_row_iterations * shoulder_short_row_decreases));
     if (shoulder_short_row_leftovers == shoulder_short_row_decreases) {
       shoulder_short_row_leftovers = 0;
@@ -59,8 +60,13 @@ function calculate() {
       shoulder_short_row_iterations += 1;
     }
       else if (shoulder_short_row_leftovers != 0) {
-      (shoulder_short_row_rows += 2);
+      shoulder_short_row_rows += 2;
+      var shoulder_short_row_leftovers_instruction = shoulder_short_row_leftovers - 1;
     }
+    if (shoulder_short_row_leftovers == 0) {
+      var shoulder_short_row_leftovers_instruction = "none";
+    }
+
 
     /* not sure if these adjustments vvv will definitely always work out correctly - test!! */
     var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
@@ -186,9 +192,9 @@ function calculate() {
     document.getElementById("outputF").innerHTML = back_panel_stitches;
     document.getElementById("outputG").innerHTML = drop_sleeve_body_rows;
     document.getElementById("outputH").innerHTML = shoulder_short_row_rows;
-    document.getElementById("outputI").innerHTML = shoulder_short_row_decreases;
+    document.getElementById("outputI").innerHTML = shoulder_short_row_instruction;
     document.getElementById("outputJ").innerHTML = shoulder_short_row_iterations;
-    document.getElementById("outputK").innerHTML = shoulder_short_row_leftovers;
+    document.getElementById("outputK").innerHTML = shoulder_short_row_leftovers_instruction;
     document.getElementById("outputL").innerHTML = shoulder_short_row_stitches;
     document.getElementById("outputM").innerHTML = shoulder_seam_stitches;
     document.getElementById("outputN").innerHTML = shoulder_seam_stitches_both;
