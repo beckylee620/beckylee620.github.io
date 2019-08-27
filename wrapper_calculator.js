@@ -73,9 +73,9 @@ function calculate() {
     var body_rows_total = Math.round(back_length / gauge_length * 10);
     body_rows_total += (body_rows_total % 2);
     var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
-    var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
-    var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
-    var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
+    var front_panel_increases_adjusted = body_rows_total / front_panel_increase_rate;
+    var front_panel_start_stitches_adjusted = front_panel_end_stitches - front_panel_increases_adjusted;
+    var cast_on = back_panel_stitches + (front_panel_start_stitches_adjusted * 2);
 
     var a_to_square = (shoulder_short_row_stitches * (gauge_width / 10));
     var b_to_square = (shoulder_short_row_rows * (gauge_length / 10));
