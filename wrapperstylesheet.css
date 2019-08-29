@@ -7,12 +7,15 @@ tr {
 }
 
 td {
+    border: 1px solid #1A5A63;
     width: 45%;
 }
 
 table {
+    border: 1px solid #1A5A63;
     width: 100%;
     font-size: 1.5em;
+    margin: 5%;
 }
 
 body {
@@ -24,7 +27,34 @@ body {
   background-color: #F9F9F9;
   text-align: center;
   width: 100%;
-  font-size: 3em;
+}
+
+#text_cutout_background {
+    background-color: #ADCCBD;
+    display: inline-block;
+    text-align: center;
+    font-size: 3em;
+    color: #ADCCBD;
+    border-radius: 25px;
+    margin: 1%;
+    padding: 1%;
+/*
+    width: 102%;
+    height: 12%;
+    margin-top: -10px;
+    vertical-align: text-bottom;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+*/
+}
+
+#text_cutout {
+  background-color: #F9F9F9;
+  display: inline-block;
+  padding: 2%;
+  border-radius: 25px;
 }
 
 #input {
@@ -32,18 +62,22 @@ body {
   display: inline-block;
   vertical-align: text-top;
   text-align: center;
+  background-image: url("images/joiner.jpeg");
   background-position: center;
   border-radius: 25px;
   padding: 2%
 }
 
-
-.button {
-  display: inline-block;
-  width: 40%;
-  text-align: center;
-  font-family: Ubuntu, sans-serif;
+/* .column {
+  float: left;
+  width: 35%;
 }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
 
 .row {
   display: flex;
