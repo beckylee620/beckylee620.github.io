@@ -12,7 +12,7 @@ td {
 
 table {
     width: 100%;
-    font-size: 1.5em;
+/*    font-size: 1.5em;*/
 }
 
 body {
@@ -31,7 +31,7 @@ body {
   width: 80%;
   display: inline-block;
   vertical-align: text-top;
-  text-align: center;
+  text-align: left;
   background-position: center;
   border-radius: 25px;
   padding: 2%
@@ -55,52 +55,11 @@ body {
 
 .input_form {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
 .input_section {
   display: inline-block;
   width: 52%;
-}
-
-.dropmenu {
-    background-color: #F9F9F9;
-    width: 40%;
-    float: right;
-    clear: right;
-}
-
-.menubutton {
-    background-color: #AAB857;
-    box-shadow: #464646 5px 5px;
-    color: #464646;
-    text-align: center;
-    font-size: 2em;
-    border-radius: 5px;
-    display: block;
-    margin: 10px auto 0px auto;
-    width: 80%;
-}
-
-.buttonlink {
-    color: #464646;
-    text-decoration: none;
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-a {
-    color: #AAB857;
-}
-
-.menubutton:hover {
-    background-color: #CEE08C;
-    box-shadow: #464646 5px 5px;
-    color: #464646;
-}
-
-.buttonlink:hover {
-    color: #464646;
 }
