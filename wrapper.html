@@ -11,40 +11,79 @@
 
   <div class="row">
     <div class="column">
-      <div>GAUGE</div>
-      <div id="input">
-        <form class="input_form" id="gauge_form">
-          <div class="input_section">stitches per length<input type="number" name="stitches_per_length"></div>
-          <div class="input_section">width of 10 stitches<input type="number" name="gauge_width"></div>
-          <div class="input_section">length of 10 rows<input type="number" name="gauge_length"></div>
-        </form>
-      </div>
+      <p>GAUGE</p>
+      <form id="gauge_form">
+        <table>
+          <tr>
+            <td>stitches per length</td>
+            <td><input type="number" name="stitches_per_length"></td>
+          </tr>
+          <tr>
+            <td>width of 10 stitches</td>
+            <td><input type="number" name="gauge_width"></td>
+          </tr>
+          <tr>
+            <td>length of 10 rows</td>
+            <td><input type="number" name="gauge_length"></td>
+          </tr>
+        </table>
+      </form>
 
-      <div>BODY MEASUREMENTS</div>
-      <div id="input">
-        <form class="input_form" id="body_form">
-          <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
-          <div class="input_section">bicep length<input type="number" name="bicep_length"></div>
-        </form>
-      </div>
+      <p>BODY MEASUREMENTS</p>
+      <form id="body_form">
+        <table>
+          <tr>
+            <td>shoulder width</td>
+            <td><input type="number" name="shoulder_width"></td>
+          </tr>
+          <tr>
+            <td>bicep length</td>
+            <td><input type="number" name="bicep_length"></td>
+          </tr>
+        </table>
+      </form>
 
-      <div>GARMENT MEASUREMENTS</div>
-      <div id="input">
-        <form class="input_form" id="garment_form">
-          <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
-          <div class="input_section">back length<input type="number" name="back_length"></div>
-          <div class="input_section">collar width<input type="number" name="collar_width"></div>
-          <div class="input_section">collar height<input type="number" name="collar_height"></div>
-          <div class="input_section">sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
-          <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
-          <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
-          <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
-        </form>
-      </div>
+      <p>GARMENT MEASUREMENTS</p>
+      <form id="garment_form">
+        <table>
+          <tr>
+            <td>body circumference</td>
+            <td><input type="number" name="body_circumference"></td>
+          </tr>
+          <tr>
+            <td>back length</td>
+            <td><input type="number" name="back_length"></td>
+          </tr>
+          <tr>
+            <td>collar width</td>
+            <td><input type="number" name="collar_width"></td>
+          </tr>
+          <tr>
+            <td>collar height</td>
+            <td><input type="number" name="collar_height"></td>
+          </tr>
+          <tr>
+            <td>sleeve bicep circumference</td>
+            <td><input type="number" name="sleeve_bicep_circumference"></td>
+          </tr>
+          <tr>
+            <td>sleeve length</td>
+            <td><input type="number" name="sleeve_length"></td>
+          </tr>
+          <tr>
+            <td>cuff circumference</td>
+            <td><input type="number" name="cuff_circumference"></td>
+          </tr>
+          <tr>
+            <td>cuff length</td>
+            <td><input type="number" name="cuff_length"></td>
+          </tr>
+          </table>
+      </form>
 
       <button class="button" onclick="calculate()">calculate</button>
+      </div>
 
-    </div>
 
   <div class="column">
     <div>
@@ -184,6 +223,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+  <script>
+  $(document).ready( function($) {
+      $('form').on('focus', 'input[type=number]', function(e) {
+          $(this).on('wheel', function(e) {
+              e.preventDefault();
+          });
+      });
+      $('form').on('blur', 'input[type=number]', function(e) {
+          $(this).off('wheel');
+      });
+      $('form').on('keydown', 'input[type=number]', function(e) {
+          if ( e.which == 38 || e.which == 40 )
+              e.preventDefault();
+      });
+  });
+  </script>
 
 </body>
 </html>
