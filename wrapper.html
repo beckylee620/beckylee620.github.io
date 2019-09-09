@@ -9,6 +9,13 @@
     <div>wrapper</div>
   </div>
 
+  <div>
+    <select id="pattern_selection">
+        <option value="garter">the garter stitch version</option>
+        <option value="open">the open-ended version</option>
+    </select>
+  </div>
+
   <div class="row">
     <div class="column">
       <p>GAUGE</p>
@@ -108,13 +115,20 @@
       </table>
     </div>
 
-
     <div>
       <p>CALCULATIONS</p>
-      <table>
+      <table id="output_table">
         <tr>
           <td>A</td>
           <td id="outputA"></td>
+        </tr>
+        <tr>
+          <td>A_1</td>
+          <td id="outputA_1"></td>
+        </tr>
+        <tr>
+          <td>A_2</td>
+          <td id="outputA_2"></td>
         </tr>
         <tr>
           <td>B</td>
@@ -239,6 +253,19 @@
               e.preventDefault();
       });
   });
+  </script>
+
+  <script>
+      $(function(){
+        $('#pattern_selection').on('change', function () {
+          var output_table = document.getElementById("output_table");
+          var row_w = output_table.insertRow(-1);
+          var cell_w_l = row_w.insertCell(0);
+          var cell_w_r = row_w.insertCell(1);
+          cell_w_l.innerHTML = "S";
+          cell_w_r.innerHTML = document.getElementById("outputS");
+        });
+      });
   </script>
 
 </body>
