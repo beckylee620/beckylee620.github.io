@@ -4,172 +4,225 @@
   <title>Wrapper</title>
 </head>
 
-<body style="text-align:center">
+<body>
   <div id="header">
-    <div id="text_cutout_background">
-      <div id="text_cutout">Wrapper</div>
-    </div>
+    <div>wrapper</div>
   </div>
+
+<!--
+  <div>
+    <select id="pattern_selection">
+        <option value="garter">the garter stitch version</option>
+        <option value="open">the open-ended version</option>
+    </select>
+  </div>
+-->
 
   <div class="row">
     <div class="column">
-      <div style="text-align:center">GAUGE</div>
-      <div id="input">
-        <form class="input_form" id="gauge_form" action="form_action.asp">
-          <div class="input_section">stitches per length<input type="number" name="stitches_per_length"></div>
-          <div class="input_section">width of 10 stitches<input type="number" name="gauge_width"></div>
-          <div class="input_section">length of 10 rows<input type="number" name="gauge_length"></div>
-        </form>
+      <p style="text-align:center;">GAUGE</p>
+      <form id="gauge_form">
+        <table>
+          <tr>
+            <td>stitches per length</td>
+            <td><input type="number" name="stitches_per_length"></td>
+          </tr>
+          <tr>
+            <td>width of 10 stitches</td>
+            <td><input type="number" name="gauge_width"></td>
+          </tr>
+          <tr>
+            <td>length of 10 rows</td>
+            <td><input type="number" name="gauge_length"></td>
+          </tr>
+        </table>
+      </form>
+
+      <p style="text-align:center;">BODY MEASUREMENTS</p>
+      <form id="body_form">
+        <table>
+          <tr>
+            <td>shoulder width</td>
+            <td><input type="number" name="shoulder_width"></td>
+          </tr>
+          <tr>
+            <td>bicep length</td>
+            <td><input type="number" name="bicep_length"></td>
+          </tr>
+        </table>
+      </form>
+
+      <p style="text-align:center;">GARMENT MEASUREMENTS</p>
+      <form id="garment_form">
+        <table>
+          <tr>
+            <td>body circumference</td>
+            <td><input type="number" name="body_circumference"></td>
+          </tr>
+          <tr>
+            <td>back length</td>
+            <td><input type="number" name="back_length"></td>
+          </tr>
+          <tr>
+            <td>collar width</td>
+            <td><input type="number" name="collar_width"></td>
+          </tr>
+          <tr>
+            <td>collar height</td>
+            <td><input type="number" name="collar_height"></td>
+          </tr>
+          <tr>
+            <td>sleeve bicep circumference</td>
+            <td><input type="number" name="sleeve_bicep_circumference"></td>
+          </tr>
+          <tr>
+            <td>sleeve length</td>
+            <td><input type="number" name="sleeve_length"></td>
+          </tr>
+          <tr>
+            <td>cuff circumference</td>
+            <td><input type="number" name="cuff_circumference"></td>
+          </tr>
+          <tr>
+            <td>cuff length</td>
+            <td><input type="number" name="cuff_length"></td>
+          </tr>
+          </table>
+      </form>
+
+      <button class="button" onclick="calculate()">calculate</button>
       </div>
 
-      <div>BODY MEASUREMENTS</div>
-      <div id="input">
-        <form class="input_form" id="body_form" action="form_action.asp">
-          <div class="input_section">shoulder width<input type="number" name="shoulder_width"></div>
-          <div class="input_section">bicep length<input type="number" name="bicep_length"></div>
-        </form>
-      </div>
-
-      <div style="text-align:center">GARMENT MEASUREMENTS</div>
-      <div id="input">
-        <form class="input_form" id="garment_form" action="form_action.asp">
-          <div class="input_section">body circumference<input type="number" name="body_circumference"></div>
-          <div class="input_section">back length<input type="number" name="back_length"></div>
-          <div class="input_section">collar width<input type="number" name="collar_width"></div>
-          <div class="input_section">collar height<input type="number" name="collar_height"></div>
-          <div class="input_section">sleeve bicep circumference<input type="number" name="sleeve_bicep_circumference"></div>
-          <div class="input_section">sleeve length<input type="number" name="sleeve_length"></div>
-          <div class="input_section">cuff circumference<input type="number" name="cuff_circumference"></div>
-          <div class="input_section">cuff length<input type="number" name="cuff_length"></div>
-        </form>
-      </div>
-
-      <button style="display:inline-block;width:40%;text-align:center" onclick="calculate()">calculate</button>
-
-    </div>
 
   <div class="column">
     <div>
-      <p>YARN QUANTITY RECOMMENDATION</p>
+      <p style="text-align:center;">YARN QUANTITY RECOMMENDATION</p>
       <table>
         <tr>
           <td>total yarn quantity</td>
-          <td id="output_yarn_A"></td>
+          <td id="output_yarn_A" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>sweater body yarn quantity</td>
-          <td id="output_yarn_B"></td>
+          <td id="output_yarn_B" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>collar yarn quantity</td>
-          <td id="output_yarn_C"></td>
+          <td id="output_yarn_C" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>per-sleeve yarn quantity</td>
-          <td id="output_yarn_D"></td>
+          <td id="output_yarn_D" style="text-align:center;"></td>
         </tr>
       </table>
     </div>
 
-
     <div>
-      <p>CALCULATIONS</p>
-      <table>
+      <p style="text-align:center;">CALCULATIONS</p>
+      <table id="output_table">
         <tr>
           <td>A</td>
-          <td id="outputA"></td>
+          <td id="outputA" style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td>A_1</td>
+          <td id="outputA_1" style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td>A_2</td>
+          <td id="outputA_2" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>B</td>
-          <td id="outputB"></td>
+          <td id="outputB" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>C</td>
-          <td id="outputC"></td>
+          <td id="outputC" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>D</td>
-          <td id="outputD"></td>
+          <td id="outputD" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>E</td>
-          <td id="outputE"></td>
+          <td id="outputE" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>F</td>
-          <td id="outputF"></td>
+          <td id="outputF" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>G</td>
-          <td id="outputG"></td>
+          <td id="outputG" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>H</td>
-          <td id="outputH"></td>
+          <td id="outputH" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>I</td>
-          <td id="outputI"></td>
+          <td id="outputI" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>J</td>
-          <td id="outputJ"></td>
+          <td id="outputJ" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>K</td>
-          <td id="outputK"></td>
+          <td id="outputK" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>L</td>
-          <td id="outputL"></td>
+          <td id="outputL" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>M</td>
-          <td id="outputM"></td>
+          <td id="outputM" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>N</td>
-          <td id="outputN"></td>
+          <td id="outputN" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>O</td>
-          <td id="outputO"></td>
+          <td id="outputO" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>P</td>
-          <td id="outputP"></td>
+          <td id="outputP" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>Q</td>
-          <td id="outputQ"></td>
+          <td id="outputQ" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>R</td>
-          <td id="outputR"></td>
+          <td id="outputR" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>S</td>
-          <td id="outputS"></td>
+          <td id="outputS" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>T</td>
-          <td id="outputT"></td>
+          <td id="outputT" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>U</td>
-          <td id="outputU"></td>
+          <td id="outputU" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>V</td>
-          <td id="outputV"></td>
+          <td id="outputV" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>last step section 4</td>
-          <td id="output_last_step_section_4"></td>
+          <td id="output_last_step_section_4" style="text-align:center;"></td>
         </tr>
         <tr>
           <td>stitch count after G</td>
-          <td id="output_stitch_count_after_G"></td>
+          <td id="output_stitch_count_after_G" style="text-align:center;"></td>
         </tr>
       </table>
 
@@ -186,6 +239,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+  <script>
+  $(document).ready( function($) {
+      $('form').on('focus', 'input[type=number]', function(e) {
+          $(this).on('wheel', function(e) {
+              e.preventDefault();
+          });
+      });
+      $('form').on('blur', 'input[type=number]', function(e) {
+          $(this).off('wheel');
+      });
+      $('form').on('keydown', 'input[type=number]', function(e) {
+          if ( e.which == 38 || e.which == 40 )
+              e.preventDefault();
+      });
+  });
+  </script>
+
+<!--
+  <script>
+      $(function(){
+        $('#pattern_selection').on('change', function () {
+          var output_table = document.getElementById("output_table");
+          var row_w = output_table.insertRow(-1);
+          var cell_w_l = row_w.insertCell(0);
+          var cell_w_r = row_w.insertCell(1);
+          cell_w_l.innerHTML = "S";
+          cell_w_r.innerHTML = document.getElementById("outputS");
+        });
+      });
+  </script>
+-->
 
 </body>
 </html>

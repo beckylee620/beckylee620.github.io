@@ -7,15 +7,11 @@ tr {
 }
 
 td {
-    border: 1px solid #1A5A63;
     width: 45%;
 }
 
 table {
-    border: 1px solid #1A5A63;
     width: 100%;
-    font-size: 1.5em;
-    margin: 5%;
 }
 
 body {
@@ -25,59 +21,17 @@ body {
 
 #header {
   background-color: #F9F9F9;
-  text-align: center;
+  text-align: left;
   width: 100%;
+  font-size: 3em;
 }
 
-#text_cutout_background {
-    background-color: #ADCCBD;
-    display: inline-block;
-    text-align: center;
-    font-size: 3em;
-    color: #ADCCBD;
-    border-radius: 25px;
-    margin: 1%;
-    padding: 1%;
-/*
-    width: 102%;
-    height: 12%;
-    margin-top: -10px;
-    vertical-align: text-bottom;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-*/
-}
-
-#text_cutout {
-  background-color: #F9F9F9;
+.button {
   display: inline-block;
-  padding: 2%;
-  border-radius: 25px;
-}
-
-#input {
-  width: 80%;
-  display: inline-block;
-  vertical-align: text-top;
+  width: 40%;
   text-align: center;
-  background-image: url("images/joiner.jpeg");
-  background-position: center;
-  border-radius: 25px;
-  padding: 2%
+  font-family: Ubuntu, sans-serif;
 }
-
-/* .column {
-  float: left;
-  width: 35%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
 
 .row {
   display: flex;
@@ -85,56 +39,14 @@ body {
 
 .column {
   flex: 35%;
+  text-align: right;
 }
 
-.input_form {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.input_section {
-  display: inline-block;
-  width: 52%;
-}
-
-.dropmenu {
-    background-color: #F9F9F9;
-    width: 40%;
-    float: right;
-    clear: right;
-}
-
-.menubutton {
-    background-color: #AAB857;
-    box-shadow: #464646 5px 5px;
-    color: #464646;
-    text-align: center;
-    font-size: 2em;
-    border-radius: 5px;
-    display: block;
-    margin: 10px auto 0px auto;
-    width: 80%;
-}
-
-.buttonlink {
-    color: #464646;
-    text-decoration: none;
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-a {
-    color: #AAB857;
-}
-
-.menubutton:hover {
-    background-color: #CEE08C;
-    box-shadow: #464646 5px 5px;
-    color: #464646;
-}
-
-.buttonlink:hover {
-    color: #464646;
+input[type="number"] {
+    -moz-appearance: textfield;
 }

@@ -142,6 +142,10 @@ function calculate() {
 
     var body_stitches_before_sleeves = ((front_panel_pickup_stitches * 2) + back_panel_stitches);
 
+    var icord_pickups = cast_on - 8
+    /* +1 accounts for the final buffer row; +2 accounts for the rows of start and end stitches */
+    var icord_rows = ((icord_pickups / 2) * 3) + 1 + 2
+
 /* calculate yarn quantity */
     /* all body rows together */
     var row_counter = 0;
@@ -192,6 +196,8 @@ function calculate() {
     var total_yarn_quantity = (body_yarn_quantity + collar_yarn_quantity + (sleeve_yarn_quantity * 2));
 
     document.getElementById("outputA").innerHTML = cast_on;
+    document.getElementById("outputA_1").innerHTML = icord_rows;
+    document.getElementById("outputA_2").innerHTML = icord_pickups;
     document.getElementById("outputB").innerHTML = body_rows_before_sleeve;
     document.getElementById("outputC").innerHTML = rows_between_front_panel_increases;
     document.getElementById("outputD").innerHTML = body_stitches_before_sleeves;
