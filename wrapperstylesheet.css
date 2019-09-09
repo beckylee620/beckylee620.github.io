@@ -21,7 +21,7 @@ body {
 
 #header {
   background-color: #F9F9F9;
-  text-align: center;
+  text-align: left;
   width: 100%;
   font-size: 3em;
 }
@@ -39,6 +39,7 @@ body {
 
 .column {
   flex: 35%;
+  text-align: right;
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
