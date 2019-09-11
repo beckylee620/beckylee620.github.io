@@ -70,6 +70,8 @@ function calculate() {
 
     /* not sure if these adjustments vvv will definitely always work out correctly - test!! */
     var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
+/* if garter */
+    back_length = back_length - (gauge_width / 10 * 2)
     var body_rows_total = Math.round(back_length / gauge_length * 10);
     body_rows_total += (body_rows_total % 2);
     var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
@@ -132,9 +134,9 @@ function calculate() {
 /* this vvv needs to be math.ceil because if body_rows_before_sleeve is not evenly divisible by front_panel_increase_rate, that means you have done at least a single extra row in terms of increases, and the first row in that repeat is the increase row, so you have definitely increased at least once more. */
     var front_panel_pickup_stitches = (Math.ceil(body_rows_before_sleeve / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
     if ((body_rows_before_sleeve % front_panel_increase_rate) == 0) {
-      var last_step_worked_section_4 = "step 4/a (increase row)"
+      var first_step_worked_section_7 = "step 4/a (increase row)"
     } else {
-      var last_step_worked_section_4 = "step 4/b, row ".concat(body_rows_before_sleeve % front_panel_increase_rate)
+      var first_step_worked_section_7 = "step 4/b, row ".concat(body_rows_before_sleeve % front_panel_increase_rate)
     }
     var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
@@ -147,9 +149,11 @@ function calculate() {
     var icord_rows = ((icord_pickups / 2) * 3) + 1 + 2
 
 /* calculate yarn quantity */
+/* if garter */
+    var stitch_counter = (icord_rows * 4);
     /* all body rows together */
     var row_counter = 0;
-    var stitch_counter = (cast_on * 2);
+    stitch_counter += (cast_on * 2);
     var current_stitches = cast_on;
 
     while (row_counter < body_rows_total) {
@@ -223,6 +227,6 @@ function calculate() {
     document.getElementById("output_yarn_B").innerHTML = body_yarn_quantity;
     document.getElementById("output_yarn_C").innerHTML = collar_yarn_quantity;
     document.getElementById("output_yarn_D").innerHTML = sleeve_yarn_quantity;
-    document.getElementById("output_last_step_section_4").innerHTML = last_step_worked_section_4;
+    document.getElementById("output_first_step_section_7").innerHTML = first_step_worked_section_7;
     document.getElementById("output_stitch_count_after_G").innerHTML = stitch_count_after_drop_sleeve_body_rows;
 }
