@@ -142,7 +142,9 @@ function calculate() {
     }
     var rows_between_front_panel_increases = (front_panel_increase_rate - 1);
 
-    var stitch_count_after_drop_sleeve_body_rows = (Math.ceil((body_rows_before_sleeve + drop_sleeve_body_rows) / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
+    var stitch_count_after_drop_sleeve_body_rows_1 = (Math.ceil((body_rows_before_sleeve + drop_sleeve_body_rows) / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
+
+    var stitch_count_after_drop_sleeve_body_rows_2 = (Math.ceil((body_rows_before_sleeve + drop_sleeve_body_rows + 1) / front_panel_increase_rate) + front_panel_start_stitches_adjusted);
 
     var body_stitches_before_sleeves = ((front_panel_pickup_stitches * 2) + back_panel_stitches);
 
@@ -211,7 +213,8 @@ function calculate() {
     document.getElementById("E-2_out").innerHTML = back_panel_stitches;
     document.getElementById("F_out").innerHTML = drop_sleeve_body_rows;
     document.getElementById("G-1_out").innerHTML = first_step_worked_section_7;
-    document.getElementById("G-2_out").innerHTML = stitch_count_after_drop_sleeve_body_rows;
+    document.getElementById("G-2_out").innerHTML = stitch_count_after_drop_sleeve_body_rows_1;
+    document.getElementById("G-3_out").innerHTML = stitch_count_after_drop_sleeve_body_rows_2;
     document.getElementById("H_out").innerHTML = shoulder_short_row_rows;
     document.getElementById("I_out").innerHTML = shoulder_short_row_instruction;
     document.getElementById("J_out").innerHTML = shoulder_short_row_iterations;
