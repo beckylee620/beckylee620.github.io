@@ -49,8 +49,8 @@ function calculate() {
     var collar_pickup = (collar_stitches_one_side * 3);
     var collar_total = (collar_stitches_one_side * 2);
 
-    /* currently making the rise of the shoulder triangle 1/2 the length of the run */
-    var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches * (gauge_width / 10)) / 2 / gauge_length * 10);
+    /* currently making the rise of the shoulder triangle 1/4 the length of the run */
+    var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches * (gauge_width / 10)) / 4 / gauge_length * 10);
     shoulder_short_row_rows -= (shoulder_short_row_rows % 2);
     var shoulder_short_row_iterations = Math.round(shoulder_short_row_rows / 2);
     var shoulder_short_row_decreases = Math.floor(shoulder_short_row_stitches / shoulder_short_row_iterations);
