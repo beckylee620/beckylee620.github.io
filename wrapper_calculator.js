@@ -175,10 +175,10 @@ function calculate() {
     var skipped_short_row_stitches = 0;
     while (row_counter < (shoulder_short_row_iterations * 2)) {
       row_counter += 2;
-      skipped_short_row_stitches += (shoulder_short_row_decreases * row_counter);
+      skipped_short_row_stitches += (shoulder_short_row_instruction * row_counter);
     }
     if (shoulder_short_row_leftovers != 0) {
-      skipped_short_row_stitches += (((shoulder_short_row_decreases * shoulder_short_row_iterations) +  shoulder_short_row_leftovers) * 2);
+      skipped_short_row_stitches += (((shoulder_short_row_instruction * shoulder_short_row_iterations) +  shoulder_short_row_leftovers) * 2);
     }
     stitch_counter -= (skipped_short_row_stitches * 4);
     stitch_counter += ((shoulder_short_row_stitches + shoulder_seam_stitches) * 4);
