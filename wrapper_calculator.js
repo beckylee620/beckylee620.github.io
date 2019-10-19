@@ -158,8 +158,11 @@ function calculate() {
     var stitch_counter = (icord_rows * 4);
     /* all body rows together */
     var row_counter = 0;
-    stitch_counter += (cast_on * 2);
+    /* the cast-on number of stitches is only knitted for one row (pick-up row)
+    before increasing starts; inc stitches before starting loop! */
+    stitch_counter += cast_on;
     var current_stitches = cast_on;
+    current_stitches += 2;
 
     while (row_counter < body_rows_total) {
       stitch_counter += (current_stitches * front_panel_increase_rate);
