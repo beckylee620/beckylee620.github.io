@@ -66,7 +66,7 @@ function calculate() {
       var shoulder_short_row_leftovers_instruction = shoulder_short_row_leftovers - 1;
     }
     if (shoulder_short_row_leftovers == 0) {
-      var shoulder_short_row_leftovers_instruction = "none";
+      var shoulder_short_row_leftovers_instruction = "n/a";
     }
 
 
