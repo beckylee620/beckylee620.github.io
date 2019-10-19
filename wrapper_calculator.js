@@ -199,6 +199,8 @@ function calculate() {
     }
     sleeve_stitch_counter += (cuff_stitches_adjusted * (cuff_rows + 2));
 
+    /* count icord bind-off */
+    sleeve_stitch_counter += ((cuff_stitches_adjusted + 3) * 1.5 * 4);
     var sleeve_yarn_quantity = Math.ceil((sleeve_stitch_counter/stitches_per_length)*1.05);
 
     var total_yarn_quantity = (body_yarn_quantity + collar_yarn_quantity + (sleeve_yarn_quantity * 2));
