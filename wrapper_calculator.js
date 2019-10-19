@@ -125,6 +125,7 @@ function calculate() {
       }
     }
 
+    var cuff_rows_plus_t = cuff_rows + rows_between_sleeve_decreases;
     var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
     var drop_sleeve_body_rows = Math.round((drop_sleeve_pickup_circumference / 2) / gauge_length * 10);
     /* note: the extra 2 rows being subtracted here account for the short row stitch pickup rows at the very top */
@@ -233,7 +234,7 @@ function calculate() {
     document.getElementById("S_out").innerHTML = sleeve_rows_straight;
     document.getElementById("T_out").innerHTML = rows_between_sleeve_decreases;
     document.getElementById("U_out").innerHTML = cuff_stitches_adjusted;
-    document.getElementById("V_out").innerHTML = cuff_rows;
+    document.getElementById("V_out").innerHTML = cuff_rows_plus_t;
     document.getElementById("yarn_total_out").innerHTML = total_yarn_quantity;
     document.getElementById("yarn_body_out").innerHTML = body_yarn_quantity;
     document.getElementById("yarn_collar_out").innerHTML = collar_yarn_quantity;
