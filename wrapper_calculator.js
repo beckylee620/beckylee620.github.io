@@ -72,8 +72,9 @@ function calculate() {
 
     /* not sure if these adjustments vvv will definitely always work out correctly - test!! */
     var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
-/* if garter */
+/* if garter version -- subtract 2 stitches' width to account for icord cast-on/bind-off */
     back_length = back_length - (gauge_width / 10 * 2)
+    sleeve_length = sleeve_length - (gauge_width / 10 * 2)
     var body_rows_total = Math.round(back_length / gauge_length * 10);
     body_rows_total += (body_rows_total % 2);
     var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
