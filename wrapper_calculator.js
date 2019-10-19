@@ -161,8 +161,7 @@ function calculate() {
     /* the cast-on number of stitches is only knitted for one row (pick-up row)
     before increasing starts; inc stitches before starting loop! */
     stitch_counter += cast_on;
-    var current_stitches = cast_on;
-    current_stitches += 2;
+    var current_stitches = (cast_on + 2);
 
     while (row_counter < body_rows_total) {
       stitch_counter += (current_stitches * front_panel_increase_rate);
@@ -200,7 +199,7 @@ function calculate() {
     sleeve_stitch_counter += (cuff_stitches_adjusted * (cuff_rows + 2));
 
     /* count icord bind-off */
-    sleeve_stitch_counter += ((cuff_stitches_adjusted + 3) * 1.5 * 4);
+    sleeve_stitch_counter += Math.ceil((cuff_stitches_adjusted + 3) * 1.5 * 4);
     var sleeve_yarn_quantity = Math.ceil((sleeve_stitch_counter/stitches_per_length)*1.05);
 
     var total_yarn_quantity = (body_yarn_quantity + collar_yarn_quantity + (sleeve_yarn_quantity * 2));
