@@ -190,8 +190,6 @@ function calculate() {
 
     var collar_yarn_quantity = Math.ceil((collar_stitch_counter/stitches_per_length)*1.05);
 
-    stitch_counter += collar_stitch_counter;
-
     /* sleeves (accounts for pick-up and bind-off) */
     var sleeve_stitch_counter = (drop_sleeve_pickup_stitches * (sleeve_rows_straight + 1));
     current_stitches = (drop_sleeve_pickup_stitches - 1);
@@ -200,8 +198,6 @@ function calculate() {
       current_stitches -= 1;
     }
     sleeve_stitch_counter += (cuff_stitches_adjusted * (cuff_rows + 2));
-
-    stitch_counter += (sleeve_stitch_counter * 2);
 
     var sleeve_yarn_quantity = Math.ceil((sleeve_stitch_counter/stitches_per_length)*1.05);
 
