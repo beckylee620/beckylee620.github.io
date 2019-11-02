@@ -1,6 +1,5 @@
 function calculate() {
     var gauge_form = document.getElementById("gauge_form");
-    var body_form = document.getElementById("body_form");
     var garment_form = document.getElementById("garment_form");
     // var design_form = document.getElementById("design_form");
 
@@ -8,18 +7,16 @@ function calculate() {
     var gauge_width = gauge_form.elements[1].value;
     var gauge_length = gauge_form.elements[2].value;
 
-    var full_shoulder_width = body_form.elements[0].value;
-    var upper_arm_length = body_form.elements[1].value;
-
-    var body_circumference = garment_form.elements[0].value;
-    var back_length = garment_form.elements[1].value;
-    var collar_width = garment_form.elements[2].value;
-    var collar_height = garment_form.elements[3].value;
-    var upper_sleeve_circumference = garment_form.elements[4].value;
-    var sleeve_length = garment_form.elements[5].value;
-    var cuff_circumference = garment_form.elements[6].value;
-    var cuff_length = garment_form.elements[7].value;
-    // var divisor = design_form.elements[0].value;
+    var full_shoulder_width = garment_form.elements[0].value;
+    var upper_arm_length = garment_form.elements[1].value;
+    var body_circumference = garment_form.elements[2].value;
+    var back_length = garment_form.elements[3].value;
+    var collar_width = garment_form.elements[4].value;
+    var collar_height = garment_form.elements[5].value;
+    var upper_sleeve_circumference = garment_form.elements[6].value;
+    var sleeve_length = garment_form.elements[7].value;
+    var cuff_circumference = garment_form.elements[8].value;
+    var cuff_length = garment_form.elements[9].value;
 
 /* problem if full_shoulder_width is wider than 1/2 body_circumference? */
 /* fyi Math.round rounds to the nearest integer - Math.floor / Math.ceil */
@@ -78,7 +75,8 @@ function calculate() {
     var body_rows_total = Math.round(back_length / gauge_length * 10);
     body_rows_total += (body_rows_total % 2);
     var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
-    var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
+/*    var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate); */
+    var front_panel_increases_adjusted = Math.ceil(body_rows_total / front_panel_increase_rate);
     var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
     var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
