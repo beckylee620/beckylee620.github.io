@@ -1,6 +1,5 @@
 function calculate() {
     var gauge_form = document.getElementById("gauge_form");
-    var body_form = document.getElementById("body_form");
     var garment_form = document.getElementById("garment_form");
     // var design_form = document.getElementById("design_form");
 
@@ -8,18 +7,16 @@ function calculate() {
     var gauge_width = gauge_form.elements[1].value;
     var gauge_length = gauge_form.elements[2].value;
 
-    var full_shoulder_width = body_form.elements[0].value;
-    var upper_arm_length = body_form.elements[1].value;
-
-    var body_circumference = garment_form.elements[0].value;
-    var back_length = garment_form.elements[1].value;
-    var collar_width = garment_form.elements[2].value;
-    var collar_height = garment_form.elements[3].value;
-    var upper_sleeve_circumference = garment_form.elements[4].value;
-    var sleeve_length = garment_form.elements[5].value;
-    var cuff_circumference = garment_form.elements[6].value;
-    var cuff_length = garment_form.elements[7].value;
-    // var divisor = design_form.elements[0].value;
+    var full_shoulder_width = garment_form.elements[0].value;
+    var upper_arm_length = garment_form.elements[1].value;
+    var body_circumference = garment_form.elements[2].value;
+    var back_length = garment_form.elements[3].value;
+    var collar_width = garment_form.elements[4].value;
+    var collar_height = garment_form.elements[5].value;
+    var upper_sleeve_circumference = garment_form.elements[6].value;
+    var sleeve_length = garment_form.elements[7].value;
+    var cuff_circumference = garment_form.elements[8].value;
+    var cuff_length = garment_form.elements[9].value;
 
 /* problem if full_shoulder_width is wider than 1/2 body_circumference? */
 /* fyi Math.round rounds to the nearest integer - Math.floor / Math.ceil */
@@ -49,8 +46,8 @@ function calculate() {
     var collar_pickup = (collar_stitches_one_side * 3);
     var collar_total = (collar_stitches_one_side * 2);
 
-    /* currently making the rise of the shoulder triangle 1/2 the length of the run */
-    var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches * (gauge_width / 10)) / 2 / gauge_length * 10);
+    /* currently making the rise of the shoulder triangle 1/4 the length of the run */
+    var shoulder_short_row_rows = Math.round((shoulder_short_row_stitches * (gauge_width / 10)) / 4 / gauge_length * 10);
     shoulder_short_row_rows -= (shoulder_short_row_rows % 2);
     var shoulder_short_row_iterations = Math.round(shoulder_short_row_rows / 2);
     var shoulder_short_row_decreases = Math.floor(shoulder_short_row_stitches / shoulder_short_row_iterations);
@@ -66,18 +63,20 @@ function calculate() {
       var shoulder_short_row_leftovers_instruction = shoulder_short_row_leftovers - 1;
     }
     if (shoulder_short_row_leftovers == 0) {
-      var shoulder_short_row_leftovers_instruction = "none";
+      var shoulder_short_row_leftovers_instruction = "n/a";
     }
 
 
     /* not sure if these adjustments vvv will definitely always work out correctly - test!! */
     var front_panel_increases = Math.round(front_panel_end_stitches - front_panel_start_stitches);
-/* if garter */
+/* if garter version -- subtract 2 stitches' width to account for icord cast-on/bind-off */
     back_length = back_length - (gauge_width / 10 * 2)
+    sleeve_length = sleeve_length - (gauge_width / 10 * 2)
     var body_rows_total = Math.round(back_length / gauge_length * 10);
     body_rows_total += (body_rows_total % 2);
     var front_panel_increase_rate = Math.round(body_rows_total / front_panel_increases);
-    var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate);
+/*    var front_panel_increases_adjusted = Math.round(body_rows_total / front_panel_increase_rate); */
+    var front_panel_increases_adjusted = Math.ceil(body_rows_total / front_panel_increase_rate);
     var front_panel_start_stitches_adjusted = Math.round(front_panel_end_stitches - front_panel_increases_adjusted);
     var cast_on = Math.round(back_panel_stitches + (front_panel_start_stitches_adjusted * 2));
 
@@ -124,6 +123,7 @@ function calculate() {
       }
     }
 
+    var sleeve_rows_straight_plus_t = sleeve_rows_straight + rows_between_sleeve_decreases;
     var drop_sleeve_pickup_stitches_halved = (drop_sleeve_pickup_stitches / 2);
     var drop_sleeve_body_rows = Math.round((drop_sleeve_pickup_circumference / 2) / gauge_length * 10);
     /* note: the extra 2 rows being subtracted here account for the short row stitch pickup rows at the very top */
@@ -157,8 +157,10 @@ function calculate() {
     var stitch_counter = (icord_rows * 4);
     /* all body rows together */
     var row_counter = 0;
-    stitch_counter += (cast_on * 2);
-    var current_stitches = cast_on;
+    /* the cast-on number of stitches is only knitted for one row (pick-up row)
+    before increasing starts; inc stitches before starting loop! */
+    stitch_counter += cast_on;
+    var current_stitches = (cast_on + 2);
 
     while (row_counter < body_rows_total) {
       stitch_counter += (current_stitches * front_panel_increase_rate);
@@ -171,10 +173,10 @@ function calculate() {
     var skipped_short_row_stitches = 0;
     while (row_counter < (shoulder_short_row_iterations * 2)) {
       row_counter += 2;
-      skipped_short_row_stitches += (shoulder_short_row_decreases * row_counter);
+      skipped_short_row_stitches += (shoulder_short_row_instruction * row_counter);
     }
     if (shoulder_short_row_leftovers != 0) {
-      skipped_short_row_stitches += (((shoulder_short_row_decreases * shoulder_short_row_iterations) +  shoulder_short_row_leftovers) * 2);
+      skipped_short_row_stitches += (((shoulder_short_row_instruction * shoulder_short_row_iterations) +  shoulder_short_row_leftovers) * 2);
     }
     stitch_counter -= (skipped_short_row_stitches * 4);
     stitch_counter += ((shoulder_short_row_stitches + shoulder_seam_stitches) * 4);
@@ -186,10 +188,8 @@ function calculate() {
 
     var collar_yarn_quantity = Math.ceil((collar_stitch_counter/stitches_per_length)*1.05);
 
-    stitch_counter += collar_stitch_counter;
-
     /* sleeves (accounts for pick-up and bind-off) */
-    var sleeve_stitch_counter = (drop_sleeve_pickup_stitches * (sleeve_rows_straight + 1));
+    var sleeve_stitch_counter = (drop_sleeve_pickup_stitches * (sleeve_rows_straight_plus_t + 1));
     current_stitches = (drop_sleeve_pickup_stitches - 1);
     while (current_stitches >= cuff_stitches_adjusted) {
       sleeve_stitch_counter += (sleeve_decrease_rate * current_stitches);
@@ -197,8 +197,8 @@ function calculate() {
     }
     sleeve_stitch_counter += (cuff_stitches_adjusted * (cuff_rows + 2));
 
-    stitch_counter += (sleeve_stitch_counter * 2);
-
+    /* count icord bind-off */
+    sleeve_stitch_counter += Math.ceil((cuff_stitches_adjusted + 3) * 1.5 * 4);
     var sleeve_yarn_quantity = Math.ceil((sleeve_stitch_counter/stitches_per_length)*1.05);
 
     var total_yarn_quantity = (body_yarn_quantity + collar_yarn_quantity + (sleeve_yarn_quantity * 2));
@@ -229,7 +229,7 @@ function calculate() {
     document.getElementById("P_out").innerHTML = collar_rows;
     document.getElementById("Q_out").innerHTML = drop_sleeve_pickup_stitches_halved;
     document.getElementById("R_out").innerHTML = drop_sleeve_pickup_stitches;
-    document.getElementById("S_out").innerHTML = sleeve_rows_straight;
+    document.getElementById("S_out").innerHTML = sleeve_rows_straight_plus_t;
     document.getElementById("T_out").innerHTML = rows_between_sleeve_decreases;
     document.getElementById("U_out").innerHTML = cuff_stitches_adjusted;
     document.getElementById("V_out").innerHTML = cuff_rows;
