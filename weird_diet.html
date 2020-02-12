@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>weird diet inspiration</title>
+</head>
+
+<body>
+  <div id="header">
+    <div style="text-align:center;">weird diet inspiration</div>
+  </div>
+
+
+  <div class="row">
+    <div class="column">
+      <div>
+        <select id="flavor_palette">
+          <option value="savory">savory flavor palette</option>
+          <option value="sweet">sweet flavor palette</option>
+          <option value="whatever">i'll eat anything</option>
+        </select>
+      </div>
+      <div>
+        <button class="button" onclick="inspire_me()">inspire me</button>
+      </div>
+    </div>
+  <div class="column">
+    <div>
+      <table>
+        <tr>
+          <td>why not make some</td>
+          <td id="thing_1" style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td>with some</td>
+          <td id="thing_2" style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td>and some</td>
+          <td id="thing_3" style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td>and serve it all on top of some</td>
+          <td id="starch" style="text-align:center;"></td>
+        </tr>
+        <tr>
+          <td>with a lovely glass of</td>
+          <td id="beverage" style="text-align:center;"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+  <link rel="stylesheet" type="text/css" href="wrapperstylesheet.css" />
+  <script src="weird_diet.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+  <script>
+  $(document).ready( function($) {
+      $('form').on('focus', 'input[type=number]', function(e) {
+          $(this).on('wheel', function(e) {
+              e.preventDefault();
+          });
+      });
+      $('form').on('blur', 'input[type=number]', function(e) {
+          $(this).off('wheel');
+      });
+      $('form').on('keydown', 'input[type=number]', function(e) {
+          if ( e.which == 38 || e.which == 40 )
+              e.preventDefault();
+      });
+  });
+  </script>
+
+<!--
+  <script>
+      $(function(){
+        $('#pattern_selection').on('change', function () {
+          var output_table = document.getElementById("output_table");
+          var row_w = output_table.insertRow(-1);
+          var cell_w_l = row_w.insertCell(0);
+          var cell_w_r = row_w.insertCell(1);
+          cell_w_l.innerHTML = "S";
+          cell_w_r.innerHTML = document.getElementById("outputS");
+        });
+      });
+  </script>
+-->
+
+</body>
+</html>
